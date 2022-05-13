@@ -1,0 +1,265 @@
+.top_pad {
+    margin-top: 40px;
+}
+.firstDiv {
+    height: 42px;
+    width: 42px;
+    background-color: #0a6ed1;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.inner_text {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+.inner_text_O {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 7px;
+}
+.pName {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+}
+.pName1 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}
+.pName2 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}
+.pName3 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}
+.top_input {
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.cus_radio {
+    margin-top: 25px;
+    margin-left: 20px;
+}
+.InputFields {
+    width: 90%;
+    padding: 8px;
+}
+.btn_section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.btn_section_next {
+    padding-bottom: 40px;
+}
+.cus_btn {
+    border: 1px solid #0a6ed1;
+    color: #0a6ed1;
+}
+.cuss_btn {
+    border: 1px solid #0a6ed1;
+    color: #0a6ed1;
+    margin-right: 15px;
+}
+.custom-radio {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.left_from {
+    margin-left: 20px;
+    padding-left: 20px;
+    outline: none;
+    padding: 15px;
+    color: #757575;
+    font-size: 18px;
+    font-weight: 500;
+    width: 470px;
+}
+
+.animation_text {
+    border-right: solid 3px #000;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Animation */
+.animation_text {
+    animation: animated-text 1.5s steps(29, end) 1s 1 normal both,
+        animated-cursor 600ms steps(29, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+    from {
+        width: 0;
+    }
+    to {
+        width: 150px;
+    }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+    from {
+        border-right-color: #000;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* react state */
+
+/* input[type="text"]:enabled {
+  background: #ffff00;
+} */
+
+input[type="text"]:disabled {
+    background: #dddddd;
+}
+
+#state1 {
+    display: none;
+}
+
+/* Loader */
+
+#loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(26 108 97 / 56%);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    float: right;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#section1dis {
+    display: block;
+}
+
+#state2 {
+    display: none;
+}
+#regenerate {
+    display: none;
+}
+
+#section2dis {
+    display: block;
+}
+#regenerate2 {
+    display: none;
+}
+#demo3dis {
+    display: none;
+}
+#next1None {
+    display: none;
+}
+#next2None {
+    display: none;
+}
+#next3None {
+    display: none;
+}
+#lastDivNone {
+    display: none;
+}
+#gen1disN {
+    display: none;
+}
+#disN123 {
+    display: none;
+}
+#dis0988 {
+    display: none;
+}
+#dis0988_11 {
+    display: none;
+}
+#next3NoneFinish {
+    display: none;
+}
+.right_side {
+    background-color: #ebf8ff;
+    width: 100%;
+    border: none;
+    height: 100%;
+    padding: 5px;
+    overflow: hidden;
+    padding-left: 16px;
+}
+
+#demo4Div {
+    display: none;
+}
+#DEMO4OP {
+    display: none;
+}
+#next3None111 {
+    display: none;
+}
+#FOROutro {
+    display: none;
+}
+#outro1Dis {
+    display: none;
+}
+#outNon2 {
+    display: none;
+}
+#outNon1 {
+    display: none;
+}
+.autosize {
+    resize: none;
+    overflow: hidden;
+}
+.pdfhead {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.newpd {
+    display: flex;
+    justify-content: flex-end;
+}
+pre {
+    display: block;
+    font-size: 87.5%;
+    color: #212529;
+    white-space: pre-wrap;
+    padding: 15px;
+}
