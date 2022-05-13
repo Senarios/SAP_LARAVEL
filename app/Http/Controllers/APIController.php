@@ -65,7 +65,7 @@ class APIController extends Controller
         $fileName = ScriptFileName::find(1);
         if($fileName){
             ScriptFileName::where('id',1)->increment('filename');
-            $name = 'script_'. $fileName->filename++ .'.xlsx';
+            $name = 'script_'. ++$fileName->filename .'.xlsx';
         }
         else{
             ScriptFileName::insert(['filename' => 1]);
@@ -99,8 +99,6 @@ class APIController extends Controller
         
         ExportScript::insert($dataScript);
 
-
-        
-        return Excel::store(new ScriptExport(2018), $name,'public_uploads', \Maatwebsite\Excel\Excel::XLSX);
+        return Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'public_uploads', \Maatwebsite\Excel\Excel::XLSX);
     }
 }
