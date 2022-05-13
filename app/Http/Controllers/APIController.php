@@ -61,44 +61,56 @@ class APIController extends Controller
     }
 
     public function storeScriptsFile(Request $request){
-        ExportScript::truncate();
-        $fileName = ScriptFileName::find(1);
-        if($fileName){
-            ScriptFileName::where('id',1)->increment('filename');
-            $name = 'script_'. ++$fileName->filename .'.xlsx';
+        try{
+            ExportScript::truncate();
+            $fileName = ScriptFileName::find(1);
+            if($fileName){
+                ScriptFileName::where('id',1)->increment('filename');
+                $name = 'script_'. ++$fileName->filename .'.xlsx';
+            }
+            else{
+                ScriptFileName::insert(['filename' => 1]);
+                $name = 'script_1.xlsx';
+            }
+    
+            $dataScript = [
+                'fileName' => $name?$name:'',
+                'Ind' => isset($data->Ind)?$data->Ind:'',
+                'PN' => isset($data->PN)?$data->PN:'',
+                'Use_Case' => isset($data->Use_Case)?$data->Use_Case:'',
+                'Intro' => isset($data->Intro)?$data->Intro:'',
+                'Protagonist_1' => isset($data->Protagonist_1)?$data->Protagonist_1:'',
+                'BO_1' => isset($data->BO_1)?$data->BO_1:'',
+                'Demo_1' => isset($data->Demo_1)?$data->Demo_1:'',
+                'Demo_1_key_points' => isset($data->Demo_1_key_points)?$data->Demo_1_key_points:'',
+                'Protagonist_2' => isset($data->Protagonist_2)?$data->Protagonist_2:'',
+                'BO_2' => isset($data->BO_2)?$data->BO_2:'',
+                'Demo_2' => isset($data->Demo_2)?$data->Demo_2:'',
+                'Demo_2_key_points' => isset($data->Demo_2_key_points)?$data->Demo_2_key_points:'',
+                'Protagonist_3' => isset($data->Protagonist_3)?$data->Protagonist_3:'',
+                'BO_3' => isset($data->BO_3)?$data->BO_3:'',
+                'Demo_3' => isset($data->Demo_3)?$data->Demo_3:'',
+                'Demo_3_key_points' => isset($data->Demo_3_key_points)?$data->Demo_3_key_points:'',
+                'Protagonist_4' => isset($data->Protagonist_4)?$data->Protagonist_4:'',
+                'BO_4' => isset($data->BO_4)?$data->BO_4:'',
+                'Demo_4' => isset($data->Demo_4)?$data->Demo_4:'',
+                'Demo_4_key_points' => isset($data->Demo_4_key_points)?$data->Demo_4_key_points:'',
+                'Outro' => isset($data->Outro)?$data->Outro:'',
+            ];
+            
+            ExportScript::insert($dataScript);
+    
+            if(Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'public_uploads', \Maatwebsite\Excel\Excel::XLSX)){
+                return response()->json(['success' => true, 'message' => 'Data captured successfully!']);
+            }
+            else{
+                return response()->json(['success' => false, 'message' => 'Something went wrong!']);
+            }
         }
-        else{
-            ScriptFileName::insert(['filename' => 1]);
-            $name = 'script_1.xlsx';
+        catch(\Exception $e){
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
-
-        $dataScript = [
-            'fileName' => $name?$name:'',
-            'Ind' => isset($data->Ind)?$data->Ind:'',
-            'PN' => isset($data->PN)?$data->PN:'',
-            'Use_Case' => isset($data->Use_Case)?$data->Use_Case:'',
-            'Intro' => isset($data->Intro)?$data->Intro:'',
-            'Protagonist_1' => isset($data->Protagonist_1)?$data->Protagonist_1:'',
-            'BO_1' => isset($data->BO_1)?$data->BO_1:'',
-            'Demo_1' => isset($data->Demo_1)?$data->Demo_1:'',
-            'Demo_1_key_points' => isset($data->Demo_1_key_points)?$data->Demo_1_key_points:'',
-            'Protagonist_2' => isset($data->Protagonist_2)?$data->Protagonist_2:'',
-            'BO_2' => isset($data->BO_2)?$data->BO_2:'',
-            'Demo_2' => isset($data->Demo_2)?$data->Demo_2:'',
-            'Demo_2_key_points' => isset($data->Demo_2_key_points)?$data->Demo_2_key_points:'',
-            'Protagonist_3' => isset($data->Protagonist_3)?$data->Protagonist_3:'',
-            'BO_3' => isset($data->BO_3)?$data->BO_3:'',
-            'Demo_3' => isset($data->Demo_3)?$data->Demo_3:'',
-            'Demo_3_key_points' => isset($data->Demo_3_key_points)?$data->Demo_3_key_points:'',
-            'Protagonist_4' => isset($data->Protagonist_4)?$data->Protagonist_4:'',
-            'BO_4' => isset($data->BO_4)?$data->BO_4:'',
-            'Demo_4' => isset($data->Demo_4)?$data->Demo_4:'',
-            'Demo_4_key_points' => isset($data->Demo_4_key_points)?$data->Demo_4_key_points:'',
-            'Outro' => isset($data->Outro)?$data->Outro:'',
-        ];
         
-        ExportScript::insert($dataScript);
-
-        return Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'public_uploads', \Maatwebsite\Excel\Excel::XLSX);
+       
     }
 }
