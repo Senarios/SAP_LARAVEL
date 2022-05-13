@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 use App\Models\sap_data;
+use App\Models\ScriptFileName;
+use App\Models\ExportScript;
 use Validator;
 
 use Illuminate\Http\Request;
+use App\Exports\ScriptExport;
+use Excel;
+use Response;
+use Illuminate\Support\Facades\Storage;
 
 class APIController extends Controller
 {
@@ -54,59 +60,47 @@ class APIController extends Controller
         
     }
 
-    public function storeScriptsFile(equest $request){
-            // 'Ind','PN','Use_Case','Intro','Protagonist 1','BO-1','Demo-1','Demo-1-key-points',
-            // 'Protagonist 2', 'BO-2','Demo-2','Demo-2-key-points','Protagonist 3','BO-3' ,
-            // 'Demo-3' ,'Demo-3-key-points','Protagonist 4','BO-4','Demo-4','Demo-4-key-points',
-            // 'Outro'
-        $data = $request->all();
-        $fileName = 'tasks.csv';
-        $headers = array(
-            "Content-type"        => "text/csv",
-            "Content-Disposition" => "attachment; filename=$fileName",
-            "Pragma"              => "no-cache",
-            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
-            "Expires"             => "0"
-        );
-        $columns = array('File_name','Ind','PN','Use_Case','Intro','Protagonist 1','BO-1','Demo-1','Demo-1-key-points',
-         'Protagonist 2', 'BO-2','Demo-2','Demo-2-key-points','Protagonist 3','BO-3' ,
-         'Demo-3' ,'Demo-3-key-points','Protagonist 4','BO-4','Demo-4','Demo-4-key-points',
-         'Outro');
+    public function storeScriptsFile(Request $request){
+        ExportScript::truncate();
+        $fileName = ScriptFileName::find(1);
+        if($fileName){
+            ScriptFileName::where('id',1)->increment('filename');
+            $name = 'script_'. $fileName->filename++ .'.xlsx';
+        }
+        else{
+            ScriptFileName::insert(['filename' => 1]);
+            $name = 'script_1.xlsx';
+        }
 
-         $callback = function() use($data, $columns) {
-            $file = fopen('php://output', 'w');
-            fputcsv($file, $columns);
+        $dataScript = [
+            'fileName' => $name?$name:'',
+            'Ind' => isset($data->Ind)?$data->Ind:'',
+            'PN' => isset($data->PN)?$data->PN:'',
+            'Use_Case' => isset($data->Use_Case)?$data->Use_Case:'',
+            'Intro' => isset($data->Intro)?$data->Intro:'',
+            'Protagonist_1' => isset($data->Protagonist_1)?$data->Protagonist_1:'',
+            'BO_1' => isset($data->BO_1)?$data->BO_1:'',
+            'Demo_1' => isset($data->Demo_1)?$data->Demo_1:'',
+            'Demo_1_key_points' => isset($data->Demo_1_key_points)?$data->Demo_1_key_points:'',
+            'Protagonist_2' => isset($data->Protagonist_2)?$data->Protagonist_2:'',
+            'BO_2' => isset($data->BO_2)?$data->BO_2:'',
+            'Demo_2' => isset($data->Demo_2)?$data->Demo_2:'',
+            'Demo_2_key_points' => isset($data->Demo_2_key_points)?$data->Demo_2_key_points:'',
+            'Protagonist_3' => isset($data->Protagonist_3)?$data->Protagonist_3:'',
+            'BO_3' => isset($data->BO_3)?$data->BO_3:'',
+            'Demo_3' => isset($data->Demo_3)?$data->Demo_3:'',
+            'Demo_3_key_points' => isset($data->Demo_3_key_points)?$data->Demo_3_key_points:'',
+            'Protagonist_4' => isset($data->Protagonist_4)?$data->Protagonist_4:'',
+            'BO_4' => isset($data->BO_4)?$data->BO_4:'',
+            'Demo_4' => isset($data->Demo_4)?$data->Demo_4:'',
+            'Demo_4_key_points' => isset($data->Demo_4_key_points)?$data->Demo_4_key_points:'',
+            'Outro' => isset($data->Outro)?$data->Outro:'',
+        ];
+        
+        ExportScript::insert($dataScript);
 
-            fputcsv($file, array(
-                $data->File_name,
-                $data->Ind,
-                $data->PN,
-                $data->Use_Case,
-                $data->Intro,
-                $data->Protagonist_1,
-                $data->BO_1,
-                $data->Demo_1,
-                $data->Demo_1_key_points,
-                $data->Protagonist_2,
-                $data->BO_2,
-                $data->Demo_2,
-                $data->Demo_2_key_points,
-                $data->Protagonist_3,
-                $data->BO_3,
-                $data->Demo_3,
-                $data->Demo_3_key_points,
-                $data->Protagonist_4,
-                $data->BO_4,
-                $data->Demo_4,
-                $data->Demo_4_key_points,
-                $data->Outro,
-            ));
-            
 
-            fclose($file);
-        };
-
-        return response()->stream($callback, 200, $headers);
-
+        
+        return Excel::store(new ScriptExport(2018), $name,'public_uploads', \Maatwebsite\Excel\Excel::XLSX);
     }
 }
