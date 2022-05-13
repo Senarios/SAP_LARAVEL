@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\sap_data;
+use Validator;
 
 use Illuminate\Http\Request;
 
@@ -51,5 +52,61 @@ class APIController extends Controller
             }
 
         
+    }
+
+    public function storeScriptsFile(equest $request){
+            // 'Ind','PN','Use_Case','Intro','Protagonist 1','BO-1','Demo-1','Demo-1-key-points',
+            // 'Protagonist 2', 'BO-2','Demo-2','Demo-2-key-points','Protagonist 3','BO-3' ,
+            // 'Demo-3' ,'Demo-3-key-points','Protagonist 4','BO-4','Demo-4','Demo-4-key-points',
+            // 'Outro'
+        $data = $request->all();
+        $fileName = 'tasks.csv';
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+        $columns = array('File_name','Ind','PN','Use_Case','Intro','Protagonist 1','BO-1','Demo-1','Demo-1-key-points',
+         'Protagonist 2', 'BO-2','Demo-2','Demo-2-key-points','Protagonist 3','BO-3' ,
+         'Demo-3' ,'Demo-3-key-points','Protagonist 4','BO-4','Demo-4','Demo-4-key-points',
+         'Outro');
+
+         $callback = function() use($data, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            fputcsv($file, array(
+                $data->File_name,
+                $data->Ind,
+                $data->PN,
+                $data->Use_Case,
+                $data->Intro,
+                $data->Protagonist_1,
+                $data->BO_1,
+                $data->Demo_1,
+                $data->Demo_1_key_points,
+                $data->Protagonist_2,
+                $data->BO_2,
+                $data->Demo_2,
+                $data->Demo_2_key_points,
+                $data->Protagonist_3,
+                $data->BO_3,
+                $data->Demo_3,
+                $data->Demo_3_key_points,
+                $data->Protagonist_4,
+                $data->BO_4,
+                $data->Demo_4,
+                $data->Demo_4_key_points,
+                $data->Outro,
+            ));
+            
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+
     }
 }
