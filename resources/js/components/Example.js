@@ -518,16 +518,11 @@ function App() {
                 alert(result)
             }
 
-            let Fdata = result
-            if (Fdata.ErrorCode && Fdata.ErrorCode == "INTERNAL_FAILURE_FROM_MODEL") {
-                setlastLoading(false)
-                alert(Fdata.ErrorCode)
-            }
-            setFintro1(Fdata[0]["Intro"])
-            setFoutro1(Fdata[0]["Outro"])
+            let Fdata = result.choices
+
+            setFintro1(Fdata[0]["text"])
             if (Fdata.length == 2) {
-                setFintro2(Fdata[1]["Intro"])
-                setFoutro2(Fdata[1]["Outro"])
+                setFintro2(Fdata[1]["text"])
             }
             setFloading(false)
             setlastLoading(false)
@@ -558,10 +553,10 @@ function App() {
 
         FinalOutro(pName, useCase, newIntro, BO1, SBO2, SBO3, SBO4).then(async (result) => {
 
-            let dataa = result
+            let dataa = result.choices
             if (dataa) {
-                setoutroState1(dataa.outro1)
-                setoutroState2(dataa.outro2)
+                setoutroState1(dataa[0]["text"])
+                setoutroState2(dataa[1]["text"])
             }
             setoutroLoading(false)
             scrollToBottom()
@@ -650,8 +645,8 @@ function App() {
     }
 
     function generateWordDocument(event) {
-        SaveScripts(extrasss5, extrasss6, BO1, SBO2, SBO3, SBO4, extrasss, extrasss2, extrasss3, extrasss4).then(async (result) => {
-            console.log(result);
+        SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
+            console.log("aleemmmmm======SCD", result);
         })
         event.preventDefault()
         let doc = new Document({
@@ -696,8 +691,6 @@ function App() {
     }
 
 
-    let oldCode = "Your team can take the lead in new directions with SAPYou and your team have centralized management and control, eliminating all the confusionAs you take your next step, you can explore ds."
-    let newCode = "hello demooono 2"
 
     return (
         <section>

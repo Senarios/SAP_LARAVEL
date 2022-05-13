@@ -25,7 +25,7 @@ export function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -66,7 +66,7 @@ export function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -106,7 +106,7 @@ export function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3)
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -146,7 +146,7 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) 
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -162,11 +162,9 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) 
     });
 }
 export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3, SBO4, extra1, extra2, extra3, extra4) {
-    const finalSentence3 = Protagonist1.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
     let PNAME = pName1.trim();
     let USECASE = useCase1.trim();
     let INDUSRTY = Indursty1.trim();
-    let PROTAGONIST = finalSentence3.trim();
     let Bo1 = BO1.trim();
     let Bo2 = SBO2.trim();
     let Bo3 = SBO3.trim();
@@ -175,53 +173,37 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
     let D2 = extra2.trim();
     let D3 = extra3.trim();
     let D4 = extra4.trim();
-    var newDate = new Date()
-    var today = new Date().getFullYear() + ("0" + (new Date().getMonth() + 1)).slice(-2) + ("0" + new Date().getDate()).slice(-2)
-    var getDate = newDate.toISOString().substring(0, 19) + 'Z'
-    var replaceStr = getDate.replaceAll("-", "");
-    var replaceAllStr = replaceStr.replaceAll(":", "");
-    var crypto = require("crypto-js");
+
+    var PN = PNAME == "" ? "nan" : PNAME
+    var US = USECASE == "" ? "nan" : USECASE
+    var IN = INDUSRTY == "" ? "nan" : INDUSRTY
+    var BoONE = Bo1 == "" ? "nan" : Bo1
+    var BoTWO = Bo2 == "" ? "nan" : Bo2
+    var BoThree = Bo3 == "" ? "nan" : Bo3
+    var BoFour = Bo4 == "" ? "nan" : Bo4
+    var DEMO1 = D1 == "" ? "nan" : D1
+    var DEMO2 = D2 == "" ? "nan" : D2
+    var DEMO3 = D3 == "" ? "nan" : D3
+    var DEMO4 = D4 == "" ? "nan" : D4
+
     var body = JSON.stringify({
-        "PN": PNAME == "" ? "nan" : PNAME,
-        "Industry": INDUSRTY == "" ? "nan" : INDUSRTY,
-        "Use Case": USECASE == "" ? "nan" : USECASE,
-        "BO-1": Bo1 == "" ? "nan" : Bo1,
-        "Demo-1": D1 == "" ? "nan" : D1,
-        "BO-2": Bo2 == "" ? "nan" : Bo2,
-        "Demo-2": D2 == "" ? "nan" : D2,
-        "BO-3": Bo3 == "" ? "nan" : Bo3,
-        "Demo-3": D3 == "" ? "nan" : D3,
-        "BO-4": Bo4 == "" ? "nan" : Bo4,
-        "Demo-4": D4 == "" ? "nan" : D4
+
+        "prompt": "PN:" + " " + PN + " " + "$ Industry:" + " " + IN + " $ Use Case:" + " " + US + " " + "$ BO-1:" + " " + BoONE + " " + "$ Demo-1: " + DEMO1 + " " + "$ BO-2:" + " " + BoTWO + " " + "$ Demo-2: " + DEMO2 + " " + "$ BO-3: " + BoThree + " " + "$ Demo-3: " + DEMO3 + " " + "$ BO-4: " + BoFour + " " + "$ Demo-4: " + DEMO4 + " " + "\n\n###\n\n",
+        "model": "davinci:ft-ai-derivatives-2022-05-06-07-15-14",
+        "temperature": 0.7,
+        "max_tokens": 1000,
+        "stop": "END",
+        "n": 2
     })
-    var URL = '/endpoints/pytorch-inference-2022-03-30-13-01-59-162/invocations';
-    var canonical_querystring = '';
-    var algorithm = 'AWS4-HMAC-SHA256';
-    var host = 'runtime.sagemaker.us-west-2.amazonaws.com';
-    var kSecret = "tejrNEWXx4NMlSC81rkXohy/d00xjTRjyCfmQ5hr";
-    var SHA256 = require('crypto-js/sha256');
-    var hasPayload = SHA256(body).toString();
-    var signed_headers = 'content-type;host;x-amz-content-sha256;x-amz-date';
-    var canonical_headers = 'content-type:' + 'application/json' + '\n' + 'host:' + host + '\n' + 'x-amz-content-sha256:' + hasPayload + '\n' + 'x-amz-date:' + replaceAllStr + '\n';
-    var credentialScope = today + '/' + 'us-west-2' + '/' + 'sagemaker' + '/' + 'aws4_request';
-    var hashCanonicalRequest = 'POST' + '\n' + URL + '\n' + canonical_querystring + '\n' + canonical_headers + '\n' + signed_headers + '\n' + hasPayload;
-    var string_to_sign = algorithm + '\n' + replaceAllStr + '\n' + credentialScope + '\n' + SHA256(hashCanonicalRequest).toString();
-    var kDate = crypto.HmacSHA256(today, 'AWS4' + kSecret);
-    var kRegion = crypto.HmacSHA256('us-west-2', kDate);
-    var kService = crypto.HmacSHA256('sagemaker', kRegion);
-    var kSigning = crypto.HmacSHA256('aws4_request', kService);
-    var signature = crypto.HmacSHA256(string_to_sign, kSigning);
-    var authorization_header = algorithm + ' ' + 'Credential=' + "AKIA4LBKETVWEYHNZK5C" + '/' + credentialScope + ', ' + 'SignedHeaders=' + signed_headers + ', ' + 'Signature=' + signature;
 
     return new Promise((resolve, reject) => {
-        fetch("https://runtime.sagemaker.us-west-2.amazonaws.com/endpoints/pytorch-inference-2022-03-30-13-01-59-162/invocations", {
+        fetch("https://api.openai.com/v1/completions", {
             method: "POST",
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                "X-Amz-Content-Sha256": hasPayload,
-                "X-Amz-Date": replaceAllStr,
-                "Authorization": authorization_header,
+                Authorization: "Bearer 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",
+                "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
             .then((response) => response.json())
@@ -234,57 +216,45 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
                 reject(error);
             });
     });
+
 }
-export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4,) {
+export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
+
+    // var outro = [
+    //     "BO-1" = "BO1",
+    //     "BO-2" = "SBO2",
+    //     "BO-3" = "SBO3",
+    //     "BO-4" = "SBO4",
+    // ]
+
+    // var arrOutro = []
+
+    // for (i = 1; i < 5; i++) {
+    //     if ("BO-" + JSON.stringify({ i }) == "nan") {
+    //         arrOutro.push(i)
+    //     }
+    // }
+    // console.log("ddssdsdsdsddd=-=-=-", arrOutro);
+
+
     let PNAME = pName1.trim();
     let USECASE = useCase1.trim();
-    let Bo1 = BO1.trim();
-    let Bo2 = SBO2.trim();
-    let Bo3 = SBO3.trim();
-    let Bo4 = SBO4.trim();
-    var newDate = new Date()
-    var today = new Date().getFullYear() + ("0" + (new Date().getMonth() + 1)).slice(-2) + ("0" + new Date().getDate()).slice(-2)
-    var getDate = newDate.toISOString().substring(0, 19) + 'Z'
-    var replaceStr = getDate.replaceAll("-", "");
-    var replaceAllStr = replaceStr.replaceAll(":", "");
-    var crypto = require("crypto-js");
     var body = JSON.stringify({
-        "PN": PNAME == "" ? "nan" : PNAME,
-        "Use Case": USECASE == "" ? "nan" : USECASE,
-        "Intro": intro == "" ? "nan" : intro,
-        "BO-1": Bo1 == "" ? "nan" : Bo1.at(-1) == "." ? Bo1.slice(0, -1) : Bo1,
-        "BO-2": Bo2 == "" ? "nan" : Bo2.at(-1) == "." ? Bo2.slice(0, -1) : Bo2,
-        "BO-3": Bo3 == "" ? "nan" : Bo3.at(-1) == "." ? Bo3.slice(0, -1) : Bo3,
-        "BO-4": Bo4 == "" ? "nan" : Bo4.at(-1) == "." ? Bo4.slice(0, -1) : Bo4,
+        "prompt": "PN: " + PNAME + " " + "$ Use Case: " + USECASE + " " + "$ Intro: " + intro + " &&&",
+        "model": "davinci:ft-ai-derivatives-2022-05-12-09-52-07",
+        "temperature": 0.9,
+        "stop": "@@",
+        "n": 2
     })
-    var URL = '/endpoints/pytorch-inference-2022-04-13-09-44-57-544/invocations';
-    var canonical_querystring = '';
-    var algorithm = 'AWS4-HMAC-SHA256';
-    var host = 'runtime.sagemaker.us-west-2.amazonaws.com';
-    var kSecret = "tejrNEWXx4NMlSC81rkXohy/d00xjTRjyCfmQ5hr";
-    var SHA256 = require('crypto-js/sha256');
-    var hasPayload = SHA256(body).toString();
-    var signed_headers = 'content-type;host;x-amz-content-sha256;x-amz-date';
-    var canonical_headers = 'content-type:' + 'application/json' + '\n' + 'host:' + host + '\n' + 'x-amz-content-sha256:' + hasPayload + '\n' + 'x-amz-date:' + replaceAllStr + '\n';
-    var credentialScope = today + '/' + 'us-west-2' + '/' + 'sagemaker' + '/' + 'aws4_request';
-    var hashCanonicalRequest = 'POST' + '\n' + URL + '\n' + canonical_querystring + '\n' + canonical_headers + '\n' + signed_headers + '\n' + hasPayload;
-    var string_to_sign = algorithm + '\n' + replaceAllStr + '\n' + credentialScope + '\n' + SHA256(hashCanonicalRequest).toString();
-    var kDate = crypto.HmacSHA256(today, 'AWS4' + kSecret);
-    var kRegion = crypto.HmacSHA256('us-west-2', kDate);
-    var kService = crypto.HmacSHA256('sagemaker', kRegion);
-    var kSigning = crypto.HmacSHA256('aws4_request', kService);
-    var signature = crypto.HmacSHA256(string_to_sign, kSigning);
-    var authorization_header = algorithm + ' ' + 'Credential=' + "AKIA4LBKETVWEYHNZK5C" + '/' + credentialScope + ', ' + 'SignedHeaders=' + signed_headers + ', ' + 'Signature=' + signature;
 
     return new Promise((resolve, reject) => {
-        fetch("https://runtime.sagemaker.us-west-2.amazonaws.com/endpoints/pytorch-inference-2022-04-13-09-44-57-544/invocations", {
+        fetch("https://api.openai.com/v1/completions", {
             method: "POST",
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                "X-Amz-Content-Sha256": hasPayload,
-                "X-Amz-Date": replaceAllStr,
-                "Authorization": authorization_header,
+                Authorization: "Bearer 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",
+                "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
             .then((response) => response.json())
@@ -320,18 +290,29 @@ export function verbs(BO1) {
             });
     });
 }
-export function SaveScripts(extrasss5, extrasss6, BO1, SBO2, SBO3, SBO4, extrasss, extrasss2, extrasss3, extrasss4) {
+export function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6) {
     var body = JSON.stringify({
-        "intro": extrasss5,
-        "outro": extrasss6,
-        "bo1": BO1,
-        "bo2": SBO2,
-        "bo3": SBO3,
-        "bo4": SBO4,
-        "demo1": extrasss,
-        "demo2": extrasss2,
-        "demo3": extrasss3,
-        "demo4": extrasss4,
+        "Ind": Indursty,
+        "PN": pName,
+        "Use_Case": useCase,
+        "Intro": newIntro == "" ? extrasss5 : newIntro,
+        "Protagonist_1": Protagonist,
+        "BO_1": BO1,
+        "Demo_1": extra == "" ? extrasss : extra,
+        "Demo_1_key_points": Demo1,
+        "Protagonist_2": protagnist2,
+        "BO_2": SBO2,
+        "Demo_2": extra2 == "" ? extrasss2 : extra2,
+        "Demo_2_key_points": Demo2,
+        "Protagonist_3": protagnist3,
+        "BO_3": SBO3,
+        "Demo_3": extra3 == "" ? extrasss3 : extra3,
+        "Demo_3_key_points": Demo3,
+        "Protagonist_4": protagnist4,
+        "BO_4": SBO4,
+        "Demo_4": extra4 == "" ? extrasss4 : extra4,
+        "Demo_4_key_points": Demo4,
+        "Outro": newOutro == "" ? extrasss6 : newOutro,
     })
     return new Promise((resolve, reject) => {
         fetch("/api/storeScripts", {
