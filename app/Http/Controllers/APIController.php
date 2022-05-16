@@ -72,32 +72,31 @@ class APIController extends Controller
                 ScriptFileName::insert(['filename' => 1]);
                 $name = 'script_1.xlsx';
             }
-    
+            $data = $request->all();
             $dataScript = [
                 'fileName' => $name?$name:'',
-                'Ind' => isset($data->Ind)?$data->Ind:'',
-                'PN' => isset($data->PN)?$data->PN:'',
-                'Use_Case' => isset($data->Use_Case)?$data->Use_Case:'',
-                'Intro' => isset($data->Intro)?$data->Intro:'',
-                'Protagonist_1' => isset($data->Protagonist_1)?$data->Protagonist_1:'',
-                'BO_1' => isset($data->BO_1)?$data->BO_1:'',
-                'Demo_1' => isset($data->Demo_1)?$data->Demo_1:'',
-                'Demo_1_key_points' => isset($data->Demo_1_key_points)?$data->Demo_1_key_points:'',
-                'Protagonist_2' => isset($data->Protagonist_2)?$data->Protagonist_2:'',
-                'BO_2' => isset($data->BO_2)?$data->BO_2:'',
-                'Demo_2' => isset($data->Demo_2)?$data->Demo_2:'',
-                'Demo_2_key_points' => isset($data->Demo_2_key_points)?$data->Demo_2_key_points:'',
-                'Protagonist_3' => isset($data->Protagonist_3)?$data->Protagonist_3:'',
-                'BO_3' => isset($data->BO_3)?$data->BO_3:'',
-                'Demo_3' => isset($data->Demo_3)?$data->Demo_3:'',
-                'Demo_3_key_points' => isset($data->Demo_3_key_points)?$data->Demo_3_key_points:'',
-                'Protagonist_4' => isset($data->Protagonist_4)?$data->Protagonist_4:'',
-                'BO_4' => isset($data->BO_4)?$data->BO_4:'',
-                'Demo_4' => isset($data->Demo_4)?$data->Demo_4:'',
-                'Demo_4_key_points' => isset($data->Demo_4_key_points)?$data->Demo_4_key_points:'',
-                'Outro' => isset($data->Outro)?$data->Outro:'',
+                'Ind' => isset($data['Ind'])?$data['Ind']:'',
+                'PN' => isset($data['PN'])?$data['PN']:'',
+                'Use_Case' => isset($data['Use_Case'])?$data['Use_Case']:'',
+                'Intro' => isset($data['Intro'])?$data['Intro']:'',
+                'Protagonist_1' => isset($data['Protagonist_1'])?$data['Protagonist_1']:'',
+                'BO_1' => isset($data['BO_1'])?$data['BO_1']:'',
+                'Demo_1' => isset($data['Demo_1'])?$data['Demo_1']:'',
+                'Demo_1_key_points' => isset($data['Demo_1_key_points'])?$data['Demo_1_key_points']:'',
+                'Protagonist_2' => isset($data['Protagonist_2'])?$data['Protagonist_2']:'',
+                'BO_2' => isset($data['BO_2'])?$data['BO_2']:'',
+                'Demo_2' => isset($data['Demo_2'])?$data['Demo_2']:'',
+                'Demo_2_key_points' => isset($data['Demo_2_key_points'])?$data['Demo_2_key_points']:'',
+                'Protagonist_3' => isset($data['Protagonist_3'])?$data['Protagonist_3']:'',
+                'BO_3' => isset($data['BO_3'])?$data['BO_3']:'',
+                'Demo_3' => isset($data['Demo_3'])?$data['Demo_3']:'',
+                'Demo_3_key_points' => isset($data['Demo_3_key_points'])?$data['Demo_3_key_points']:'',
+                'Protagonist_4' => isset($data['Protagonist_4'])?$data['Protagonist_4']:'',
+                'BO_4' => isset($data['BO_4'])?$data['BO_4']:'',
+                'Demo_4' => isset($data['Demo_4'])?$data['Demo_4']:'',
+                'Demo_4_key_points' => isset($data['Demo_4_key_points'])?$data['Demo_4_key_points']:'',
+                'Outro' => isset($data['Outro'])?$data['Outro']:'',
             ];
-            
             ExportScript::insert($dataScript);
     
             if(Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'s3', \Maatwebsite\Excel\Excel::XLSX)){
