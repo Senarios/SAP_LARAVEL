@@ -5783,7 +5783,6 @@ function App() {
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     scrollToTop();
   }, []);
-  console.log("dsdsds=-=-=", extrasss);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     autosize();
 
@@ -6034,13 +6033,22 @@ function App() {
       setloading(true);
       (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptOne)(pName, useCase, Indursty, Protagonist, BO1, Demo1).then( /*#__PURE__*/function () {
         var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(result) {
-          var data;
+          var aa, data;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  if (result == "Please try again...") {
-                    alert(result);
+                  aa = {
+                    "error": {
+                      "message": "That model is still being loaded. Please try again shortly.",
+                      "type": "server_error",
+                      "param": null,
+                      "code": null
+                    }
+                  };
+
+                  if (result == aa) {
+                    alert(aa.error.message);
                   }
 
                   data = result.choices;
@@ -6059,7 +6067,7 @@ function App() {
                   document.getElementById("state1").style.display = "block";
                   scrollToBottom();
 
-                case 8:
+                case 9:
                 case "end":
                   return _context.stop();
               }
@@ -6089,13 +6097,22 @@ function App() {
       setloading(true);
       (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptTwo)(pName, useCase, Indursty, protagnist2, SBO2, Demo2).then( /*#__PURE__*/function () {
         var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(result) {
-          var data;
+          var aa, data;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
             while (1) {
               switch (_context2.prev = _context2.next) {
                 case 0:
-                  if (result == "Please try again...") {
-                    alert(result);
+                  aa = {
+                    "error": {
+                      "message": "That model is still being loaded. Please try again shortly.",
+                      "type": "server_error",
+                      "param": null,
+                      "code": null
+                    }
+                  };
+
+                  if (result == aa) {
+                    alert(aa.error.message);
                   }
 
                   data = result.choices;
@@ -6114,7 +6131,7 @@ function App() {
                   document.getElementById("regenerate").style.display = "block";
                   scrollToBottom();
 
-                case 8:
+                case 9:
                 case "end":
                   return _context2.stop();
               }
@@ -6143,13 +6160,22 @@ function App() {
       setloading(true);
       (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptThree)(pName, useCase, Indursty, protagnist3, SBO3, Demo3).then( /*#__PURE__*/function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(result) {
-          var data;
+          var aa, data;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
             while (1) {
               switch (_context3.prev = _context3.next) {
                 case 0:
-                  if (result == "Please try again...") {
-                    alert(result);
+                  aa = {
+                    "error": {
+                      "message": "That model is still being loaded. Please try again shortly.",
+                      "type": "server_error",
+                      "param": null,
+                      "code": null
+                    }
+                  };
+
+                  if (result == aa) {
+                    alert(aa.error.message);
                   }
 
                   data = result.choices;
@@ -6168,7 +6194,7 @@ function App() {
                   document.getElementById("demo3dis").style.display = "block";
                   scrollToBottom();
 
-                case 8:
+                case 9:
                 case "end":
                   return _context3.stop();
               }
@@ -6197,13 +6223,22 @@ function App() {
       setloading(true);
       (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptFour)(pName, useCase, Indursty, protagnist4, SBO4, Demo4).then( /*#__PURE__*/function () {
         var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(result) {
-          var data;
+          var aa, data;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
             while (1) {
               switch (_context4.prev = _context4.next) {
                 case 0:
-                  if (result == "Please try again...") {
-                    alert(result);
+                  aa = {
+                    "error": {
+                      "message": "That model is still being loaded. Please try again shortly.",
+                      "type": "server_error",
+                      "param": null,
+                      "code": null
+                    }
+                  };
+
+                  if (result == aa) {
+                    alert(aa.error.message);
                   }
 
                   data = result.choices;
@@ -6222,7 +6257,7 @@ function App() {
                   document.getElementById("DEMO4OP").style.display = "block";
                   scrollToBottom();
 
-                case 8:
+                case 9:
                 case "end":
                   return _context4.stop();
               }
@@ -6343,13 +6378,22 @@ function App() {
     setFloading(true);
     (0,_Service__WEBPACK_IMPORTED_MODULE_4__.FinalOutPut)(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4).then( /*#__PURE__*/function () {
       var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(result) {
-        var Fdata;
+        var aa, Fdata;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
-                if (result == "Please try again...") {
-                  alert(result);
+                aa = {
+                  "error": {
+                    "message": "That model is still being loaded. Please try again shortly.",
+                    "type": "server_error",
+                    "param": null,
+                    "code": null
+                  }
+                };
+
+                if (result == aa) {
+                  alert(aa.error.message);
                 }
 
                 Fdata = result.choices;
@@ -6364,7 +6408,7 @@ function App() {
                 document.getElementById("next3NoneFinish").style.display = "block";
                 scrollToBottom();
 
-              case 8:
+              case 9:
               case "end":
                 return _context5.stop();
             }
@@ -6425,11 +6469,24 @@ function App() {
     scrollToBottom();
     (0,_Service__WEBPACK_IMPORTED_MODULE_4__.FinalOutro)(pName, useCase, newIntro, BO1, SBO2, SBO3, SBO4).then( /*#__PURE__*/function () {
       var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6(result) {
-        var dataa;
+        var aa, dataa;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
+                aa = {
+                  "error": {
+                    "message": "That model is still being loaded. Please try again shortly.",
+                    "type": "server_error",
+                    "param": null,
+                    "code": null
+                  }
+                };
+
+                if (result == aa) {
+                  alert(aa.error.message);
+                }
+
                 dataa = result.choices;
 
                 if (dataa) {
@@ -6440,7 +6497,7 @@ function App() {
                 setoutroLoading(false);
                 scrollToBottom();
 
-              case 4:
+              case 6:
               case "end":
                 return _context6.stop();
             }
@@ -6618,20 +6675,7 @@ function App() {
     data: data,
     headers: headers,
     filename: 'scriptoria.txt'
-  }; // console.log(resA1);
-  // const pdfExportComponent = React.useRef(null);
-  // const exportPDFWithComponent = () => {
-  //   if (pdfExportComponent.current) {
-  //     pdfExportComponent.current.save();
-  //   }
-  // };
-  // document.getElementById('generate').addEventListener(
-  //   'click',
-  //   function (event) {
-  //     generateWordDocument(event)
-  //   },
-  //   false
-  // )
+  };
 
   function saveDocumentToFile(doc, fileName) {
     // Create a mime type that will associate the new file with Microsoft Word
@@ -6651,7 +6695,7 @@ function App() {
           while (1) {
             switch (_context11.prev = _context11.next) {
               case 0:
-                console.log("aleemmmmm======SCD", result);
+                console.log("Result---->", result);
 
               case 1:
               case "end":
@@ -6842,17 +6886,17 @@ function App() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        "class": "row m-0 pt-5",
+        className: "row m-0 pt-5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-          "class": "col-1"
+          className: "col-1"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-          "class": "col-4",
+          className: "col-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
-            "class": "animation_text",
+            className: "animation_text",
             children: "Start New Draft"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-          "class": "col-7"
+          className: "col-7"
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
@@ -6861,164 +6905,164 @@ function App() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "col-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row top_pad",
+            className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "col-10",
+              className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 style: {
                   display: "flex"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "firstDiv",
+                  className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                    "class": "inner_text",
+                    className: "inner_text",
                     children: "1"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                  "class": "pName",
+                  className: "pName",
                   children: "Product Name"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "top_input",
+                className: "top_input",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                   disabled: disabledInputs,
                   onChange: onChangePname,
-                  "class": "InputFields",
+                  className: "InputFields",
                   placeholder: "SAP S/4HANA Cloud",
                   type: "text"
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row top_pad",
+            className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "col-10",
+              className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 style: {
                   display: "flex"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "firstDiv",
+                  className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                    "class": "inner_text",
+                    className: "inner_text",
                     children: "2"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                  "class": "pName",
+                  className: "pName",
                   children: "Use Case"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "top_input",
+                className: "top_input",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                   disabled: disabledInputs,
                   onChange: onChangeUseCase,
-                  "class": "InputFields",
+                  className: "InputFields",
                   placeholder: "Create Profitable Estimates",
                   type: "text"
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row top_pad",
+            className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "col-10",
+              className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 style: {
                   display: "flex"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "firstDiv",
+                  className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                    "class": "inner_text",
+                    className: "inner_text",
                     children: "3"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                  "class": "pName",
+                  className: "pName",
                   children: "Industry"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "top_input",
+                className: "top_input",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                   disabled: disabledInputs,
                   onChange: onChangeIndursty,
-                  "class": "InputFields",
+                  className: "InputFields",
                   placeholder: "CX",
                   type: "text"
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row top_pad",
+            className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "col-10",
+              className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 style: {
                   display: "flex"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "firstDiv",
+                  className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                    "class": "inner_text",
+                    className: "inner_text",
                     children: "A1"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                  "class": "pName",
+                  className: "pName",
                   children: "Persona 1"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "top_input",
+                className: "top_input",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                   disabled: disabledInputsOnNext,
                   onChange: onChangeProtagonist,
-                  "class": "InputFields",
+                  className: "InputFields",
                   placeholder: "Project Planner",
                   type: "text"
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row top_pad",
+            className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "col-10",
+              className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 style: {
                   display: "flex"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "firstDiv",
+                  className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                    "class": "inner_text",
+                    className: "inner_text",
                     children: "A2"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                  "class": "pName",
+                  className: "pName",
                   children: "Business Outcomes 1"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "top_input",
+                className: "top_input",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                   onBlur: VerbCheckEv1,
                   disabled: disabledInputsOnNext,
                   onChange: onChangeBO1,
-                  "class": "InputFields",
+                  className: "InputFields",
                   placeholder: "Create successful projects",
                   type: "text"
                 }), bo1RES && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
@@ -7031,107 +7075,107 @@ function App() {
                 })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row top_pad",
+            className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "col-10",
+              className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 style: {
                   display: "flex"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "firstDiv",
+                  className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                    "class": "inner_text",
+                    className: "inner_text",
                     children: "A3"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                  "class": "pName",
+                  className: "pName",
                   children: "Demo 1"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "top_input",
+                className: "top_input",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                   value: Demo1,
                   disabled: disabledInputsOnNext,
                   onChange: onChangeDemo1,
-                  "class": "InputFields",
+                  className: "InputFields",
                   rows: "5",
                   cols: "50",
                   placeholder: "Enter key bullets here. For Example: \nTransform your business by customizing existing successful projects with intelligent editing.\r Redesign plans with fully adjustable rules to create future success. "
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              className: "col-1"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
             id: "section1dis",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               id: "gen0disN",
               children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0 btn_section",
+                className: "row m-0 btn_section",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-8",
+                  className: "col-8",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "loading"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 })]
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0 btn_section",
+                className: "row m-0 btn_section",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-8",
+                  className: "col-8",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                     onClick: generate1Press,
-                    "class": "btn cus_btn",
+                    className: "btn cus_btn",
                     style: {
                       "float": "right"
                     },
                     children: "Generate Demo Script"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               id: "gen1disN",
               children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0 btn_section",
+                className: "row m-0 btn_section",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-8",
+                  className: "col-8",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "loading"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 })]
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0 btn_section",
+                className: "row m-0 btn_section",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-8",
+                  className: "col-8",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                     onClick: generate1Press,
-                    "class": "btn cus_btn",
+                    className: "btn cus_btn",
                     style: {
                       "float": "right"
                     },
                     children: "Re Generate Demo Script"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 })]
               })
             })]
@@ -7143,42 +7187,42 @@ function App() {
                 paddingBottom: "50px"
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0",
+                className: "row m-0",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-1"
+                  className: "col-1"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "col-10",
+                  className: "col-10",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text_O",
+                          className: "inner_text_O",
                           children: "*"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName1",
+                        className: "pName1",
                         children: "Demo 1 Options"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "custom-control custom-radio",
+                      className: "custom-control custom-radio",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         id: "A1",
                         rows: "8",
                         cols: "50",
                         onChange: onChangeDO1O,
                         value: resA1 == null || "" ? "" : resA1,
-                        "class": "left_from",
+                        className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         checked: isChecked,
                         onChange: OnchangeCheck,
                         id: "female",
                         type: "checkbox",
-                        "class": " cus_radio",
+                        className: "cus_radio",
                         value: "female",
                         name: "gender",
                         style: {
@@ -7189,23 +7233,23 @@ function App() {
                       })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "mt-2",
+                    className: "mt-2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "custom-control custom-radio",
+                      className: "custom-control custom-radio",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         id: "A2",
                         rows: "8",
                         cols: "50",
                         onChange: onChangeDO1O1,
                         value: resA2 == null || "" ? "" : resA2,
-                        "class": "left_from",
+                        className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         checked: isChecked2,
                         onChange: OnchangeCheck2,
                         id: "female",
                         type: "checkbox",
-                        "class": " cus_radio",
+                        className: "cus_radio",
                         value: "female",
                         name: "gender",
                         style: {
@@ -7218,94 +7262,94 @@ function App() {
                     })
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-1"
+                  className: "col-1"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "row m-0 btn_section_next",
+              className: "row m-0 btn_section_next",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "col-2"
+                className: "col-2"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "col-8",
+                className: "col-8",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                   id: "next1None",
                   onClick: onNextClick,
-                  "class": "btn cus_btn",
+                  className: "btn cus_btn",
                   style: {
                     "float": "right"
                   },
                   children: "Next"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "col-2"
+                className: "col-2"
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
             id: "state2",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "row",
+              className: "row",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "col-12",
+                className: "col-12",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "B1"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Persona 2"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         onChange: onChangeProtagnest2,
                         disabled: disabledInputsd2,
-                        "class": "InputFields",
+                        className: "InputFields",
                         placeholder: "Project Planner",
                         type: "text"
                       })
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "B2"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Business Outcomes 2"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         onBlur: VerbCheckEv2,
                         onChange: onChangeSBO2,
                         disabled: disabledInputsd2,
-                        "class": "InputFields",
+                        className: "InputFields",
                         placeholder: "Make close estimates",
                         type: "text"
                       }), bo1RES_1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
@@ -7318,35 +7362,35 @@ function App() {
                       })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "B3"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Demo 2"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         disabled: disabledInputsd2,
                         onChange: onChangeDemo2,
                         value: Demo2,
-                        "class": "InputFields",
+                        className: "InputFields",
                         id: "w3review",
                         name: "w3review",
                         rows: "5",
@@ -7355,79 +7399,79 @@ function App() {
                       })
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   id: "section2dis",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "123disN123",
                     children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onRegenerate1,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right"
                           },
                           children: "Generate Demo Script"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onBackClick1,
-                          "class": "btn cus_btn mr-2",
+                          className: "btn cus_btn mr-2",
                           style: {
                             "float": "right"
                           },
                           children: "Back"
                         })]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "disN123",
                     children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onRegenerate1,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right"
                           },
                           children: "Re Generate Demo Script"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     })
                   })]
@@ -7439,42 +7483,42 @@ function App() {
                       paddingBottom: "50px"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0",
+                      className: "row m-0",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-1"
+                        className: "col-1"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                        "class": "col-10",
+                        className: "col-10",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                             style: {
                               display: "flex"
                             },
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                              "class": "firstDiv",
+                              className: "firstDiv",
                               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                                "class": "inner_text_O",
+                                className: "inner_text_O",
                                 children: "*"
                               })
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                              "class": "pName1",
+                              className: "pName1",
                               children: "Demo 2 Options"
                             })]
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "custom-control custom-radio",
+                            className: "custom-control custom-radio",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                               id: "B1",
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO2O,
                               value: resB1 == null || "" ? "" : resB1,
-                              "class": "left_from",
+                              className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                               checked: isChecked3,
                               onChange: OnchangeCheck3,
                               id: "female",
                               type: "checkbox",
-                              "class": "cus_radio",
+                              className: "cus_radio",
                               value: "female",
                               name: "gender",
                               style: {
@@ -7485,23 +7529,23 @@ function App() {
                             })]
                           })]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                          "class": "mt-2",
+                          className: "mt-2",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "custom-control custom-radio",
+                            className: "custom-control custom-radio",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                               id: "B2",
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO2O1,
                               value: resB2 == null || "" ? "" : resB2,
-                              "class": "left_from",
+                              className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                               checked: isChecked4,
                               onChange: OnchangeCheck4,
                               id: "female",
                               type: "checkbox",
-                              "class": "cus_radio",
+                              className: "cus_radio",
                               value: "female",
                               name: "gender",
                               style: {
@@ -7513,26 +7557,26 @@ function App() {
                           })
                         })]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-1"
+                        className: "col-1"
                       })]
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "row m-0 btn_section_next",
+                    className: "row m-0 btn_section_next",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "col-2"
+                      className: "col-2"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "col-8",
+                      className: "col-8",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                         id: "next2None",
                         onClick: OnNext2Clicked,
-                        "class": "btn cus_btn",
+                        className: "btn cus_btn",
                         style: {
                           "float": "right"
                         },
                         children: "Next"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "col-2"
+                      className: "col-2"
                     })]
                   })]
                 })]
@@ -7541,69 +7585,69 @@ function App() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
             id: "regenerate2",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "row",
+              className: "row",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "col-12",
+                className: "col-12",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "C1"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Persona 3"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         onChange: onChangeProtagnest3,
                         disabled: disabledInputsd4,
-                        "class": "InputFields",
+                        className: "InputFields",
                         placeholder: "Project Planner",
                         type: "text"
                       })
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "C2"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Business Outcomes 3"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         onBlur: VerbCheckEv3,
                         onChange: onChangeSBO3,
                         disabled: disabledInputsd4,
-                        "class": "InputFields",
+                        className: "InputFields",
                         placeholder: "Collaborate efficiently.",
                         type: "text"
                       }), bo1RES_2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
@@ -7616,35 +7660,35 @@ function App() {
                       })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "C3"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Demo 3"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         disabled: disabledInputsd4,
                         onChange: onChangeDemo3,
                         value: Demo3,
-                        "class": "InputFields",
+                        className: "InputFields",
                         id: "w3review",
                         name: "w3review",
                         rows: "5",
@@ -7653,38 +7697,38 @@ function App() {
                       })
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   id: "finishClick",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "dis76546",
                     children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                        "class": "col-10 p-0",
+                        className: "col-10 p-0",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: regenerate3,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right"
                           },
                           children: "Generate Demo Script"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onFinishClick,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right",
                             marginRight: 20
@@ -7692,7 +7736,7 @@ function App() {
                           children: "Skip Demo, Move to Intro"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onBackClick2,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right",
                             marginRight: 20
@@ -7700,39 +7744,39 @@ function App() {
                           children: "Back"
                         })]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "dis0988",
                     children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: regenerate3,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right"
                           },
                           children: "Re Generate Demo Script"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     })
                   })]
@@ -7744,42 +7788,42 @@ function App() {
                       paddingBottom: "50px"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0",
+                      className: "row m-0",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-1"
+                        className: "col-1"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                        "class": "col-10",
+                        className: "col-10",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                             style: {
                               display: "flex"
                             },
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                              "class": "firstDiv",
+                              className: "firstDiv",
                               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                                "class": "inner_text_O",
+                                className: "inner_text_O",
                                 children: "*"
                               })
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                              "class": "pName1",
+                              className: "pName1",
                               children: "Demo 3 Options"
                             })]
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "custom-control custom-radio",
+                            className: "custom-control custom-radio",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                               id: "C1",
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO3O,
                               value: resC1 == null || "" ? "" : resC1,
-                              "class": "left_from",
+                              className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                               checked: isChecked5,
                               onChange: OnchangeCheck5,
                               id: "female",
                               type: "checkbox",
-                              "class": " cus_radio",
+                              className: "cus_radio",
                               value: "female",
                               name: "gender",
                               style: {
@@ -7790,23 +7834,23 @@ function App() {
                             })]
                           })]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                          "class": "mt-2",
+                          className: "mt-2",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "custom-control custom-radio",
+                            className: "custom-control custom-radio",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                               id: "C2",
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO3O1,
                               value: resC2 == null || "" ? "" : resC2,
-                              "class": "left_from",
+                              className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                               checked: isChecked6,
                               onChange: OnchangeCheck6,
                               id: "female",
                               type: "checkbox",
-                              "class": "cus_radio",
+                              className: "cus_radio",
                               value: "female",
                               name: "gender",
                               style: {
@@ -7818,27 +7862,27 @@ function App() {
                           })
                         })]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-1"
+                        className: "col-1"
                       })]
                     })
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row m-0 btn_section_next",
+                  className: "row m-0 btn_section_next",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-2"
+                    className: "col-2"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-8 mt-5",
+                    className: "col-8 mt-5",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                       id: "next3None",
                       onClick: OnNext3Clicked,
-                      "class": "btn cus_btn",
+                      className: "btn cus_btn",
                       style: {
                         "float": "right"
                       },
                       children: "Next"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-2"
+                    className: "col-2"
                   })]
                 })]
               })
@@ -7849,69 +7893,69 @@ function App() {
             },
             id: "demo4Div",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "row",
+              className: "row",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "col-12",
+                className: "col-12",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "D1"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Persona 4"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         onChange: onChangeProtagnest4,
                         disabled: disabledInputsd3,
-                        "class": "InputFields",
+                        className: "InputFields",
                         placeholder: "Project Planner",
                         type: "text"
                       })
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "D2"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Business Outcomes 4"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         onBlur: VerbCheckEv4,
                         onChange: onChangeSBO4,
                         disabled: disabledInputsd3,
-                        "class": "InputFields",
+                        className: "InputFields",
                         placeholder: "Create successful projects",
                         type: "text"
                       }), bo1RES_3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
@@ -7924,35 +7968,35 @@ function App() {
                       })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row top_pad",
+                  className: "row top_pad",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-10",
+                    className: "col-10",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       style: {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text",
+                          className: "inner_text",
                           children: "D3"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName",
+                        className: "pName",
                         children: "Demo 4"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "top_input",
+                      className: "top_input",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         disabled: disabledInputsd3,
                         onChange: onChangeDemo4,
                         value: Demo4,
-                        "class": "InputFields",
+                        className: "InputFields",
                         id: "w3review",
                         name: "w3review",
                         rows: "5",
@@ -7961,38 +8005,38 @@ function App() {
                       })
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-1"
+                    className: "col-1"
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   id: "",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "dis76546_1",
                     children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                        "class": "col-10 p-0",
+                        className: "col-10 p-0",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: regenerate4,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right"
                           },
                           children: "Generate Demo Script"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onFinishClick,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right",
                             marginRight: 20
@@ -8000,7 +8044,7 @@ function App() {
                           children: "Skip Demo, Move to Intro"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: onBackClick3,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right",
                             marginRight: 20
@@ -8008,39 +8052,39 @@ function App() {
                           children: "Back"
                         })]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     id: "dis0988_11",
                     children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                           onClick: regenerate4,
-                          "class": "btn cus_btn",
+                          className: "btn cus_btn",
                           style: {
                             "float": "right"
                           },
                           children: "Re Generate Demo Script"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     })
                   })]
@@ -8052,42 +8096,42 @@ function App() {
                       paddingBottom: "50px"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0",
+                      className: "row m-0",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-1"
+                        className: "col-1"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                        "class": "col-10",
+                        className: "col-10",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                             style: {
                               display: "flex"
                             },
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                              "class": "firstDiv",
+                              className: "firstDiv",
                               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                                "class": "inner_text_O",
+                                className: "inner_text_O",
                                 children: "*"
                               })
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                              "class": "pName1",
+                              className: "pName1",
                               children: "Demo 4 Options"
                             })]
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "custom-control custom-radio",
+                            className: "custom-control custom-radio",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                               id: "D4_1",
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO4O,
                               value: resC1_2 == null || "" ? "" : resC1_2,
-                              "class": "left_from",
+                              className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                               checked: isChecked11,
                               onChange: OnchangeCheck11,
                               id: "female",
                               type: "checkbox",
-                              "class": " cus_radio",
+                              className: "cus_radio",
                               value: "female",
                               name: "gender",
                               style: {
@@ -8098,23 +8142,23 @@ function App() {
                             })]
                           })]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                          "class": "mt-2",
+                          className: "mt-2",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "custom-control custom-radio",
+                            className: "custom-control custom-radio",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                               id: "D4_2",
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO4O1,
                               value: resC2_1 == null || "" ? "" : resC2_1,
-                              "class": "left_from",
+                              className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                               checked: isChecked12,
                               onChange: OnchangeCheck12,
                               id: "female",
                               type: "checkbox",
-                              "class": "cus_radio",
+                              className: "cus_radio",
                               value: "female",
                               name: "gender",
                               style: {
@@ -8126,20 +8170,20 @@ function App() {
                           })
                         })]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-1"
+                        className: "col-1"
                       })]
                     })
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row m-0 btn_section_next",
+                  className: "row m-0 btn_section_next",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-2"
+                    className: "col-2"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    "class": "col-8 mt-5",
+                    className: "col-8 mt-5",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                       id: "next3None111",
                       onClick: onFinishClick,
-                      "class": "btn cus_btn",
+                      className: "btn cus_btn",
                       style: {
                         "float": "right"
                       },
@@ -8147,14 +8191,14 @@ function App() {
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                       id: "next3NoneFinish",
                       onClick: onFinishClick,
-                      "class": "btn cus_btn",
+                      className: "btn cus_btn",
                       style: {
                         "float": "right"
                       },
                       children: "Re Generate Intro Script"
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-2"
+                    className: "col-2"
                   })]
                 })]
               })
@@ -8180,9 +8224,9 @@ function App() {
                   })]
                 }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "row",
+                    className: "row",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      "class": "col-12",
+                      className: "col-12",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           style: {
@@ -8190,42 +8234,42 @@ function App() {
                             paddingBottom: "50px"
                           },
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                            "class": "row m-0",
+                            className: "row m-0",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                              "class": "col-1"
+                              className: "col-1"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                              "class": "col-10",
+                              className: "col-10",
                               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                   style: {
                                     display: "flex"
                                   },
                                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                                    "class": "firstDiv",
+                                    className: "firstDiv",
                                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                                      "class": "inner_text_O",
+                                      className: "inner_text_O",
                                       children: "*"
                                     })
                                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                                    "class": "pName1",
+                                    className: "pName1",
                                     children: "Select Intro"
                                   })]
                                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                                  "class": "custom-control custom-radio",
+                                  className: "custom-control custom-radio",
                                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                                     id: "AAA",
                                     rows: "5",
                                     cols: "50",
                                     onChange: int1,
                                     value: Fintro1 == null || "" ? "" : Fintro1,
-                                    "class": "left_from",
+                                    className: "left_from",
                                     type: "text"
                                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                     checked: isChecked7,
                                     onChange: OnchangeCheck7,
                                     id: "female",
                                     type: "checkbox",
-                                    "class": " cus_radio",
+                                    className: "cus_radio",
                                     value: "female",
                                     name: "gender",
                                     style: {
@@ -8236,23 +8280,23 @@ function App() {
                                   })]
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                                "class": "mt-2",
+                                className: "mt-2",
                                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                                  "class": "custom-control custom-radio",
+                                  className: "custom-control custom-radio",
                                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                                     id: "BBB",
                                     rows: "5",
                                     cols: "50",
                                     onChange: int2,
                                     value: Fintro2 == null || "" ? "" : Fintro2,
-                                    "class": "left_from",
+                                    className: "left_from",
                                     type: "text"
                                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                     checked: isChecked8,
                                     onChange: OnchangeCheck8,
                                     id: "female",
                                     type: "checkbox",
-                                    "class": "cus_radio",
+                                    className: "cus_radio",
                                     value: "female",
                                     name: "gender",
                                     style: {
@@ -8264,7 +8308,7 @@ function App() {
                                 })
                               })]
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                              "class": "col-1"
+                              className: "col-1"
                             })]
                           })
                         })
@@ -8274,15 +8318,15 @@ function App() {
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              "class": "row m-0 btn_section_next",
+              className: "row m-0 btn_section_next",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "col-2"
+                className: "col-2"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "col-8 ",
+                className: "col-8 ",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                   id: "outNon1",
                   onClick: GenerateOutro,
-                  "class": "btn cus_btn",
+                  className: "btn cus_btn",
                   style: {
                     "float": "right"
                   },
@@ -8290,14 +8334,14 @@ function App() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                   id: "outNon2",
                   onClick: GenerateOutro,
-                  "class": "btn cus_btn",
+                  className: "btn cus_btn",
                   style: {
                     "float": "right"
                   },
                   children: "Re Generate Outro Script"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                "class": "col-2"
+                className: "col-2"
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
@@ -8318,11 +8362,11 @@ function App() {
               })]
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0",
+                className: "row m-0",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-1"
+                  className: "col-1"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "col-10",
+                  className: "col-10",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                     className: "mt-5",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
@@ -8330,31 +8374,31 @@ function App() {
                         display: "flex"
                       },
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "firstDiv",
+                        className: "firstDiv",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                          "class": "inner_text_O",
+                          className: "inner_text_O",
                           children: "*"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-                        "class": "pName1 ",
+                        className: "pName1 ",
                         children: "Select Outro"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "custom-control custom-radio",
+                      className: "custom-control custom-radio",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         onChange: out1,
                         id: "CCC",
                         rows: "5",
                         cols: "50",
                         value: outroState1,
-                        "class": "left_from",
+                        className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         checked: isChecked9,
                         onChange: OnchangeCheck9,
                         id: "female",
                         type: "checkbox",
-                        "class": " cus_radio",
+                        className: "cus_radio",
                         value: "female",
                         name: "gender",
                         style: {
@@ -8365,23 +8409,23 @@ function App() {
                       })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "mt-2",
+                    className: "mt-2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "custom-control custom-radio",
+                      className: "custom-control custom-radio",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                         onChange: out2,
                         id: "DDD",
                         rows: "5",
                         cols: "50",
                         value: outroState2,
-                        "class": "left_from",
+                        className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                         checked: isChecked10,
                         onChange: OnchangeCheck10,
                         id: "female",
                         type: "checkbox",
-                        "class": "cus_radio",
+                        className: "cus_radio",
                         value: "female",
                         name: "gender",
                         style: {
@@ -8393,42 +8437,44 @@ function App() {
                     })
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-1"
+                  className: "col-1"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0 btn_section_next",
+                className: "row m-0 btn_section_next",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-8 mt-5",
+                  className: "col-8 mt-5",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                     onClick: FinClick,
-                    "class": "btn cus_btn",
+                    className: "btn cus_btn",
                     style: {
                       "float": "right"
                     },
                     children: "Finish"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-2"
+                  className: "col-2"
                 })]
               })]
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          "class": "col-6",
+          className: "col-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("ul", {
-            "class": "nav nav-tabs",
+            className: "nav nav-tabs",
             style: {
-              width: "90%"
+              width: "90%",
+              marginLeft: 10
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("li", {
-              "class": "active",
+              className: "active",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("a", {
                 "data-toggle": "tab",
                 href: "#home",
                 style: {
-                  fontWeight: 600
+                  fontWeight: 600,
+                  fontSize: 16
                 },
                 children: "Result"
               })
@@ -8437,20 +8483,21 @@ function App() {
                 "data-toggle": "tab",
                 href: "#menu1",
                 style: {
-                  fontWeight: 600
+                  fontWeight: 600,
+                  fontSize: 16
                 },
                 children: "Graphs"
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "tab-content",
+            className: "tab-content",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               id: "home",
-              "class": "tab-pane fade in active",
+              className: "tab-pane fade in active",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                "class": "row m-0",
+                className: "row m-0",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-11",
+                  className: "col-11",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     style: {
                       height: "auto",
@@ -8459,11 +8506,11 @@ function App() {
                       padding: "20px"
                     },
                     children: Floading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      "class": "row m-0 btn_section",
+                      className: "row m-0 btn_section",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-8",
+                        className: "col-8",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           id: "loading",
                           style: {
@@ -8472,7 +8519,7 @@ function App() {
                           }
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        "class": "col-2"
+                        className: "col-2"
                       })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
@@ -8519,10 +8566,10 @@ function App() {
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                         className: "row",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                          wrap: "soft",
+                          rows: "5",
                           onChange: ONchangeboo1,
-                          type: "text",
-                          className: "right_side",
-                          contentEditable: true,
+                          className: "right_side autosize",
                           value: BO1
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
@@ -8563,12 +8610,10 @@ function App() {
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                         className: "row",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
                           onChange: OnChnageBof2,
-                          type: "text",
-                          className: "right_side",
-                          contentEditable: true,
-                          children: SBO2
+                          className: "right_side autosize",
+                          value: SBO2
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                         className: "row",
@@ -8610,11 +8655,11 @@ function App() {
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           className: "row",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            wrap: "soft",
+                            rows: "5",
                             onChange: onChangeBoF3,
-                            type: "text",
-                            className: "right_side",
-                            contentEditable: true,
-                            children: SBO3
+                            className: "right_side autosize",
+                            value: SBO3
                           })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
                       }), extra3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
@@ -8658,12 +8703,12 @@ function App() {
                           })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           className: "row",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                            wrap: "soft",
+                            rows: "5",
                             onChange: onChangeBoF3,
-                            type: "text",
-                            className: "right_side",
-                            contentEditable: true,
-                            children: SBO4
+                            className: "right_side autosize",
+                            value: SBO4
                           })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
                       }), extra4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
@@ -8740,7 +8785,7 @@ function App() {
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                           className: "col-12 newpd",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-                            "class": "btn cus_btn",
+                            className: "btn cus_btn",
                             style: {
                               marginRight: 15,
                               marginTop: 10
@@ -8753,12 +8798,12 @@ function App() {
                     })
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                  "class": "col-1"
+                  className: "col-1"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               id: "menu1",
-              "class": "tab-pane fade",
+              className: "tab-pane fade",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                 style: {
                   width: 600
@@ -8828,7 +8873,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8865,7 +8910,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8902,7 +8947,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8939,7 +8984,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8988,7 +9033,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9019,7 +9064,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -16099,7 +16144,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".top_pad {\r\n    margin-top: 40px;\r\n}\r\n.firstDiv {\r\n    height: 42px;\r\n    width: 42px;\r\n    background-color: #0a6ed1;\r\n    border-radius: 50px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-right: 20px;\r\n}\r\n.inner_text {\r\n    color: #fff;\r\n    font-size: 22px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n}\r\n.inner_text_O {\r\n    color: #fff;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding-top: 7px;\r\n}\r\n.pName {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n}\r\n.pName1 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName2 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName3 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.top_input {\r\n    margin-top: 10px;\r\n    margin-left: 60px;\r\n}\r\n.cus_radio {\r\n    margin-top: 25px;\r\n    margin-left: 20px;\r\n}\r\n.InputFields {\r\n    width: 90%;\r\n    padding: 8px;\r\n}\r\n.btn_section {\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n.btn_section_next {\r\n    padding-bottom: 40px;\r\n}\r\n.cus_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n}\r\n.cuss_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n    margin-right: 15px;\r\n}\r\n.custom-radio {\r\n    display: flex;\r\n    margin-top: 20px;\r\n    margin-left: 20px;\r\n}\r\n.left_from {\r\n    margin-left: 20px;\r\n    padding-left: 20px;\r\n    outline: none;\r\n    padding: 15px;\r\n    color: #757575;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n    width: 470px;\r\n}\r\n\r\n.animation_text {\r\n    border-right: solid 3px #000;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    font-size: 20px;\r\n    color: #000;\r\n    font-weight: 600;\r\n}\r\n\r\n/* Animation */\r\n.animation_text {\r\n    -webkit-animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n            animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n}\r\n\r\n/* text animation */\r\n\r\n@-webkit-keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n@keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n/* cursor animations */\r\n\r\n@-webkit-keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n@keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n/* react state */\r\n\r\n/* input[type=\"text\"]:enabled {\r\n  background: #ffff00;\r\n} */\r\n\r\ninput[type=\"text\"]:disabled {\r\n    background: #dddddd;\r\n}\r\n\r\n#state1 {\r\n    display: none;\r\n}\r\n\r\n/* Loader */\r\n\r\n#loading {\r\n    display: inline-block;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 5px solid rgb(26 108 97 / 56%);\r\n    border-radius: 50%;\r\n    border-top-color: #fff;\r\n    animation: spin 1s ease-in-out infinite;\r\n    -webkit-animation: spin 1s ease-in-out infinite;\r\n    float: right;\r\n}\r\n\r\n@keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n#section1dis {\r\n    display: block;\r\n}\r\n\r\n#state2 {\r\n    display: none;\r\n}\r\n#regenerate {\r\n    display: none;\r\n}\r\n\r\n#section2dis {\r\n    display: block;\r\n}\r\n#regenerate2 {\r\n    display: none;\r\n}\r\n#demo3dis {\r\n    display: none;\r\n}\r\n#next1None {\r\n    display: none;\r\n}\r\n#next2None {\r\n    display: none;\r\n}\r\n#next3None {\r\n    display: none;\r\n}\r\n#lastDivNone {\r\n    display: none;\r\n}\r\n#gen1disN {\r\n    display: none;\r\n}\r\n#disN123 {\r\n    display: none;\r\n}\r\n#dis0988 {\r\n    display: none;\r\n}\r\n#dis0988_11 {\r\n    display: none;\r\n}\r\n#next3NoneFinish {\r\n    display: none;\r\n}\r\n.right_side {\r\n    background-color: #ebf8ff;\r\n    width: 100%;\r\n    border: none;\r\n    height: 100%;\r\n    padding: 5px;\r\n    overflow: hidden;\r\n    padding-left: 16px;\r\n}\r\n\r\n#demo4Div {\r\n    display: none;\r\n}\r\n#DEMO4OP {\r\n    display: none;\r\n}\r\n#next3None111 {\r\n    display: none;\r\n}\r\n#FOROutro {\r\n    display: none;\r\n}\r\n#outro1Dis {\r\n    display: none;\r\n}\r\n#outNon2 {\r\n    display: none;\r\n}\r\n#outNon1 {\r\n    display: none;\r\n}\r\n.autosize {\r\n    resize: none;\r\n    overflow: hidden;\r\n}\r\n.pdfhead {\r\n    text-align: center;\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n}\r\n.newpd {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\npre {\r\n    display: block;\r\n    font-size: 87.5%;\r\n    color: #212529;\r\n    white-space: pre-wrap;\r\n    padding: 15px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".top_pad {\r\n    margin-top: 40px;\r\n}\r\n.firstDiv {\r\n    height: 42px;\r\n    width: 42px;\r\n    background-color: #0a6ed1;\r\n    border-radius: 50px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-right: 20px;\r\n}\r\n.inner_text {\r\n    color: #fff;\r\n    font-size: 22px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n}\r\n.inner_text_O {\r\n    color: #fff;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding-top: 7px;\r\n}\r\n.pName {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n}\r\n.pName1 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName2 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName3 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.top_input {\r\n    margin-top: 10px;\r\n    margin-left: 60px;\r\n}\r\n.cus_radio {\r\n    margin-top: 25px;\r\n    margin-left: 20px !important;\r\n}\r\n.InputFields {\r\n    width: 90%;\r\n    padding: 8px;\r\n}\r\n.btn_section {\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n.btn_section_next {\r\n    padding-bottom: 40px;\r\n}\r\n.cus_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n}\r\n.cuss_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n    margin-right: 15px;\r\n}\r\n.custom-radio {\r\n    display: flex;\r\n    margin-top: 20px;\r\n    margin-left: 20px;\r\n}\r\n.left_from {\r\n    margin-left: 20px;\r\n    padding-left: 20px;\r\n    outline: none;\r\n    padding: 15px;\r\n    color: #757575;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n    width: 470px;\r\n}\r\n\r\n.animation_text {\r\n    border-right: solid 3px #000;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    font-size: 20px;\r\n    color: #000;\r\n    font-weight: 600;\r\n}\r\n\r\n/* Animation */\r\n.animation_text {\r\n    -webkit-animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n            animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n}\r\n\r\n/* text animation */\r\n\r\n@-webkit-keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n@keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n/* cursor animations */\r\n\r\n@-webkit-keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n@keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n/* react state */\r\n\r\n/* input[type=\"text\"]:enabled {\r\n  background: #ffff00;\r\n} */\r\n\r\ninput[type=\"text\"]:disabled {\r\n    background: #dddddd;\r\n}\r\n\r\n#state1 {\r\n    display: none;\r\n}\r\n\r\n/* Loader */\r\n\r\n#loading {\r\n    display: inline-block;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 5px solid rgb(26 108 97 / 56%);\r\n    border-radius: 50%;\r\n    border-top-color: #fff;\r\n    animation: spin 1s ease-in-out infinite;\r\n    -webkit-animation: spin 1s ease-in-out infinite;\r\n    float: right;\r\n}\r\n\r\n@keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n#section1dis {\r\n    display: block;\r\n}\r\n\r\n#state2 {\r\n    display: none;\r\n}\r\n#regenerate {\r\n    display: none;\r\n}\r\n\r\n#section2dis {\r\n    display: block;\r\n}\r\n#regenerate2 {\r\n    display: none;\r\n}\r\n#demo3dis {\r\n    display: none;\r\n}\r\n#next1None {\r\n    display: none;\r\n}\r\n#next2None {\r\n    display: none;\r\n}\r\n#next3None {\r\n    display: none;\r\n}\r\n#lastDivNone {\r\n    display: none;\r\n}\r\n#gen1disN {\r\n    display: none;\r\n}\r\n#disN123 {\r\n    display: none;\r\n}\r\n#dis0988 {\r\n    display: none;\r\n}\r\n#dis0988_11 {\r\n    display: none;\r\n}\r\n#next3NoneFinish {\r\n    display: none;\r\n}\r\n.right_side {\r\n    background-color: #ebf8ff;\r\n    width: 100%;\r\n    border: none;\r\n    height: 100%;\r\n    padding: 5px;\r\n    overflow: hidden;\r\n    padding-left: 16px;\r\n}\r\n\r\n#demo4Div {\r\n    display: none;\r\n}\r\n#DEMO4OP {\r\n    display: none;\r\n}\r\n#next3None111 {\r\n    display: none;\r\n}\r\n#FOROutro {\r\n    display: none;\r\n}\r\n#outro1Dis {\r\n    display: none;\r\n}\r\n#outNon2 {\r\n    display: none;\r\n}\r\n#outNon1 {\r\n    display: none;\r\n}\r\n.autosize {\r\n    resize: none;\r\n    overflow: hidden;\r\n}\r\n.pdfhead {\r\n    text-align: center;\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n}\r\n.newpd {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\npre {\r\n    display: block;\r\n    font-size: 87.5%;\r\n    color: #212529;\r\n    white-space: pre-wrap;\r\n    padding: 15px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

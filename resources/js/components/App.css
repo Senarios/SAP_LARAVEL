@@ -50,7 +50,7 @@
 }
 .cus_radio {
     margin-top: 25px;
-    margin-left: 20px;
+    margin-left: 20px !important;
 }
 .InputFields {
     width: 90%;

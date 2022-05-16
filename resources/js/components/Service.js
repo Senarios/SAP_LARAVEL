@@ -25,7 +25,7 @@ export function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -66,7 +66,7 @@ export function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -106,7 +106,7 @@ export function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3)
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -146,7 +146,7 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) 
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -202,7 +202,7 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -242,7 +242,7 @@ export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })

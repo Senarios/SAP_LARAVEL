@@ -138,7 +138,6 @@ function App() {
     useEffect(() => {
         scrollToTop()
     }, [])
-    console.log("dsdsds=-=-=", extrasss);
     useEffect(() => {
 
         autosize();
@@ -350,8 +349,16 @@ function App() {
             document.getElementById("gen1disN").style.display = "block"
             setloading(true)
             scriptOne(pName, useCase, Indursty, Protagonist, BO1, Demo1).then(async (result) => {
-                if (result == "Please try again...") {
-                    alert(result)
+                const aa = {
+                    "error": {
+                        "message": "That model is still being loaded. Please try again shortly.",
+                        "type": "server_error",
+                        "param": null,
+                        "code": null
+                    }
+                }
+                if (result == aa) {
+                    alert(aa.error.message)
                 }
                 let data = result.choices
                 if (data.length == 0) {
@@ -381,8 +388,16 @@ function App() {
             document.getElementById("disN123").style.display = "block"
             setloading(true)
             scriptTwo(pName, useCase, Indursty, protagnist2, SBO2, Demo2).then(async (result) => {
-                if (result == "Please try again...") {
-                    alert(result)
+                const aa = {
+                    "error": {
+                        "message": "That model is still being loaded. Please try again shortly.",
+                        "type": "server_error",
+                        "param": null,
+                        "code": null
+                    }
+                }
+                if (result == aa) {
+                    alert(aa.error.message)
                 }
                 let data = result.choices
                 if (data.length == 0) {
@@ -412,8 +427,16 @@ function App() {
             document.getElementById("dis0988").style.display = "block"
             setloading(true)
             scriptThree(pName, useCase, Indursty, protagnist3, SBO3, Demo3).then(async (result) => {
-                if (result == "Please try again...") {
-                    alert(result)
+                const aa = {
+                    "error": {
+                        "message": "That model is still being loaded. Please try again shortly.",
+                        "type": "server_error",
+                        "param": null,
+                        "code": null
+                    }
+                }
+                if (result == aa) {
+                    alert(aa.error.message)
                 }
                 let data = result.choices
                 if (data.length == 0) {
@@ -441,8 +464,16 @@ function App() {
             document.getElementById("dis0988_11").style.display = "block"
             setloading(true)
             scriptFour(pName, useCase, Indursty, protagnist4, SBO4, Demo4).then(async (result) => {
-                if (result == "Please try again...") {
-                    alert(result)
+                const aa = {
+                    "error": {
+                        "message": "That model is still being loaded. Please try again shortly.",
+                        "type": "server_error",
+                        "param": null,
+                        "code": null
+                    }
+                }
+                if (result == aa) {
+                    alert(aa.error.message)
                 }
                 let data = result.choices
                 if (data.length == 0) {
@@ -554,8 +585,16 @@ function App() {
         setlastLoading(true)
         setFloading(true)
         FinalOutPut(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4).then(async (result) => {
-            if (result == "Please try again...") {
-                alert(result)
+            const aa = {
+                "error": {
+                    "message": "That model is still being loaded. Please try again shortly.",
+                    "type": "server_error",
+                    "param": null,
+                    "code": null
+                }
+            }
+            if (result == aa) {
+                alert(aa.error.message)
             }
 
             let Fdata = result.choices
@@ -628,7 +667,17 @@ function App() {
         scrollToBottom()
 
         FinalOutro(pName, useCase, newIntro, BO1, SBO2, SBO3, SBO4).then(async (result) => {
-
+            const aa = {
+                "error": {
+                    "message": "That model is still being loaded. Please try again shortly.",
+                    "type": "server_error",
+                    "param": null,
+                    "code": null
+                }
+            }
+            if (result == aa) {
+                alert(aa.error.message)
+            }
             let dataa = result.choices
             if (dataa) {
                 setoutroState1(BOs + "\n" + dataa[0]["text"])
@@ -694,21 +743,6 @@ function App() {
         headers: headers,
         filename: 'scriptoria.txt'
     };
-    // console.log(resA1);
-    // const pdfExportComponent = React.useRef(null);
-
-    // const exportPDFWithComponent = () => {
-    //   if (pdfExportComponent.current) {
-    //     pdfExportComponent.current.save();
-    //   }
-    // };
-    // document.getElementById('generate').addEventListener(
-    //   'click',
-    //   function (event) {
-    //     generateWordDocument(event)
-    //   },
-    //   false
-    // )
     function saveDocumentToFile(doc, fileName) {
         // Create a mime type that will associate the new file with Microsoft Word
         const mimeType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
@@ -723,7 +757,7 @@ function App() {
     function generateWordDocument(event) {
 
         SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
-            console.log("aleemmmmm======SCD", result);
+            console.log("Result---->", result);
         })
         event.preventDefault();
 
@@ -839,116 +873,116 @@ function App() {
                 </div >
             </section >
             <section>
-                <div class="row m-0 pt-5">
-                    <div class="col-1"></div>
-                    <div class="col-4">
-                        <p class="animation_text">Start New Draft</p>
+                <div className="row m-0 pt-5">
+                    <div className="col-1"></div>
+                    <div className="col-4">
+                        <p className="animation_text">Start New Draft</p>
                     </div>
-                    <div class="col-7"></div>
+                    <div className="col-7"></div>
                 </div>
             </section>
             <section>
                 <div className='row m-0'>
                     <div className='col-6'>
-                        <div class="row top_pad">
-                            <div class="col-1"></div>
-                            <div class="col-10">
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-10">
                                 <div style={{ display: "flex" }}>
-                                    <div class="firstDiv">
-                                        <span class="inner_text">1</span>
+                                    <div className="firstDiv">
+                                        <span className="inner_text">1</span>
                                     </div>
-                                    <span class="pName">Product Name</span>
+                                    <span className="pName">Product Name</span>
                                 </div>
-                                <div class="top_input">
+                                <div className="top_input">
                                     <input
                                         disabled={disabledInputs}
                                         onChange={onChangePname}
-                                        class="InputFields"
+                                        className="InputFields"
                                         placeholder="SAP S/4HANA Cloud"
                                         type="text"
                                     />
                                 </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div className="col-1"></div>
                         </div>
-                        <div class="row top_pad">
-                            <div class="col-1"></div>
-                            <div class="col-10">
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-10">
                                 <div style={{ display: "flex" }}>
-                                    <div class="firstDiv">
-                                        <span class="inner_text">2</span>
+                                    <div className="firstDiv">
+                                        <span className="inner_text">2</span>
                                     </div>
-                                    <span class="pName">Use Case</span>
+                                    <span className="pName">Use Case</span>
                                 </div>
-                                <div class="top_input">
+                                <div className="top_input">
                                     <input
                                         disabled={disabledInputs}
                                         onChange={onChangeUseCase}
-                                        class="InputFields"
+                                        className="InputFields"
                                         placeholder="Create Profitable Estimates"
                                         type="text"
                                     />
                                 </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div className="col-1"></div>
                         </div>
-                        <div class="row top_pad">
-                            <div class="col-1"></div>
-                            <div class="col-10">
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-10">
                                 <div style={{ display: "flex" }}>
-                                    <div class="firstDiv">
-                                        <span class="inner_text">3</span>
+                                    <div className="firstDiv">
+                                        <span className="inner_text">3</span>
                                     </div>
-                                    <span class="pName">Industry</span>
+                                    <span className="pName">Industry</span>
                                 </div>
-                                <div class="top_input">
+                                <div className="top_input">
                                     <input
                                         disabled={disabledInputs}
                                         onChange={onChangeIndursty}
-                                        class="InputFields"
+                                        className="InputFields"
                                         placeholder="CX"
                                         type="text"
                                     />
                                 </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div className="col-1"></div>
                         </div>
-                        <div class="row top_pad">
-                            <div class="col-1"></div>
-                            <div class="col-10">
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-10">
                                 <div style={{ display: "flex" }}>
-                                    <div class="firstDiv">
-                                        <span class="inner_text">A1</span>
+                                    <div className="firstDiv">
+                                        <span className="inner_text">A1</span>
                                     </div>
-                                    <span class="pName">Persona 1</span>
+                                    <span className="pName">Persona 1</span>
                                 </div>
-                                <div class="top_input">
+                                <div className="top_input">
                                     <input
                                         disabled={disabledInputsOnNext}
                                         onChange={onChangeProtagonist}
-                                        class="InputFields"
+                                        className="InputFields"
                                         placeholder="Project Planner"
                                         type="text"
                                     />
                                 </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div className="col-1"></div>
                         </div>
-                        <div class="row top_pad">
-                            <div class="col-1"></div>
-                            <div class="col-10">
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-10">
                                 <div style={{ display: "flex" }}>
-                                    <div class="firstDiv">
-                                        <span class="inner_text">A2</span>
+                                    <div className="firstDiv">
+                                        <span className="inner_text">A2</span>
                                     </div>
-                                    <span class="pName">Business Outcomes 1</span>
+                                    <span className="pName">Business Outcomes 1</span>
                                 </div>
-                                <div class="top_input">
+                                <div className="top_input">
                                     <input
                                         onBlur={VerbCheckEv1}
                                         disabled={disabledInputsOnNext}
                                         onChange={onChangeBO1}
-                                        class="InputFields"
+                                        className="InputFields"
                                         placeholder="Create successful projects"
                                         type="text"
                                     />
@@ -958,23 +992,23 @@ function App() {
                                     }
                                 </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div className="col-1"></div>
                         </div>
-                        <div class="row top_pad">
-                            <div class="col-1"></div>
-                            <div class="col-10">
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-10">
                                 <div style={{ display: "flex" }}>
-                                    <div class="firstDiv">
-                                        <span class="inner_text">A3</span>
+                                    <div className="firstDiv">
+                                        <span className="inner_text">A3</span>
                                     </div>
-                                    <span class="pName">Demo 1</span>
+                                    <span className="pName">Demo 1</span>
                                 </div>
-                                <div class="top_input">
+                                <div className="top_input">
                                     <textarea
                                         value={Demo1}
                                         disabled={disabledInputsOnNext}
                                         onChange={onChangeDemo1}
-                                        class="InputFields"
+                                        className="InputFields"
                                         rows="5"
                                         cols="50"
                                         placeholder="Enter key bullets here. For Example: &#10;Transform your business by customizing existing successful projects with intelligent editing.
@@ -982,56 +1016,56 @@ function App() {
                                     ></textarea>
                                 </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div className="col-1"></div>
                         </div>
                         <div id='section1dis'>
                             <div id='gen0disN'>
                                 {loading ? (
-                                    <div class="row m-0 btn_section">
-                                        <div class="col-2"></div>
-                                        <div class="col-8">
+                                    <div className="row m-0 btn_section">
+                                        <div className="col-2"></div>
+                                        <div className="col-8">
                                             <div id="loading"></div>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div>
                                 ) : (
-                                    <div class="row m-0 btn_section">
-                                        <div class="col-2"></div>
-                                        <div class="col-8">
+                                    <div className="row m-0 btn_section">
+                                        <div className="col-2"></div>
+                                        <div className="col-8">
                                             <button
                                                 onClick={generate1Press}
-                                                class="btn cus_btn"
+                                                className="btn cus_btn"
                                                 style={{ float: "right" }}
                                             >
                                                 Generate Demo Script
                                             </button>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div>
                                 )}
                             </div>
                             <div id='gen1disN'>
                                 {loading ? (
-                                    <div class="row m-0 btn_section">
-                                        <div class="col-2"></div>
-                                        <div class="col-8">
+                                    <div className="row m-0 btn_section">
+                                        <div className="col-2"></div>
+                                        <div className="col-8">
                                             <div id="loading"></div>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div>
                                 ) : (
-                                    <div class="row m-0 btn_section">
-                                        <div class="col-2"></div>
-                                        <div class="col-8">
+                                    <div className="row m-0 btn_section">
+                                        <div className="col-2"></div>
+                                        <div className="col-8">
                                             <button
                                                 onClick={generate1Press}
-                                                class="btn cus_btn"
+                                                className="btn cus_btn"
                                                 style={{ float: "right" }}
                                             >
                                                 Re Generate Demo Script
                                             </button>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div>
                                 )}
                             </div>
@@ -1041,24 +1075,24 @@ function App() {
 
                         <section id="state1">
                             <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
-                                <div class="row m-0">
-                                    <div class="col-1"></div>
-                                    <div class="col-10">
+                                <div className="row m-0">
+                                    <div className="col-1"></div>
+                                    <div className="col-10">
                                         <div>
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text_O">*</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text_O">*</span>
                                                 </div>
-                                                <span class="pName1">Demo 1 Options</span>
+                                                <span className="pName1">Demo 1 Options</span>
                                             </div>
-                                            <div class="custom-control custom-radio">
+                                            <div className="custom-control custom-radio">
                                                 <textarea
                                                     id="A1"
                                                     rows="8"
                                                     cols="50"
                                                     onChange={onChangeDO1O}
                                                     value={resA1 == null || "" ? "" : resA1}
-                                                    class="left_from"
+                                                    className="left_from"
                                                     type="text"
                                                 ></textarea>
                                                 <input
@@ -1066,22 +1100,22 @@ function App() {
                                                     onChange={OnchangeCheck}
                                                     id="female"
                                                     type="checkbox"
-                                                    class=" cus_radio"
+                                                    className="cus_radio"
                                                     value="female"
                                                     name="gender"
                                                     style={{ height: "20px", width: "20px", marginTop: "70px" }}
                                                 />
                                             </div>
                                         </div>
-                                        <div class="mt-2">
-                                            <div class="custom-control custom-radio">
+                                        <div className="mt-2">
+                                            <div className="custom-control custom-radio">
                                                 <textarea
                                                     id='A2'
                                                     rows="8"
                                                     cols="50"
                                                     onChange={onChangeDO1O1}
                                                     value={resA2 == null || "" ? "" : resA2}
-                                                    class="left_from"
+                                                    className="left_from"
                                                     type="text"
                                                 ></textarea>
                                                 <input
@@ -1089,7 +1123,7 @@ function App() {
                                                     onChange={OnchangeCheck2}
                                                     id="female"
                                                     type="checkbox"
-                                                    class=" cus_radio"
+                                                    className="cus_radio"
                                                     value="female"
                                                     name="gender"
                                                     style={{ height: "20px", width: "20px", marginTop: "70px" }}
@@ -1098,66 +1132,66 @@ function App() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-1"></div>
+                                    <div className="col-1"></div>
                                 </div>
                             </div>
-                            <div class="row m-0 btn_section_next">
-                                <div class="col-2"></div>
-                                <div class="col-8">
+                            <div className="row m-0 btn_section_next">
+                                <div className="col-2"></div>
+                                <div className="col-8">
                                     <button
                                         id='next1None'
                                         onClick={onNextClick}
-                                        class="btn cus_btn"
+                                        className="btn cus_btn"
                                         style={{ float: "right" }}
                                     >
                                         Next
                                     </button>
                                 </div>
-                                <div class="col-2"></div>
+                                <div className="col-2"></div>
                             </div>
                         </section>
 
                         {/* State 2 Start */}
 
                         <section id='state2'>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">B1</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">B1</span>
                                                 </div>
-                                                <span class="pName">Persona 2</span>
+                                                <span className="pName">Persona 2</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <input
                                                     onChange={onChangeProtagnest2}
                                                     disabled={disabledInputsd2}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     placeholder="Project Planner"
                                                     type="text"
                                                 />
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">B2</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">B2</span>
                                                 </div>
-                                                <span class="pName">Business Outcomes 2</span>
+                                                <span className="pName">Business Outcomes 2</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <input
                                                     onBlur={VerbCheckEv2}
                                                     onChange={onChangeSBO2}
                                                     disabled={disabledInputsd2}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     placeholder="Make close estimates"
                                                     type="text"
                                                 />
@@ -1167,23 +1201,23 @@ function App() {
                                                 }
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">B3</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">B3</span>
                                                 </div>
-                                                <span class="pName">Demo 2</span>
+                                                <span className="pName">Demo 2</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <textarea
                                                     disabled={disabledInputsd2}
                                                     onChange={onChangeDemo2}
                                                     value={Demo2}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     id="w3review"
                                                     name="w3review"
                                                     rows="5"
@@ -1194,63 +1228,63 @@ function App() {
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
                                     <div id='section2dis'>
                                         <div id='123disN123'>
                                             {loading ? (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <div id="loading"></div>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             ) : (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <button
                                                             onClick={onRegenerate1}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right" }}
                                                         >
                                                             Generate Demo Script
                                                         </button>
                                                         <button
                                                             onClick={onBackClick1}
-                                                            class="btn cus_btn mr-2"
+                                                            className="btn cus_btn mr-2"
                                                             style={{ float: "right" }}
                                                         >
                                                             Back
                                                         </button>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             )}
                                         </div>
                                         <div id='disN123'>
                                             {loading ? (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <div id="loading"></div>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             ) : (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <button
                                                             onClick={onRegenerate1}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right" }}
                                                         >
                                                             Re Generate Demo Script
                                                         </button>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             )}
                                         </div>
@@ -1258,24 +1292,24 @@ function App() {
 
                                     <section id='regenerate'>
                                         <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
-                                            <div class="row m-0">
-                                                <div class="col-1"></div>
-                                                <div class="col-10">
+                                            <div className="row m-0">
+                                                <div className="col-1"></div>
+                                                <div className="col-10">
                                                     <div>
                                                         <div style={{ display: "flex" }}>
-                                                            <div class="firstDiv">
-                                                                <span class="inner_text_O">*</span>
+                                                            <div className="firstDiv">
+                                                                <span className="inner_text_O">*</span>
                                                             </div>
-                                                            <span class="pName1">Demo 2 Options</span>
+                                                            <span className="pName1">Demo 2 Options</span>
                                                         </div>
-                                                        <div class="custom-control custom-radio">
+                                                        <div className="custom-control custom-radio">
                                                             <textarea
                                                                 id='B1'
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO2O}
                                                                 value={resB1 == null || "" ? "" : resB1}
-                                                                class="left_from"
+                                                                className="left_from"
                                                                 type="text"
                                                             ></textarea>
                                                             <input
@@ -1283,22 +1317,22 @@ function App() {
                                                                 onChange={OnchangeCheck3}
                                                                 id="female"
                                                                 type="checkbox"
-                                                                class="cus_radio"
+                                                                className="cus_radio"
                                                                 value="female"
                                                                 name="gender"
                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
                                                             />
                                                         </div>
                                                     </div>
-                                                    <div class="mt-2">
-                                                        <div class="custom-control custom-radio">
+                                                    <div className="mt-2">
+                                                        <div className="custom-control custom-radio">
                                                             <textarea
                                                                 id='B2'
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO2O1}
                                                                 value={resB2 == null || "" ? "" : resB2}
-                                                                class="left_from"
+                                                                className="left_from"
                                                                 type="text"
                                                             ></textarea>
                                                             <input
@@ -1306,7 +1340,7 @@ function App() {
                                                                 onChange={OnchangeCheck4}
                                                                 id="female"
                                                                 type="checkbox"
-                                                                class="cus_radio"
+                                                                className="cus_radio"
                                                                 value="female"
                                                                 name="gender"
                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
@@ -1314,22 +1348,22 @@ function App() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-1"></div>
+                                                <div className="col-1"></div>
                                             </div>
                                         </div>
-                                        <div class="row m-0 btn_section_next">
-                                            <div class="col-2"></div>
-                                            <div class="col-8">
+                                        <div className="row m-0 btn_section_next">
+                                            <div className="col-2"></div>
+                                            <div className="col-8">
                                                 <button
                                                     id='next2None'
                                                     onClick={OnNext2Clicked}
-                                                    class="btn cus_btn"
+                                                    className="btn cus_btn"
                                                     style={{ float: "right" }}
                                                 >
                                                     Next
                                                 </button>
                                             </div>
-                                            <div class="col-2"></div>
+                                            <div className="col-2"></div>
                                         </div>
                                     </section >
                                 </div >
@@ -1339,44 +1373,44 @@ function App() {
                         {/* State 3 Start */}
 
                         <section id='regenerate2'>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">C1</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">C1</span>
                                                 </div>
-                                                <span class="pName">Persona 3</span>
+                                                <span className="pName">Persona 3</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <input
                                                     onChange={onChangeProtagnest3}
                                                     disabled={disabledInputsd4}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     placeholder="Project Planner"
                                                     type="text"
                                                 />
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">C2</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">C2</span>
                                                 </div>
-                                                <span class="pName">Business Outcomes 3</span>
+                                                <span className="pName">Business Outcomes 3</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <input
                                                     onBlur={VerbCheckEv3}
                                                     onChange={onChangeSBO3}
                                                     disabled={disabledInputsd4}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     placeholder="Collaborate efficiently."
                                                     type="text"
                                                 />
@@ -1386,23 +1420,23 @@ function App() {
                                                 }
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">C3</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">C3</span>
                                                 </div>
-                                                <span class="pName">Demo 3</span>
+                                                <span className="pName">Demo 3</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <textarea
                                                     disabled={disabledInputsd4}
                                                     onChange={onChangeDemo3}
                                                     value={Demo3}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     id="w3review"
                                                     name="w3review"
                                                     rows="5"
@@ -1412,71 +1446,71 @@ function App() {
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
                                     <div id="finishClick">
                                         <div id='dis76546'>
                                             {loading ? (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <div id="loading"></div>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             ) : (
-                                                <div class="row m-0 btn_section">
-                                                    {/* <div class="col-2"></div> */}
-                                                    <div class="col-10 p-0">
+                                                <div className="row m-0 btn_section">
+                                                    {/* <div className="col-2"></div> */}
+                                                    <div className="col-10 p-0">
 
                                                         <button
                                                             onClick={regenerate3}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right" }}
                                                         >
                                                             Generate Demo Script
                                                         </button>
                                                         <button
                                                             onClick={onFinishClick}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right", marginRight: 20 }}
                                                         >
                                                             Skip Demo, Move to Intro
                                                         </button>
                                                         <button
                                                             onClick={onBackClick2}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right", marginRight: 20 }}
                                                         >
                                                             Back
                                                         </button>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             )}
                                         </div>
                                         <div id='dis0988'>
                                             {loading ? (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <div id="loading"></div>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             ) : (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <button
                                                             onClick={regenerate3}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right" }}
                                                         >
                                                             Re Generate Demo Script
                                                         </button>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             )}
                                         </div>
@@ -1490,24 +1524,24 @@ function App() {
                                         <div
                                             style={{ paddingTop: "50px", paddingBottom: "50px" }}
                                         >
-                                            <div class="row m-0">
-                                                <div class="col-1"></div>
-                                                <div class="col-10">
+                                            <div className="row m-0">
+                                                <div className="col-1"></div>
+                                                <div className="col-10">
                                                     <div>
                                                         <div style={{ display: "flex" }}>
-                                                            <div class="firstDiv">
-                                                                <span class="inner_text_O">*</span>
+                                                            <div className="firstDiv">
+                                                                <span className="inner_text_O">*</span>
                                                             </div>
-                                                            <span class="pName1">Demo 3 Options</span>
+                                                            <span className="pName1">Demo 3 Options</span>
                                                         </div>
-                                                        <div class="custom-control custom-radio">
+                                                        <div className="custom-control custom-radio">
                                                             <textarea
                                                                 id='C1'
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO3O}
                                                                 value={resC1 == null || "" ? "" : resC1}
-                                                                class="left_from"
+                                                                className="left_from"
                                                                 type="text"
                                                             ></textarea>
                                                             <input
@@ -1515,22 +1549,22 @@ function App() {
                                                                 onChange={OnchangeCheck5}
                                                                 id="female"
                                                                 type="checkbox"
-                                                                class=" cus_radio"
+                                                                className="cus_radio"
                                                                 value="female"
                                                                 name="gender"
                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
                                                             />
                                                         </div>
                                                     </div>
-                                                    <div class="mt-2">
-                                                        <div class="custom-control custom-radio">
+                                                    <div className="mt-2">
+                                                        <div className="custom-control custom-radio">
                                                             <textarea
                                                                 id='C2'
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO3O1}
                                                                 value={resC2 == null || "" ? "" : resC2}
-                                                                class="left_from"
+                                                                className="left_from"
                                                                 type="text"
                                                             ></textarea>
                                                             <input
@@ -1538,7 +1572,7 @@ function App() {
                                                                 onChange={OnchangeCheck6}
                                                                 id="female"
                                                                 type="checkbox"
-                                                                class="cus_radio"
+                                                                className="cus_radio"
                                                                 value="female"
                                                                 name="gender"
                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
@@ -1547,24 +1581,24 @@ function App() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-1"></div>
+                                                <div className="col-1"></div>
                                             </div>
                                         </div>
                                     </section >
 
-                                    <div class="row m-0 btn_section_next">
-                                        <div class="col-2"></div>
-                                        <div class="col-8 mt-5">
+                                    <div className="row m-0 btn_section_next">
+                                        <div className="col-2"></div>
+                                        <div className="col-8 mt-5">
                                             <button
                                                 id='next3None'
                                                 onClick={OnNext3Clicked}
-                                                class="btn cus_btn"
+                                                className="btn cus_btn"
                                                 style={{ float: "right" }}
                                             >
                                                 Next
                                             </button>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div >
 
 
@@ -1575,44 +1609,44 @@ function App() {
                         {/* State 4 Start */}
 
                         <section style={{ marginTop: -78 }} id='demo4Div'>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">D1</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">D1</span>
                                                 </div>
-                                                <span class="pName">Persona 4</span>
+                                                <span className="pName">Persona 4</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <input
                                                     onChange={onChangeProtagnest4}
                                                     disabled={disabledInputsd3}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     placeholder="Project Planner"
                                                     type="text"
                                                 />
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">D2</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">D2</span>
                                                 </div>
-                                                <span class="pName">Business Outcomes 4</span>
+                                                <span className="pName">Business Outcomes 4</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <input
                                                     onBlur={VerbCheckEv4}
                                                     onChange={onChangeSBO4}
                                                     disabled={disabledInputsd3}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     placeholder="Create successful projects"
                                                     type="text"
                                                 />
@@ -1622,23 +1656,23 @@ function App() {
                                                 }
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row top_pad">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row top_pad">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div style={{ display: "flex" }}>
-                                                <div class="firstDiv">
-                                                    <span class="inner_text">D3</span>
+                                                <div className="firstDiv">
+                                                    <span className="inner_text">D3</span>
                                                 </div>
-                                                <span class="pName">Demo 4</span>
+                                                <span className="pName">Demo 4</span>
                                             </div>
-                                            <div class="top_input">
+                                            <div className="top_input">
                                                 <textarea
                                                     disabled={disabledInputsd3}
                                                     onChange={onChangeDemo4}
                                                     value={Demo4}
-                                                    class="InputFields"
+                                                    className="InputFields"
                                                     id="w3review"
                                                     name="w3review"
                                                     rows="5"
@@ -1649,70 +1683,70 @@ function App() {
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
                                     <div id="">
                                         <div id='dis76546_1'>
                                             {loading ? (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <div id="loading"></div>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             ) : (
-                                                <div class="row m-0 btn_section">
-                                                    {/* <div class="col-2"></div> */}
-                                                    <div class="col-10 p-0">
+                                                <div className="row m-0 btn_section">
+                                                    {/* <div className="col-2"></div> */}
+                                                    <div className="col-10 p-0">
                                                         <button
                                                             onClick={regenerate4}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right" }}
                                                         >
                                                             Generate Demo Script
                                                         </button>
                                                         <button
                                                             onClick={onFinishClick}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right", marginRight: 20 }}
                                                         >
                                                             Skip Demo, Move to Intro
                                                         </button>
                                                         <button
                                                             onClick={onBackClick3}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right", marginRight: 20 }}
                                                         >
                                                             Back
                                                         </button>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             )}
                                         </div>
                                         <div id='dis0988_11'>
                                             {loading ? (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <div id="loading"></div>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             ) : (
-                                                <div class="row m-0 btn_section">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-8">
+                                                <div className="row m-0 btn_section">
+                                                    <div className="col-2"></div>
+                                                    <div className="col-8">
                                                         <button
                                                             onClick={regenerate4}
-                                                            class="btn cus_btn"
+                                                            className="btn cus_btn"
                                                             style={{ float: "right" }}
                                                         >
                                                             Re Generate Demo Script
                                                         </button>
                                                     </div>
-                                                    <div class="col-2"></div>
+                                                    <div className="col-2"></div>
                                                 </div>
                                             )}
                                         </div>
@@ -1723,24 +1757,24 @@ function App() {
                                         <div
                                             style={{ paddingTop: "50px", paddingBottom: "50px" }}
                                         >
-                                            <div class="row m-0">
-                                                <div class="col-1"></div>
-                                                <div class="col-10">
+                                            <div className="row m-0">
+                                                <div className="col-1"></div>
+                                                <div className="col-10">
                                                     <div>
                                                         <div style={{ display: "flex" }}>
-                                                            <div class="firstDiv">
-                                                                <span class="inner_text_O">*</span>
+                                                            <div className="firstDiv">
+                                                                <span className="inner_text_O">*</span>
                                                             </div>
-                                                            <span class="pName1">Demo 4 Options</span>
+                                                            <span className="pName1">Demo 4 Options</span>
                                                         </div>
-                                                        <div class="custom-control custom-radio">
+                                                        <div className="custom-control custom-radio">
                                                             <textarea
                                                                 id='D4_1'
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO4O}
                                                                 value={resC1_2 == null || "" ? "" : resC1_2}
-                                                                class="left_from"
+                                                                className="left_from"
                                                                 type="text"
                                                             ></textarea>
                                                             <input
@@ -1748,22 +1782,22 @@ function App() {
                                                                 onChange={OnchangeCheck11}
                                                                 id="female"
                                                                 type="checkbox"
-                                                                class=" cus_radio"
+                                                                className="cus_radio"
                                                                 value="female"
                                                                 name="gender"
                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
                                                             />
                                                         </div>
                                                     </div>
-                                                    <div class="mt-2">
-                                                        <div class="custom-control custom-radio">
+                                                    <div className="mt-2">
+                                                        <div className="custom-control custom-radio">
                                                             <textarea
                                                                 id='D4_2'
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO4O1}
                                                                 value={resC2_1 == null || "" ? "" : resC2_1}
-                                                                class="left_from"
+                                                                className="left_from"
                                                                 type="text"
                                                             ></textarea>
                                                             <input
@@ -1771,7 +1805,7 @@ function App() {
                                                                 onChange={OnchangeCheck12}
                                                                 id="female"
                                                                 type="checkbox"
-                                                                class="cus_radio"
+                                                                className="cus_radio"
                                                                 value="female"
                                                                 name="gender"
                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
@@ -1780,18 +1814,18 @@ function App() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-1"></div>
+                                                <div className="col-1"></div>
                                             </div>
                                         </div>
                                     </section >
 
-                                    <div class="row m-0 btn_section_next">
-                                        <div class="col-2"></div>
-                                        <div class="col-8 mt-5">
+                                    <div className="row m-0 btn_section_next">
+                                        <div className="col-2"></div>
+                                        <div className="col-8 mt-5">
                                             <button
                                                 id='next3None111'
                                                 onClick={onFinishClick}
-                                                class="btn cus_btn"
+                                                className="btn cus_btn"
                                                 style={{ float: "right" }}
                                             >
                                                 Generate Intro Script
@@ -1799,13 +1833,13 @@ function App() {
                                             <button
                                                 id='next3NoneFinish'
                                                 onClick={onFinishClick}
-                                                class="btn cus_btn"
+                                                className="btn cus_btn"
                                                 style={{ float: "right" }}
                                             >
                                                 Re Generate Intro Script
                                             </button>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div >
 
 
@@ -1828,28 +1862,28 @@ function App() {
                                         </div>
                                     ) : (
                                         <section>
-                                            <div class="row">
-                                                <div class="col-12">
+                                            <div className="row">
+                                                <div className="col-12">
                                                     <section >
                                                         <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
-                                                            <div class="row m-0">
-                                                                <div class="col-1"></div>
-                                                                <div class="col-10">
+                                                            <div className="row m-0">
+                                                                <div className="col-1"></div>
+                                                                <div className="col-10">
                                                                     <div>
                                                                         <div style={{ display: "flex" }}>
-                                                                            <div class="firstDiv">
-                                                                                <span class="inner_text_O">*</span>
+                                                                            <div className="firstDiv">
+                                                                                <span className="inner_text_O">*</span>
                                                                             </div>
-                                                                            <span class="pName1">Select Intro</span>
+                                                                            <span className="pName1">Select Intro</span>
                                                                         </div>
-                                                                        <div class="custom-control custom-radio">
+                                                                        <div className="custom-control custom-radio">
                                                                             <textarea
                                                                                 id='AAA'
                                                                                 rows="5"
                                                                                 cols="50"
                                                                                 onChange={int1}
                                                                                 value={Fintro1 == null || "" ? "" : Fintro1}
-                                                                                class="left_from"
+                                                                                className="left_from"
                                                                                 type="text"
                                                                             ></textarea>
                                                                             <input
@@ -1857,22 +1891,22 @@ function App() {
                                                                                 onChange={OnchangeCheck7}
                                                                                 id="female"
                                                                                 type="checkbox"
-                                                                                class=" cus_radio"
+                                                                                className="cus_radio"
                                                                                 value="female"
                                                                                 name="gender"
                                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
                                                                             />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="mt-2">
-                                                                        <div class="custom-control custom-radio">
+                                                                    <div className="mt-2">
+                                                                        <div className="custom-control custom-radio">
                                                                             <textarea
                                                                                 id='BBB'
                                                                                 rows="5"
                                                                                 cols="50"
                                                                                 onChange={int2}
                                                                                 value={Fintro2 == null || "" ? "" : Fintro2}
-                                                                                class="left_from"
+                                                                                className="left_from"
                                                                                 type="text"
                                                                             ></textarea>
                                                                             <input
@@ -1880,7 +1914,7 @@ function App() {
                                                                                 onChange={OnchangeCheck8}
                                                                                 id="female"
                                                                                 type="checkbox"
-                                                                                class="cus_radio"
+                                                                                className="cus_radio"
                                                                                 value="female"
                                                                                 name="gender"
                                                                                 style={{ height: "20px", width: "20px", marginTop: "70px" }}
@@ -1888,7 +1922,7 @@ function App() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-1"></div>
+                                                                <div className="col-1"></div>
                                                             </div>
 
 
@@ -1900,13 +1934,13 @@ function App() {
                                     )}
                                 </div>
                             </div>
-                            <div class="row m-0 btn_section_next">
-                                <div class="col-2"></div>
-                                <div class="col-8 ">
+                            <div className="row m-0 btn_section_next">
+                                <div className="col-2"></div>
+                                <div className="col-8 ">
                                     <button
                                         id='outNon1'
                                         onClick={GenerateOutro}
-                                        class="btn cus_btn"
+                                        className="btn cus_btn"
                                         style={{ float: "right" }}
                                     >
                                         Generate Outro Script
@@ -1914,13 +1948,13 @@ function App() {
                                     <button
                                         id='outNon2'
                                         onClick={GenerateOutro}
-                                        class="btn cus_btn"
+                                        className="btn cus_btn"
                                         style={{ float: "right" }}
                                     >
                                         Re Generate Outro Script
                                     </button>
                                 </div>
-                                <div class="col-2"></div>
+                                <div className="col-2"></div>
                             </div>
                         </div>
 
@@ -1934,24 +1968,24 @@ function App() {
                                 </div>
                             ) : (
                                 <div>
-                                    <div class="row m-0">
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
+                                    <div className="row m-0">
+                                        <div className="col-1"></div>
+                                        <div className="col-10">
                                             <div className='mt-5'>
                                                 <div style={{ display: "flex" }}>
-                                                    <div class="firstDiv">
-                                                        <span class="inner_text_O">*</span>
+                                                    <div className="firstDiv">
+                                                        <span className="inner_text_O">*</span>
                                                     </div>
-                                                    <span class="pName1 ">Select Outro</span>
+                                                    <span className="pName1 ">Select Outro</span>
                                                 </div>
-                                                <div class="custom-control custom-radio">
+                                                <div className="custom-control custom-radio">
                                                     <textarea
                                                         onChange={out1}
                                                         id='CCC'
                                                         rows="5"
                                                         cols="50"
                                                         value={outroState1}
-                                                        class="left_from"
+                                                        className="left_from"
                                                         type="text"
                                                     ></textarea>
                                                     <input
@@ -1959,15 +1993,15 @@ function App() {
                                                         onChange={OnchangeCheck9}
                                                         id="female"
                                                         type="checkbox"
-                                                        class=" cus_radio"
+                                                        className="cus_radio"
                                                         value="female"
                                                         name="gender"
                                                         style={{ height: "20px", width: "20px", marginTop: "70px" }}
                                                     />
                                                 </div>
                                             </div>
-                                            <div class="mt-2">
-                                                <div class="custom-control custom-radio">
+                                            <div className="mt-2">
+                                                <div className="custom-control custom-radio">
                                                     <textarea
 
                                                         onChange={out2}
@@ -1975,7 +2009,7 @@ function App() {
                                                         rows="5"
                                                         cols="50"
                                                         value={outroState2}
-                                                        class="left_from"
+                                                        className="left_from"
                                                         type="text"
                                                     ></textarea>
                                                     <input
@@ -1983,7 +2017,7 @@ function App() {
                                                         onChange={OnchangeCheck10}
                                                         id="female"
                                                         type="checkbox"
-                                                        class="cus_radio"
+                                                        className="cus_radio"
                                                         value="female"
                                                         name="gender"
                                                         style={{ height: "20px", width: "20px", marginTop: "70px" }}
@@ -1991,48 +2025,48 @@ function App() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-1"></div>
+                                        <div className="col-1"></div>
                                     </div>
-                                    <div class="row m-0 btn_section_next">
-                                        <div class="col-2"></div>
-                                        <div class="col-8 mt-5">
+                                    <div className="row m-0 btn_section_next">
+                                        <div className="col-2"></div>
+                                        <div className="col-8 mt-5">
                                             <button
                                                 onClick={FinClick}
-                                                class="btn cus_btn"
+                                                className="btn cus_btn"
                                                 style={{ float: "right" }}
                                             >
                                                 Finish
                                             </button>
                                         </div>
-                                        <div class="col-2"></div>
+                                        <div className="col-2"></div>
                                     </div >
                                 </div>
                             )}
                         </div>
                     </div>
 
-                    <div class="col-6">
-                        <ul class="nav nav-tabs" style={{ width: "90%" }}>
-                            <li class="active"><a data-toggle="tab" href="#home" style={{ fontWeight: 600 }}>Result</a></li>
+                    <div className="col-6">
+                        <ul className="nav nav-tabs" style={{ width: "90%", marginLeft: 10 }}>
+                            <li className="active"><a data-toggle="tab" href="#home" style={{ fontWeight: 600, fontSize: 16 }}>Result</a></li>
                             <li>
-                                <a data-toggle="tab" href="#menu1" style={{ fontWeight: 600 }}>Graphs
+                                <a data-toggle="tab" href="#menu1" style={{ fontWeight: 600, fontSize: 16 }}>Graphs
                                 </a>
                             </li>
                         </ul>
 
-                        <div class="tab-content">
-                            <div id="home" class="tab-pane fade in active">
-                                <div class="row m-0">
-                                    <div class="col-11">
+                        <div className="tab-content">
+                            <div id="home" className="tab-pane fade in active">
+                                <div className="row m-0">
+                                    <div className="col-11">
                                         <div style={{ height: "auto", borderRadius: "8px", backgroundColor: "#eef8ff", padding: "20px" }}>
                                             {
                                                 Floading ? (
-                                                    <div class="row m-0 btn_section">
-                                                        <div class="col-2"></div>
-                                                        <div class="col-8">
+                                                    <div className="row m-0 btn_section">
+                                                        <div className="col-2"></div>
+                                                        <div className="col-8">
                                                             <div id="loading" style={{ marginRight: "172px", marginTop: "170px" }}></div>
                                                         </div>
-                                                        <div class="col-2"></div>
+                                                        <div className="col-2"></div>
                                                     </div>
                                                 ) : (
                                                     <div>
@@ -2061,7 +2095,7 @@ function App() {
                                                             <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 1:</div>
                                                         </div>
                                                         <div className='row'>
-                                                            <textarea onChange={ONchangeboo1} type="text" className='right_side' contentEditable={true} value={BO1}></textarea>
+                                                            <textarea wrap="soft" rows="5" onChange={ONchangeboo1} className='right_side autosize' value={BO1}></textarea>
                                                         </div><br></br>
 
                                                         <div className='row'>
@@ -2085,7 +2119,7 @@ function App() {
                                                             <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 2:</div>
                                                         </div>
                                                         <div className='row'>
-                                                            <div onChange={OnChnageBof2} type="text" className='right_side' contentEditable={true}>{SBO2}</div>
+                                                            <textarea onChange={OnChnageBof2} className='right_side autosize' value={SBO2}></textarea>
                                                         </div><br></br>
 
                                                         <div className='row'>
@@ -2111,7 +2145,7 @@ function App() {
                                                                     <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 3:</div>
                                                                 </div>
                                                                 <div className='row'>
-                                                                    <div onChange={onChangeBoF3} type="text" className='right_side' contentEditable={true}>{SBO3}</div>
+                                                                    <div wrap="soft" rows="5" onChange={onChangeBoF3} className='right_side autosize' value={SBO3}></div>
                                                                 </div><br></br>
                                                             </div>
                                                         }
@@ -2131,7 +2165,7 @@ function App() {
                                                                     </div>
                                                                 }
                                                                 <div className='row'>
-                                                                    < textarea wrap="soft" rows="5" onChange={yess3} className='right_side autosize' value={extrasss3 || extra3} />
+                                                                    < textarea wrap="soft" rows="5" onChange={yess3} className='right_side autosize' value={extrasss3 || extra3}></textarea>
                                                                 </div><br></br>
                                                             </div>
                                                         }
@@ -2143,7 +2177,7 @@ function App() {
                                                                     <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 4:</div>
                                                                 </div>
                                                                 <div className='row'>
-                                                                    <div onChange={onChangeBoF3} type="text" className='right_side' contentEditable={true}>{SBO4}</div>
+                                                                    <textarea wrap="soft" rows="5" onChange={onChangeBoF3} className='right_side autosize' value={SBO4}></textarea>
                                                                 </div><br></br>
                                                             </div>
                                                         }
@@ -2193,7 +2227,7 @@ function App() {
                                                                 <button className="btn cuss_btn" id="generate" onClick={generateWordDocument}>Save and Download Script</button>
                                                             </div>
                                                             <div className='col-12 newpd'>
-                                                                <button class="btn cus_btn" style={{ marginRight: 15, marginTop: 10 }} onClick={ClearAll}>Clear All</button>
+                                                                <button className="btn cus_btn" style={{ marginRight: 15, marginTop: 10 }} onClick={ClearAll}>Clear All</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2201,11 +2235,11 @@ function App() {
                                             }
                                         </div>
                                     </div>
-                                    <div class="col-1"></div>
+                                    <div className="col-1"></div>
                                 </div>
 
                             </div>
-                            <div id="menu1" class="tab-pane fade">
+                            <div id="menu1" className="tab-pane fade">
                                 <div style={{ width: 600 }}>
                                     <canvas id="myChart" width="300" height="300"></canvas>
                                 </div>
