@@ -5381,6 +5381,27 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function App() {
+  window.onload = function () {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+        labels: ['Reddsdsds', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          axis: 'y',
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y'
+      }
+    });
+  };
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       StateOne = _useState2[0],
@@ -6366,6 +6387,34 @@ function App() {
   };
 
   var GenerateOutro = function GenerateOutro() {
+    var outro = [{
+      "B1": BO1 == "" ? "nan" : BO1
+    }, {
+      "B1": SBO2 == "" ? "nan" : SBO2
+    }, {
+      "B1": SBO3 == "" ? "nan" : SBO3
+    }, {
+      "B1": SBO4 == "" ? "nan" : SBO4
+    }];
+    var arrOutro = [];
+    var i = 0;
+
+    for (i = 0; i < 4; i++) {
+      if (outro[i]["B1"] == "nan") {
+        arrOutro.push(i);
+      }
+    }
+
+    if (arrOutro.length == 0) {
+      var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", " + SBO3.toLowerCase() + ", and " + SBO4.toLowerCase() + "...";
+    }
+
+    if (arrOutro.length == 1) {
+      var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", and " + SBO3.toLowerCase() + "...";
+    } else {
+      var BOs = BO1.toLowerCase() + ", and " + SBO2.toLowerCase() + "...";
+    }
+
     document.getElementById("FOROutro").style.display = "block";
     document.getElementById("outNon2").style.display = "block";
     document.getElementById("outNon1").style.display = "none";
@@ -6384,8 +6433,8 @@ function App() {
                 dataa = result.choices;
 
                 if (dataa) {
-                  setoutroState1(dataa[0]["text"]);
-                  setoutroState2(dataa[1]["text"]);
+                  setoutroState1(BOs + "\n" + dataa[0]["text"]);
+                  setoutroState2(BOs + "\n" + dataa[1]["text"]);
                 }
 
                 setoutroLoading(false);
@@ -6616,6 +6665,69 @@ function App() {
         return _ref11.apply(this, arguments);
       };
     }());
+    event.preventDefault();
+    var doc = new docx__WEBPACK_IMPORTED_MODULE_5__.Document({
+      sections: [{
+        children: [new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'Final Script',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.TITLE
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'Intro',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss5
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 1',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: BO1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 1',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 2',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: SBO2
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 2',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss2
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 3',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: SBO3
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 3',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss3
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 4',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: SBO4
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 4',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss4
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'Outro',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss6
+        })]
+      }]
+    });
+    saveDocumentToFile(doc, 'New Document.docx');
+  }
+
+  function OnlyDownload(event) {
     event.preventDefault();
     var doc = new docx__WEBPACK_IMPORTED_MODULE_5__.Document({
       sections: [{
@@ -8303,308 +8415,362 @@ function App() {
               })]
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           "class": "col-6",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            "class": "row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-11",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("ul", {
+            "class": "nav nav-tabs",
+            style: {
+              width: "90%"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("li", {
+              "class": "active",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("a", {
+                "data-toggle": "tab",
+                href: "#home",
                 style: {
-                  height: "auto",
-                  borderRadius: "8px",
-                  backgroundColor: "#eef8ff",
-                  padding: "20px"
+                  fontWeight: 600
                 },
-                children: Floading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  "class": "row m-0 btn_section",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-2"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-8",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      id: "loading",
-                      style: {
-                        marginRight: "172px",
-                        marginTop: "170px"
-                      }
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    "class": "col-2"
-                  })]
-                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "pdfhead",
-                    children: "Final Script"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        className: "col-12",
-                        style: {
-                          fontSize: "18px",
-                          fontWeight: "600"
-                        },
-                        children: "Intro:"
-                      })
-                    }), StateFive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
-                        inputA: newIntro,
-                        inputB: extrasss5,
-                        type: "words"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
-                        wrap: "soft",
-                        rows: "5",
-                        onChange: yess5,
-                        className: "right_side autosize",
-                        value: extrasss5 || newIntro
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "col-12",
-                      style: {
-                        fontSize: "18px",
-                        fontWeight: "600"
-                      },
-                      children: "BO 1:"
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      onChange: ONchangeboo1,
-                      type: "text",
-                      className: "right_side",
-                      contentEditable: true,
-                      children: BO1
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "col-12",
-                      style: {
-                        fontSize: "18px",
-                        fontWeight: "600"
-                      },
-                      children: "DEMO 1:"
-                    })
-                  }), StateOne && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
-                      inputA: extra,
-                      inputB: extrasss,
-                      type: "words"
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
-                      wrap: "soft",
-                      rows: "5",
-                      onChange: yess,
-                      className: "right_side autosize",
-                      value: extrasss || extra
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "col-12",
-                      style: {
-                        fontSize: "18px",
-                        fontWeight: "600"
-                      },
-                      children: "BO 2:"
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      onChange: OnChnageBof2,
-                      type: "text",
-                      className: "right_side",
-                      contentEditable: true,
-                      children: SBO2
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "col-12",
-                      style: {
-                        fontSize: "18px",
-                        fontWeight: "600"
-                      },
-                      children: "DEMO 2:"
-                    })
-                  }), StateTwo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
-                      inputA: extra2,
-                      inputB: extrasss2,
-                      type: "words"
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
-                      wrap: "soft",
-                      rows: "5",
-                      onChange: yess2,
-                      className: "right_side autosize",
-                      value: extrasss2 || extra2
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), SBO3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        className: "col-12",
-                        style: {
-                          fontSize: "18px",
-                          fontWeight: "600"
-                        },
-                        children: "BO 3:"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        onChange: onChangeBoF3,
-                        type: "text",
-                        className: "right_side",
-                        contentEditable: true,
-                        children: SBO3
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), extra3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        className: "col-12",
-                        style: {
-                          fontSize: "18px",
-                          fontWeight: "600"
-                        },
-                        children: "DEMO 3:"
-                      })
-                    }), StateThree && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
-                        inputA: extra3,
-                        inputB: extrasss3,
-                        type: "words"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
-                        wrap: "soft",
-                        rows: "5",
-                        onChange: yess3,
-                        className: "right_side autosize",
-                        value: extrasss3 || extra3
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), SBO4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        className: "col-12",
-                        style: {
-                          fontSize: "18px",
-                          fontWeight: "600"
-                        },
-                        children: "BO 4:"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        onChange: onChangeBoF3,
-                        type: "text",
-                        className: "right_side",
-                        contentEditable: true,
-                        children: SBO4
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), extra4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        className: "col-12",
-                        style: {
-                          fontSize: "18px",
-                          fontWeight: "600"
-                        },
-                        children: "DEMO 4:"
-                      })
-                    }), StateFour && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
-                        inputA: extra4,
-                        inputB: extrasss4,
-                        type: "words"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
-                        wrap: "soft",
-                        rows: "5",
-                        onChange: yess4,
-                        className: "right_side autosize",
-                        value: extrasss4 || extra4
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                        className: "col-12",
-                        style: {
-                          fontSize: "18px",
-                          fontWeight: "600"
-                        },
-                        children: "Outro:"
-                      })
-                    }), StateSix && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
-                        inputA: newOutro,
-                        inputB: extrasss6,
-                        type: "words"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                      className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
-                        wrap: "soft",
-                        rows: "5",
-                        onChange: yess6,
-                        className: "right_side autosize",
-                        value: extrasss6 || newOutro
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                      className: "col-12 newpd",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-                        className: "btn cuss_btn",
-                        id: "generate",
-                        onClick: generateWordDocument,
-                        children: "Download Script"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-                        "class": "btn cus_btn",
-                        style: {
-                          "float": "right"
-                        },
-                        onClick: ClearAll,
-                        children: "Clear All"
+                children: "Result"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("a", {
+                "data-toggle": "tab",
+                href: "#menu1",
+                style: {
+                  fontWeight: 600
+                },
+                children: "Graphs"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            "class": "tab-content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              id: "home",
+              "class": "tab-pane fade in active",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                "class": "row m-0",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                  "class": "col-11",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    style: {
+                      height: "auto",
+                      borderRadius: "8px",
+                      backgroundColor: "#eef8ff",
+                      padding: "20px"
+                    },
+                    children: Floading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      "class": "row m-0 btn_section",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        "class": "col-2"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        "class": "col-8",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          id: "loading",
+                          style: {
+                            marginRight: "172px",
+                            marginTop: "170px"
+                          }
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        "class": "col-2"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "pdfhead",
+                        children: "Final Script"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            className: "col-12",
+                            style: {
+                              fontSize: "18px",
+                              fontWeight: "600"
+                            },
+                            children: "Intro:"
+                          })
+                        }), StateFive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
+                            inputA: newIntro,
+                            inputB: extrasss5,
+                            type: "words"
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                            wrap: "soft",
+                            rows: "5",
+                            onChange: yess5,
+                            className: "right_side autosize",
+                            value: extrasss5 || newIntro
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "col-12",
+                          style: {
+                            fontSize: "18px",
+                            fontWeight: "600"
+                          },
+                          children: "BO 1:"
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                          onChange: ONchangeboo1,
+                          type: "text",
+                          className: "right_side",
+                          contentEditable: true,
+                          value: BO1
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "col-12",
+                          style: {
+                            fontSize: "18px",
+                            fontWeight: "600"
+                          },
+                          children: "DEMO 1:"
+                        })
+                      }), StateOne && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
+                          inputA: extra,
+                          inputB: extrasss,
+                          type: "words"
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                          wrap: "soft",
+                          rows: "5",
+                          onChange: yess,
+                          className: "right_side autosize",
+                          value: extrasss || extra
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "col-12",
+                          style: {
+                            fontSize: "18px",
+                            fontWeight: "600"
+                          },
+                          children: "BO 2:"
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          onChange: OnChnageBof2,
+                          type: "text",
+                          className: "right_side",
+                          contentEditable: true,
+                          children: SBO2
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "col-12",
+                          style: {
+                            fontSize: "18px",
+                            fontWeight: "600"
+                          },
+                          children: "DEMO 2:"
+                        })
+                      }), StateTwo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
+                          inputA: extra2,
+                          inputB: extrasss2,
+                          type: "words"
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "row",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                          wrap: "soft",
+                          rows: "5",
+                          onChange: yess2,
+                          className: "right_side autosize",
+                          value: extrasss2 || extra2
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), SBO3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            className: "col-12",
+                            style: {
+                              fontSize: "18px",
+                              fontWeight: "600"
+                            },
+                            children: "BO 3:"
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            onChange: onChangeBoF3,
+                            type: "text",
+                            className: "right_side",
+                            contentEditable: true,
+                            children: SBO3
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
+                      }), extra3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            className: "col-12",
+                            style: {
+                              fontSize: "18px",
+                              fontWeight: "600"
+                            },
+                            children: "DEMO 3:"
+                          })
+                        }), StateThree && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
+                            inputA: extra3,
+                            inputB: extrasss3,
+                            type: "words"
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                            wrap: "soft",
+                            rows: "5",
+                            onChange: yess3,
+                            className: "right_side autosize",
+                            value: extrasss3 || extra3
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
+                      }), SBO4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            className: "col-12",
+                            style: {
+                              fontSize: "18px",
+                              fontWeight: "600"
+                            },
+                            children: "BO 4:"
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            onChange: onChangeBoF3,
+                            type: "text",
+                            className: "right_side",
+                            contentEditable: true,
+                            children: SBO4
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
+                      }), extra4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            className: "col-12",
+                            style: {
+                              fontSize: "18px",
+                              fontWeight: "600"
+                            },
+                            children: "DEMO 4:"
+                          })
+                        }), StateFour && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
+                            inputA: extra4,
+                            inputB: extrasss4,
+                            type: "words"
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                            wrap: "soft",
+                            rows: "5",
+                            onChange: yess4,
+                            className: "right_side autosize",
+                            value: extrasss4 || extra4
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                            className: "col-12",
+                            style: {
+                              fontSize: "18px",
+                              fontWeight: "600"
+                            },
+                            children: "Outro:"
+                          })
+                        }), StateSix && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_diff2__WEBPACK_IMPORTED_MODULE_8___default()), {
+                            inputA: newOutro,
+                            inputB: extrasss6,
+                            type: "words"
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "row",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                            wrap: "soft",
+                            rows: "5",
+                            onChange: yess6,
+                            className: "right_side autosize",
+                            value: extrasss6 || newOutro
+                          })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        className: "row",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                          className: "col-12 newpd",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                            className: "btn cuss_btn",
+                            id: "generate",
+                            onClick: OnlyDownload,
+                            children: "Download Script"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                            className: "btn cuss_btn",
+                            id: "generate",
+                            onClick: generateWordDocument,
+                            children: "Save and Download Script"
+                          })]
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "col-12 newpd",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                            "class": "btn cus_btn",
+                            style: {
+                              marginRight: 15,
+                              marginTop: 10
+                            },
+                            onClick: ClearAll,
+                            children: "Clear All"
+                          })
+                        })]
                       })]
                     })
-                  })]
-                })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                  "class": "col-1"
+                })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              "class": "col-1"
+              id: "menu1",
+              "class": "tab-pane fade",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                style: {
+                  width: 600
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("canvas", {
+                  id: "myChart",
+                  width: "300",
+                  height: "300"
+                })
+              })
             })]
-          })
+          })]
         })]
       })
     })]
@@ -8662,7 +8828,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8699,7 +8865,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8736,7 +8902,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8773,7 +8939,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8822,7 +8988,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8835,23 +9001,13 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
   });
 }
 function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
-  // var outro = [
-  //     "BO-1" = "BO1",
-  //     "BO-2" = "SBO2",
-  //     "BO-3" = "SBO3",
-  //     "BO-4" = "SBO4",
-  // ]
-  // var arrOutro = []
-  // for (i = 1; i < 5; i++) {
-  //     if ("BO-" + JSON.stringify({ i }) == "nan") {
-  //         arrOutro.push(i)
-  //     }
-  // }
-  // console.log("ddssdsdsdsddd=-=-=-", arrOutro);
   var PNAME = pName1.trim();
   var USECASE = useCase1.trim();
+  var PN = PNAME == "" ? "nan" : PNAME;
+  var US = USECASE == "" ? "nan" : USECASE;
+  var IN = intro == "" ? "nan" : intro;
   var body = JSON.stringify({
-    "prompt": "PN: " + PNAME + " " + "$ Use Case: " + USECASE + " " + "$ Intro: " + intro + " &&&",
+    "prompt": "PN: " + PN + " " + "$ Use Case: " + US + " " + "$ Intro: " + IN + " &&&",
     "model": "davinci:ft-ai-derivatives-2022-05-12-09-52-07",
     "temperature": 0.9,
     "stop": "@@",
@@ -8863,7 +9019,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {

@@ -7,7 +7,46 @@ import { saveAs } from 'file-saver';
 import $ from "jquery"
 import Diff from 'react-diff2';
 
+
+
 function App() {
+
+    window.onload = function () {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['Reddsdsds', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    axis: 'y',
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+            }
+        });
+    }
+
+
     const [StateOne, setStateOne] = useState(false);
     const [StateTwo, setStateTwo] = useState(false);
     const [StateThree, setStateThree] = useState(false);
@@ -66,6 +105,7 @@ function App() {
     const [outroLoading, setoutroLoading] = useState(false);
     const [outroState1, setoutroState1] = useState("");
     const [outroState2, setoutroState2] = useState("");
+
     const out1 = (e) => {
         setoutroState1(e.target.value)
     }
@@ -542,6 +582,42 @@ function App() {
     }
 
     const GenerateOutro = () => {
+        var outro = [
+            {
+                "B1": BO1 == "" ? "nan" : BO1,
+            },
+            {
+                "B1": SBO2 == "" ? "nan" : SBO2,
+            },
+            {
+                "B1": SBO3 == "" ? "nan" : SBO3,
+            },
+            {
+                "B1": SBO4 == "" ? "nan" : SBO4
+            },
+        ];
+
+        var arrOutro = []
+        var i = 0;
+
+        for (i = 0; i < 4; i++) {
+            if (outro[i]["B1"] == "nan") {
+                arrOutro.push(i)
+            }
+        }
+
+        if (arrOutro.length == 0) {
+            var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", " + SBO3.toLowerCase() + ", and " + SBO4.toLowerCase() + "..."
+        }
+        if (arrOutro.length == 1) {
+            var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", and " + SBO3.toLowerCase() + "..."
+        } else {
+            var BOs = BO1.toLowerCase() + ", and " + SBO2.toLowerCase() + "..."
+        }
+
+
+
+
         document.getElementById("FOROutro").style.display = "block"
         document.getElementById("outNon2").style.display = "block"
         document.getElementById("outNon1").style.display = "none"
@@ -555,8 +631,8 @@ function App() {
 
             let dataa = result.choices
             if (dataa) {
-                setoutroState1(dataa[0]["text"])
-                setoutroState2(dataa[1]["text"])
+                setoutroState1(BOs + "\n" + dataa[0]["text"])
+                setoutroState2(BOs + "\n" + dataa[1]["text"])
             }
             setoutroLoading(false)
             scrollToBottom()
@@ -645,10 +721,56 @@ function App() {
     }
 
     function generateWordDocument(event) {
+
         SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
             console.log("aleemmmmm======SCD", result);
         })
-        event.preventDefault()
+        event.preventDefault();
+
+        let doc = new Document({
+            sections: [
+                {
+                    children: [
+                        new Paragraph({ text: 'Final Script', heading: HeadingLevel.TITLE }),
+                        new Paragraph({ text: 'Intro', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss5 }),
+
+                        new Paragraph({ text: 'BO 1', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: BO1 }),
+
+                        new Paragraph({ text: 'DEMO 1', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss }),
+
+                        new Paragraph({ text: 'BO 2', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: SBO2 }),
+
+                        new Paragraph({ text: 'DEMO 2', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss2 }),
+
+                        new Paragraph({ text: 'BO 3', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: SBO3 }),
+
+                        new Paragraph({ text: 'DEMO 3', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss3 }),
+
+                        new Paragraph({ text: 'BO 4', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: SBO4 }),
+
+                        new Paragraph({ text: 'DEMO 4', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss4 }),
+
+                        new Paragraph({ text: 'Outro', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss6 }),
+                    ],
+                },
+            ],
+        })
+        saveDocumentToFile(doc, 'New Document.docx')
+    }
+    function OnlyDownload(event) {
+
+        event.preventDefault();
+
         let doc = new Document({
             sections: [
                 {
@@ -1890,191 +2012,204 @@ function App() {
                     </div>
 
                     <div class="col-6">
-                        <div class="row">
-                            <div class="col-11">
-                                <div style={{ height: "auto", borderRadius: "8px", backgroundColor: "#eef8ff", padding: "20px" }}>
-                                    {
-                                        Floading ? (
-                                            <div class="row m-0 btn_section">
-                                                <div class="col-2"></div>
-                                                <div class="col-8">
-                                                    <div id="loading" style={{ marginRight: "172px", marginTop: "170px" }}></div>
-                                                </div>
-                                                <div class="col-2"></div>
-                                            </div>
-                                        ) : (
-                                            <div>
-                                                {/* <PDFExport ref={pdfExportComponent} papersize="A4"> */}
-                                                <div className="pdfhead">Final Script</div>
-                                                <div>
-                                                    <div className='row'>
-                                                        <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>Intro:</div>
-                                                    </div>
-                                                    {
-                                                        StateFive &&
-                                                        <div className='row'>
-                                                            <Diff
-                                                                inputA={newIntro}
-                                                                inputB={extrasss5}
-                                                                type="words"
-                                                            />
+                        <ul class="nav nav-tabs" style={{ width: "90%" }}>
+                            <li class="active"><a data-toggle="tab" href="#home" style={{ fontWeight: 600 }}>Result</a></li>
+                            <li>
+                                <a data-toggle="tab" href="#menu1" style={{ fontWeight: 600 }}>Graphs
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade in active">
+                                <div class="row m-0">
+                                    <div class="col-11">
+                                        <div style={{ height: "auto", borderRadius: "8px", backgroundColor: "#eef8ff", padding: "20px" }}>
+                                            {
+                                                Floading ? (
+                                                    <div class="row m-0 btn_section">
+                                                        <div class="col-2"></div>
+                                                        <div class="col-8">
+                                                            <div id="loading" style={{ marginRight: "172px", marginTop: "170px" }}></div>
                                                         </div>
-                                                    }
-                                                    <div className='row'>
-                                                        {/* <textarea onChange={onChanegINTRO} type="text" className='right_side autosize' value={newIntro}></textarea> */}
-                                                        <textarea wrap="soft" rows="5" onChange={yess5} className='right_side autosize' value={extrasss5 || newIntro} />
-                                                    </div><br></br>
-                                                </div>
-
-
-                                                <div className='row'>
-                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 1:</div>
-                                                </div>
-                                                <div className='row'>
-                                                    <div onChange={ONchangeboo1} type="text" className='right_side' contentEditable={true} >{BO1}</div>
-                                                </div><br></br>
-
-                                                <div className='row'>
-                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 1:</div>
-                                                </div>
-                                                {
-                                                    StateOne &&
-                                                    <div className='row'>
-                                                        <Diff
-                                                            inputA={extra}
-                                                            inputB={extrasss}
-                                                            type="words"
-                                                        />
+                                                        <div class="col-2"></div>
                                                     </div>
-                                                }
-                                                <div className='row'>
-                                                    <textarea wrap="soft" rows="5" onChange={yess} className='right_side autosize' value={extrasss || extra} />
-                                                </div><br></br>
-                                                <br></br>
-                                                <div className='row'>
-                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 2:</div>
-                                                </div>
-                                                <div className='row'>
-                                                    <div onChange={OnChnageBof2} type="text" className='right_side' contentEditable={true}>{SBO2}</div>
-                                                </div><br></br>
-
-                                                <div className='row'>
-                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 2:</div>
-                                                </div>
-                                                {
-                                                    StateTwo &&
-                                                    <div className='row'>
-                                                        <Diff
-                                                            inputA={extra2}
-                                                            inputB={extrasss2}
-                                                            type="words"
-                                                        />
-                                                    </div>
-                                                }
-                                                <div className='row'>
-                                                    {/* <div onChange={onchnageDemoF2} type="text" className='right_side' contentEditable={true} >{extra2}</div> */}
-                                                    <textarea wrap="soft" rows="5" onChange={yess2} className='right_side autosize' value={extrasss2 || extra2} />
-                                                </div><br></br>
-
-                                                {SBO3 &&
+                                                ) : (
                                                     <div>
+                                                        <div className="pdfhead">Final Script</div>
+                                                        <div>
+                                                            <div className='row'>
+                                                                <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>Intro:</div>
+                                                            </div>
+                                                            {
+                                                                StateFive &&
+                                                                <div className='row'>
+                                                                    <Diff
+                                                                        inputA={newIntro}
+                                                                        inputB={extrasss5}
+                                                                        type="words"
+                                                                    />
+                                                                </div>
+                                                            }
+                                                            <div className='row'>
+                                                                < textarea wrap="soft" rows="5" onChange={yess5} className='right_side autosize' value={extrasss5 || newIntro} />
+                                                            </div><br></br>
+                                                        </div>
+
+
                                                         <div className='row'>
-                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 3:</div>
+                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 1:</div>
                                                         </div>
                                                         <div className='row'>
-                                                            <div onChange={onChangeBoF3} type="text" className='right_side' contentEditable={true}>{SBO3}</div>
+                                                            <textarea onChange={ONchangeboo1} type="text" className='right_side' contentEditable={true} value={BO1}></textarea>
                                                         </div><br></br>
-                                                    </div>
-                                                }
 
-                                                {extra3 &&
-                                                    <div>
                                                         <div className='row'>
-                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 3:</div>
+                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 1:</div>
                                                         </div>
-                                                        {StateThree &&
+                                                        {
+                                                            StateOne &&
                                                             <div className='row'>
                                                                 <Diff
-                                                                    inputA={extra3}
-                                                                    inputB={extrasss3}
+                                                                    inputA={extra}
+                                                                    inputB={extrasss}
                                                                     type="words"
                                                                 />
                                                             </div>
                                                         }
                                                         <div className='row'>
-                                                            {/* <div onChange={OnchangeDEmoF3} type="text" className='right_side' contentEditable={true}>{extra3}</div> */}
-                                                            <textarea wrap="soft" rows="5" onChange={yess3} className='right_side autosize' value={extrasss3 || extra3} />
+                                                            <textarea wrap="soft" rows="5" onChange={yess} className='right_side autosize' value={extrasss || extra} />
                                                         </div><br></br>
-                                                    </div>
-                                                }
-
-
-                                                {SBO4 &&
-                                                    <div>
+                                                        <br></br>
                                                         <div className='row'>
-                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 4:</div>
+                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 2:</div>
                                                         </div>
                                                         <div className='row'>
-                                                            <div onChange={onChangeBoF3} type="text" className='right_side' contentEditable={true}>{SBO4}</div>
+                                                            <div onChange={OnChnageBof2} type="text" className='right_side' contentEditable={true}>{SBO2}</div>
                                                         </div><br></br>
-                                                    </div>
-                                                }
 
-                                                {extra4 &&
-                                                    <div>
                                                         <div className='row'>
-                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 4:</div>
+                                                            <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 2:</div>
                                                         </div>
-                                                        {StateFour &&
+                                                        {
+                                                            StateTwo &&
                                                             <div className='row'>
                                                                 <Diff
-                                                                    inputA={extra4}
-                                                                    inputB={extrasss4}
+                                                                    inputA={extra2}
+                                                                    inputB={extrasss2}
                                                                     type="words"
                                                                 />
                                                             </div>
                                                         }
                                                         <div className='row'>
-                                                            {/* <div onChange={OnchangeDemoRes4} type="text" className='right_side' contentEditable={true}>{extra4}</div> */}
-                                                            <textarea wrap="soft" rows="5" onChange={yess4} className='right_side autosize' value={extrasss4 || extra4} />
+                                                            < textarea wrap="soft" rows="5" onChange={yess2} className='right_side autosize' value={extrasss2 || extra2} />
                                                         </div><br></br>
-                                                    </div>
-                                                }
 
-                                                <div>
-                                                    <div className='row'>
-                                                        <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>Outro:</div>
-                                                    </div>
-                                                    {
-                                                        StateSix &&
-                                                        <div className='row'>
-                                                            <Diff
-                                                                inputA={newOutro}
-                                                                inputB={extrasss6}
-                                                                type="words"
-                                                            />
+                                                        {SBO3 &&
+                                                            <div>
+                                                                <div className='row'>
+                                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 3:</div>
+                                                                </div>
+                                                                <div className='row'>
+                                                                    <div onChange={onChangeBoF3} type="text" className='right_side' contentEditable={true}>{SBO3}</div>
+                                                                </div><br></br>
+                                                            </div>
+                                                        }
+
+                                                        {extra3 &&
+                                                            <div>
+                                                                <div className='row'>
+                                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 3:</div>
+                                                                </div>
+                                                                {StateThree &&
+                                                                    <div className='row'>
+                                                                        <Diff
+                                                                            inputA={extra3}
+                                                                            inputB={extrasss3}
+                                                                            type="words"
+                                                                        />
+                                                                    </div>
+                                                                }
+                                                                <div className='row'>
+                                                                    < textarea wrap="soft" rows="5" onChange={yess3} className='right_side autosize' value={extrasss3 || extra3} />
+                                                                </div><br></br>
+                                                            </div>
+                                                        }
+
+
+                                                        {SBO4 &&
+                                                            <div>
+                                                                <div className='row'>
+                                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 4:</div>
+                                                                </div>
+                                                                <div className='row'>
+                                                                    <div onChange={onChangeBoF3} type="text" className='right_side' contentEditable={true}>{SBO4}</div>
+                                                                </div><br></br>
+                                                            </div>
+                                                        }
+
+                                                        {extra4 &&
+                                                            <div>
+                                                                <div className='row'>
+                                                                    <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>DEMO 4:</div>
+                                                                </div>
+                                                                {StateFour &&
+                                                                    <div className='row'>
+                                                                        <Diff
+                                                                            inputA={extra4}
+                                                                            inputB={extrasss4}
+                                                                            type="words"
+                                                                        />
+                                                                    </div>
+                                                                }
+                                                                <div className='row'>
+                                                                    < textarea wrap="soft" rows="5" onChange={yess4} className='right_side autosize' value={extrasss4 || extra4} />
+                                                                </div><br></br>
+                                                            </div>
+                                                        }
+
+                                                        <div>
+                                                            <div className='row'>
+                                                                <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>Outro:</div>
+                                                            </div>
+                                                            {
+                                                                StateSix &&
+                                                                <div className='row'>
+                                                                    <Diff
+                                                                        inputA={newOutro}
+                                                                        inputB={extrasss6}
+                                                                        type="words"
+                                                                    />
+                                                                </div>
+                                                            }
+                                                            <div className='row'>
+                                                                <textarea wrap="soft" rows="5" onChange={yess6} className='right_side autosize' value={extrasss6 || newOutro} />
+                                                            </div><br></br>
                                                         </div>
-                                                    }
-                                                    <div className='row'>
-                                                        <textarea wrap="soft" rows="5" onChange={yess6} className='right_side autosize' value={extrasss6 || newOutro} />
-                                                    </div><br></br>
-                                                </div>
 
-                                                <div className='row'>
-                                                    <div className='col-12 newpd'>
-                                                        <button className="btn cuss_btn" id="generate" onClick={generateWordDocument}>Download Script</button>
-                                                        <button class="btn cus_btn" style={{ float: "right" }} onClick={ClearAll}>Clear All</button>
+                                                        <div className='row'>
+                                                            <div className='col-12 newpd'>
+                                                                <button className="btn cuss_btn" id="generate" onClick={OnlyDownload}>Download Script</button>
+                                                                <button className="btn cuss_btn" id="generate" onClick={generateWordDocument}>Save and Download Script</button>
+                                                            </div>
+                                                            <div className='col-12 newpd'>
+                                                                <button class="btn cus_btn" style={{ marginRight: 15, marginTop: 10 }} onClick={ClearAll}>Clear All</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                )
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-1"></div>
+                                </div>
 
-                                            </div>
-
-                                        )
-                                    }
-
+                            </div>
+                            <div id="menu1" class="tab-pane fade">
+                                <div style={{ width: 600 }}>
+                                    <canvas id="myChart" width="300" height="300"></canvas>
                                 </div>
                             </div>
-                            <div class="col-1"></div>
                         </div>
                     </div>
                 </div>
