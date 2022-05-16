@@ -100,7 +100,7 @@ class APIController extends Controller
             
             ExportScript::insert($dataScript);
     
-            if(Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'public_uploads', \Maatwebsite\Excel\Excel::XLSX)){
+            if(Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'s3', \Maatwebsite\Excel\Excel::XLSX)){
                 return response()->json(['success' => true, 'message' => 'Data captured successfully!']);
             }
             else{

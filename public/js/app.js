@@ -6366,6 +6366,34 @@ function App() {
   };
 
   var GenerateOutro = function GenerateOutro() {
+    var outro = [{
+      "B1": BO1 == "" ? "nan" : BO1
+    }, {
+      "B1": SBO2 == "" ? "nan" : SBO2
+    }, {
+      "B1": SBO3 == "" ? "nan" : SBO3
+    }, {
+      "B1": SBO4 == "" ? "nan" : SBO4
+    }];
+    var arrOutro = [];
+    var i = 0;
+
+    for (i = 0; i < 4; i++) {
+      if (outro[i]["B1"] == "nan") {
+        arrOutro.push(i);
+      }
+    }
+
+    if (arrOutro.length == 0) {
+      var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", " + SBO3.toLowerCase() + ", and " + SBO4.toLowerCase() + "...";
+    }
+
+    if (arrOutro.length == 1) {
+      var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", and " + SBO3.toLowerCase() + "...";
+    } else {
+      var BOs = BO1.toLowerCase() + ", and " + SBO2.toLowerCase() + "...";
+    }
+
     document.getElementById("FOROutro").style.display = "block";
     document.getElementById("outNon2").style.display = "block";
     document.getElementById("outNon1").style.display = "none";
@@ -6384,8 +6412,8 @@ function App() {
                 dataa = result.choices;
 
                 if (dataa) {
-                  setoutroState1(dataa[0]["text"]);
-                  setoutroState2(dataa[1]["text"]);
+                  setoutroState1(BOs + "\n" + dataa[0]["text"]);
+                  setoutroState2(BOs + "\n" + dataa[1]["text"]);
                 }
 
                 setoutroLoading(false);
@@ -6616,6 +6644,69 @@ function App() {
         return _ref11.apply(this, arguments);
       };
     }());
+    event.preventDefault();
+    var doc = new docx__WEBPACK_IMPORTED_MODULE_5__.Document({
+      sections: [{
+        children: [new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'Final Script',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.TITLE
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'Intro',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss5
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 1',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: BO1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 1',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 2',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: SBO2
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 2',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss2
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 3',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: SBO3
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 3',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss3
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'BO 4',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: SBO4
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'DEMO 4',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss4
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: 'Outro',
+          heading: docx__WEBPACK_IMPORTED_MODULE_5__.HeadingLevel.HEADING_1
+        }), new docx__WEBPACK_IMPORTED_MODULE_5__.Paragraph({
+          text: extrasss6
+        })]
+      }]
+    });
+    saveDocumentToFile(doc, 'New Document.docx');
+  }
+
+  function OnlyDownload(event) {
     event.preventDefault();
     var doc = new docx__WEBPACK_IMPORTED_MODULE_5__.Document({
       sections: [{
@@ -8580,24 +8671,33 @@ function App() {
                         value: extrasss6 || newOutro
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                     className: "row",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       className: "col-12 newpd",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                         className: "btn cuss_btn",
                         id: "generate",
-                        onClick: generateWordDocument,
+                        onClick: OnlyDownload,
                         children: "Download Script"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                        className: "btn cuss_btn",
+                        id: "generate",
+                        onClick: generateWordDocument,
+                        children: "Save and Download Script"
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                      className: "col-12 newpd",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                         "class": "btn cus_btn",
                         style: {
-                          "float": "right"
+                          marginRight: 15,
+                          marginTop: 10
                         },
                         onClick: ClearAll,
                         children: "Clear All"
-                      })]
-                    })
+                      })
+                    })]
                   })]
                 })
               })
@@ -8662,7 +8762,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8699,7 +8799,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8736,7 +8836,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8773,7 +8873,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8822,7 +8922,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -8835,23 +8935,13 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
   });
 }
 function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
-  // var outro = [
-  //     "BO-1" = "BO1",
-  //     "BO-2" = "SBO2",
-  //     "BO-3" = "SBO3",
-  //     "BO-4" = "SBO4",
-  // ]
-  // var arrOutro = []
-  // for (i = 1; i < 5; i++) {
-  //     if ("BO-" + JSON.stringify({ i }) == "nan") {
-  //         arrOutro.push(i)
-  //     }
-  // }
-  // console.log("ddssdsdsdsddd=-=-=-", arrOutro);
   var PNAME = pName1.trim();
   var USECASE = useCase1.trim();
+  var PN = PNAME == "" ? "nan" : PNAME;
+  var US = USECASE == "" ? "nan" : USECASE;
+  var IN = intro == "" ? "nan" : intro;
   var body = JSON.stringify({
-    "prompt": "PN: " + PNAME + " " + "$ Use Case: " + USECASE + " " + "$ Intro: " + intro + " &&&",
+    "prompt": "PN: " + PN + " " + "$ Use Case: " + US + " " + "$ Intro: " + IN + " &&&",
     "model": "davinci:ft-ai-derivatives-2022-05-12-09-52-07",
     "temperature": 0.9,
     "stop": "@@",
@@ -8863,7 +8953,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        Authorization: "Bearer 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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {

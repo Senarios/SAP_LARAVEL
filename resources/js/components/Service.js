@@ -25,7 +25,7 @@ export function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -66,7 +66,7 @@ export function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -106,7 +106,7 @@ export function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3)
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -146,7 +146,7 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) 
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -202,7 +202,7 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -220,27 +220,16 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
 }
 export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
 
-    // var outro = [
-    //     "BO-1" = "BO1",
-    //     "BO-2" = "SBO2",
-    //     "BO-3" = "SBO3",
-    //     "BO-4" = "SBO4",
-    // ]
-
-    // var arrOutro = []
-
-    // for (i = 1; i < 5; i++) {
-    //     if ("BO-" + JSON.stringify({ i }) == "nan") {
-    //         arrOutro.push(i)
-    //     }
-    // }
-    // console.log("ddssdsdsdsddd=-=-=-", arrOutro);
-
 
     let PNAME = pName1.trim();
     let USECASE = useCase1.trim();
+
+    var PN = PNAME == "" ? "nan" : PNAME
+    var US = USECASE == "" ? "nan" : USECASE
+    var IN = intro == "" ? "nan" : intro
+
     var body = JSON.stringify({
-        "prompt": "PN: " + PNAME + " " + "$ Use Case: " + USECASE + " " + "$ Intro: " + intro + " &&&",
+        "prompt": "PN: " + PN + " " + "$ Use Case: " + US + " " + "$ Intro: " + IN + " &&&",
         "model": "davinci:ft-ai-derivatives-2022-05-12-09-52-07",
         "temperature": 0.9,
         "stop": "@@",
@@ -253,7 +242,7 @@ export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer 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",
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })

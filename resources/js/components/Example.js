@@ -66,6 +66,7 @@ function App() {
     const [outroLoading, setoutroLoading] = useState(false);
     const [outroState1, setoutroState1] = useState("");
     const [outroState2, setoutroState2] = useState("");
+
     const out1 = (e) => {
         setoutroState1(e.target.value)
     }
@@ -542,6 +543,42 @@ function App() {
     }
 
     const GenerateOutro = () => {
+        var outro = [
+            {
+                "B1": BO1 == "" ? "nan" : BO1,
+            },
+            {
+                "B1": SBO2 == "" ? "nan" : SBO2,
+            },
+            {
+                "B1": SBO3 == "" ? "nan" : SBO3,
+            },
+            {
+                "B1": SBO4 == "" ? "nan" : SBO4
+            },
+        ];
+
+        var arrOutro = []
+        var i = 0;
+
+        for (i = 0; i < 4; i++) {
+            if (outro[i]["B1"] == "nan") {
+                arrOutro.push(i)
+            }
+        }
+
+        if (arrOutro.length == 0) {
+            var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", " + SBO3.toLowerCase() + ", and " + SBO4.toLowerCase() + "..."
+        }
+        if (arrOutro.length == 1) {
+            var BOs = BO1.toLowerCase() + ", " + SBO2.toLowerCase() + ", and " + SBO3.toLowerCase() + "..."
+        } else {
+            var BOs = BO1.toLowerCase() + ", and " + SBO2.toLowerCase() + "..."
+        }
+
+
+
+
         document.getElementById("FOROutro").style.display = "block"
         document.getElementById("outNon2").style.display = "block"
         document.getElementById("outNon1").style.display = "none"
@@ -555,8 +592,8 @@ function App() {
 
             let dataa = result.choices
             if (dataa) {
-                setoutroState1(dataa[0]["text"])
-                setoutroState2(dataa[1]["text"])
+                setoutroState1(BOs + "\n" + dataa[0]["text"])
+                setoutroState2(BOs + "\n" + dataa[1]["text"])
             }
             setoutroLoading(false)
             scrollToBottom()
@@ -645,10 +682,56 @@ function App() {
     }
 
     function generateWordDocument(event) {
+
         SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
             console.log("aleemmmmm======SCD", result);
         })
-        event.preventDefault()
+        event.preventDefault();
+
+        let doc = new Document({
+            sections: [
+                {
+                    children: [
+                        new Paragraph({ text: 'Final Script', heading: HeadingLevel.TITLE }),
+                        new Paragraph({ text: 'Intro', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss5 }),
+
+                        new Paragraph({ text: 'BO 1', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: BO1 }),
+
+                        new Paragraph({ text: 'DEMO 1', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss }),
+
+                        new Paragraph({ text: 'BO 2', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: SBO2 }),
+
+                        new Paragraph({ text: 'DEMO 2', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss2 }),
+
+                        new Paragraph({ text: 'BO 3', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: SBO3 }),
+
+                        new Paragraph({ text: 'DEMO 3', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss3 }),
+
+                        new Paragraph({ text: 'BO 4', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: SBO4 }),
+
+                        new Paragraph({ text: 'DEMO 4', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss4 }),
+
+                        new Paragraph({ text: 'Outro', heading: HeadingLevel.HEADING_1 }),
+                        new Paragraph({ text: extrasss6 }),
+                    ],
+                },
+            ],
+        })
+        saveDocumentToFile(doc, 'New Document.docx')
+    }
+    function OnlyDownload(event) {
+
+        event.preventDefault();
+
         let doc = new Document({
             sections: [
                 {
@@ -2062,16 +2145,16 @@ function App() {
 
                                                 <div className='row'>
                                                     <div className='col-12 newpd'>
-                                                        <button className="btn cuss_btn" id="generate" onClick={generateWordDocument}>Download Script</button>
-                                                        <button class="btn cus_btn" style={{ float: "right" }} onClick={ClearAll}>Clear All</button>
+                                                        <button className="btn cuss_btn" id="generate" onClick={OnlyDownload}>Download Script</button>
+                                                        <button className="btn cuss_btn" id="generate" onClick={generateWordDocument}>Save and Download Script</button>
+                                                    </div>
+                                                    <div className='col-12 newpd'>
+                                                        <button class="btn cus_btn" style={{ marginRight: 15, marginTop: 10 }} onClick={ClearAll}>Clear All</button>
                                                     </div>
                                                 </div>
-
                                             </div>
-
                                         )
                                     }
-
                                 </div>
                             </div>
                             <div class="col-1"></div>
