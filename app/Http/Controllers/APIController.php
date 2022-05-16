@@ -66,11 +66,13 @@ class APIController extends Controller
             $fileName = ScriptFileName::find(1);
             if($fileName){
                 ScriptFileName::where('id',1)->increment('filename');
-                $name = 'script_'. ++$fileName->filename .'.xlsx';
+                $date = date('Y-m-d H:i:s');
+                $name = 'script_'. ++$fileName->filename .'_'.$date.'.xlsx';
             }
             else{
                 ScriptFileName::insert(['filename' => 1]);
-                $name = 'script_1.xlsx';
+                $date = date('Y-m-d H:i:s');
+                $name = 'script_307' . '_' . $date . '.xlsx';
             }
             $data = $request->all();
             $dataScript = [
