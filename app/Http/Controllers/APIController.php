@@ -8,6 +8,17 @@ use Validator;
 
 use Illuminate\Http\Request;
 use App\Exports\ScriptExport;
+
+use App\Imports\IndustoryCountImport;
+use App\Imports\ModelNamesImport;
+use App\Imports\ProductCountImport;
+use App\Imports\ProductUsedIndustoryImport;
+
+use App\Models\Product_Used_Industry;
+use App\Models\Product_Count;
+use App\Models\Industry_Count;
+use App\Models\model_names;
+
 use Excel;
 use Response;
 use Illuminate\Support\Facades\Storage;
@@ -117,5 +128,48 @@ class APIController extends Controller
 
     public function readScriptFiles(){
         
+        Product_Used_Industry::truncate();
+        Product_Count::truncate();
+        Industry_Count::truncate();
+        model_names::truncate();
+        $fileName = 'config_and_graph_data/Industry_Count.xlsx';
+        $fileName1 = 'config_and_graph_data/Product_Used_Industry.xlsx';
+        $fileName2 = 'config_and_graph_data/Product_Count.xlsx';
+        $fileName3 = 'config_and_graph_data/model_names.xlsx';
+
+        $s3_file = Storage::disk('s3')->get($fileName);
+        $s3 = Storage::disk('public_uploads')->put($fileName, $s3_file);
+        $s3_file = Storage::disk('s3')->get($fileName1);
+        $s3 = Storage::disk('public_uploads')->put($fileName1, $s3_file);
+        $s3_file = Storage::disk('s3')->get($fileName2);
+        $s3 = Storage::disk('public_uploads')->put($fileName2, $s3_file);
+        $s3_file = Storage::disk('s3')->get($fileName3);
+        $s3 = Storage::disk('public_uploads')->put($fileName3, $s3_file);
+
+        $var = public_path('uploads/s3/'.$fileName);
+        Excel::import(new IndustoryCountImport,$var);
+        $var1 = public_path('uploads/s3/'.$fileName1);
+        Excel::import(new ProductUsedIndustoryImport,$var1);
+        $var2 = public_path('uploads/s3/'.$fileName2);
+        Excel::import(new ProductCountImport,$var2);
+        $var3 = public_path('uploads/s3/'.$fileName3);
+        Excel::import(new ModelNamesImport,$var3);
+
+        Storage::disk('public_uploads')->delete($fileName);
+        Storage::disk('public_uploads')->delete($fileName1);
+        Storage::disk('public_uploads')->delete($fileName2);
+        Storage::disk('public_uploads')->delete($fileName3);
+        
+        $Product_Used_Industry = Product_Used_Industry::get(['name','value'])->skip(1)->toArray();
+        $Product_Count = Product_Count::get(['name','value'])->skip(1)->toArray();
+        $Industry_Count = Industry_Count::get(['name','value'])->skip(1)->toArray();
+        $model_names = model_names::get(['Demo_Model','Intro_Model','Outro_Model'])->skip(1)->toArray();
+
+        return response()->json(['success' => true,
+         'Product_Used_Industry' => $Product_Used_Industry,
+         'Product_Count' => $Product_Count,
+         'Industry_Count' => $Industry_Count,
+         'model_names' => $model_names,
+        ]);
     }
 }
