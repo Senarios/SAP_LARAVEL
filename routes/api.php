@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::post('/storeScripts', [APIController::class,"storeScripts"]);
 Route::post('/storeScripts', [APIController::class,"storeScriptsFile"]);
+Route::get('/readScripts', [APIController::class,"readScriptFiles"]);

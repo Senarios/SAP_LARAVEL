@@ -114,4 +114,8 @@ class APIController extends Controller
         
        
     }
+
+    public function readScriptFiles(){
+        
+    }
 }
