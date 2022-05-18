@@ -1,3 +1,6 @@
+var demoModel = localStorage.getItem("DemoModels")
+var introModel = localStorage.getItem("IntroModels")
+var outroModel = localStorage.getItem("OutroModels")
 export function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
     const finalSentence = Protagonist.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
     let PNAME = pName.trim();
@@ -12,7 +15,7 @@ export function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
 
     var body = JSON.stringify({
         "prompt": "PN:" + " " + PNAME + " " + "$ Industry:" + " " + IN + " " + "$ Use Case:" + " " + US + " " + "$ Protagonist:" + " " + PN + " " + "$ BO: " + BO1 + " " + "$ Demo:" + " " + extra + " " + "\n\n###\n\n",
-        "model": "davinci:ft-ai-derivatives-2022-04-28-08-58-09",
+        "model": demoModel,
         "temperature": 0.9,
         "max_tokens": 1000,
         "stop": "END",
@@ -25,7 +28,7 @@ export function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer " + process.env.MIX_API_URL,
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -53,7 +56,7 @@ export function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
 
     var body = JSON.stringify({
         "prompt": "PN:" + " " + PNAME + " " + "$ Industry:" + " " + IN + " " + "$ Use Case:" + " " + US + " " + "$ Protagonist:" + " " + PN + " " + "$ BO: " + SBO2 + " " + "$ Demo:" + " " + extra2 + " " + "\n\n###\n\n",
-        "model": "davinci:ft-ai-derivatives-2022-04-28-08-58-09",
+        "model": demoModel,
         "temperature": 0.9,
         "max_tokens": 1000,
         "stop": "END",
@@ -66,7 +69,7 @@ export function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer " + process.env.MIX_API_URL,
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -94,7 +97,7 @@ export function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3)
 
     var body = JSON.stringify({
         "prompt": "PN:" + " " + PNAME + " " + "$ Industry:" + " " + IN + " " + "$ Use Case:" + " " + US + " " + "$ Protagonist:" + " " + PN + " " + "$ BO: " + SBO3 + " " + "$ Demo:" + " " + extra3 + " " + "\n\n###\n\n",
-        "model": "davinci:ft-ai-derivatives-2022-04-28-08-58-09",
+        "model": demoModel,
         "temperature": 0.9,
         "max_tokens": 1000,
         "stop": "END",
@@ -106,7 +109,7 @@ export function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3)
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer " + process.env.MIX_API_URL,
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -134,7 +137,7 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) 
 
     var body = JSON.stringify({
         "prompt": "PN:" + " " + PNAME + " " + "$ Industry:" + " " + IN + " " + "$ Use Case:" + " " + US + " " + "$ Protagonist:" + " " + PN + " " + "$ BO: " + SBO3 + " " + "$ Demo:" + " " + extra3 + " " + "\n\n###\n\n",
-        "model": "davinci:ft-ai-derivatives-2022-04-28-08-58-09",
+        "model": demoModel,
         "temperature": 0.9,
         "max_tokens": 1000,
         "stop": "END",
@@ -146,7 +149,7 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3) 
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer " + process.env.MIX_API_URL,
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -189,7 +192,7 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
     var body = JSON.stringify({
 
         "prompt": "PN:" + " " + PN + " " + "$ Industry:" + " " + IN + " $ Use Case:" + " " + US + " " + "$ BO-1:" + " " + BoONE + " " + "$ Demo-1: " + DEMO1 + " " + "$ BO-2:" + " " + BoTWO + " " + "$ Demo-2: " + DEMO2 + " " + "$ BO-3: " + BoThree + " " + "$ Demo-3: " + DEMO3 + " " + "$ BO-4: " + BoFour + " " + "$ Demo-4: " + DEMO4 + " " + "\n\n###\n\n",
-        "model": "davinci:ft-ai-derivatives-2022-05-06-07-15-14",
+        "model": introModel,
         "temperature": 0.7,
         "max_tokens": 1000,
         "stop": "END",
@@ -202,7 +205,7 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer " + process.env.MIX_API_URL,
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -230,7 +233,7 @@ export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
 
     var body = JSON.stringify({
         "prompt": "PN: " + PN + " " + "$ Use Case: " + US + " " + "$ Intro: " + IN + " &&&",
-        "model": "davinci:ft-ai-derivatives-2022-05-12-09-52-07",
+        "model": outroModel,
         "temperature": 0.9,
         "stop": "@@",
         "n": 2
@@ -242,7 +245,7 @@ export function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
             body: body,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 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",
+                Authorization: "Bearer " + process.env.MIX_API_URL,
                 "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB",
             },
         })
@@ -307,6 +310,24 @@ export function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SB
         fetch("/api/storeScripts", {
             method: "POST",
             body: body,
+            headers: { "Content-type": "application/json" }
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+
+                resolve(responseJson);
+            })
+            .catch((error) => {
+
+                reject(error);
+            });
+    });
+}
+export function GraphsData() {
+
+    return new Promise((resolve, reject) => {
+        fetch("/api/readScripts", {
+            method: "GET",
             headers: { "Content-type": "application/json" }
         })
             .then((response) => response.json())

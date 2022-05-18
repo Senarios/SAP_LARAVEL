@@ -1,26 +1,64 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import { scriptOne, scriptTwo, scriptThree, FinalOutPut, scriptFour, verbs, FinalOutro, SaveScripts } from './Service'
+import { scriptOne, scriptTwo, scriptThree, FinalOutPut, scriptFour, verbs, FinalOutro, SaveScripts, GraphsData } from './Service'
 import { Document, Packer, Paragraph, HeadingLevel } from 'docx';
 import { saveAs } from 'file-saver';
 import $ from "jquery"
 import Diff from 'react-diff2';
+import Progressbar from './ProgressBar';
+import { toInteger } from 'lodash';
+import gif from '../assets/Spinner.gif'
+// import gif from '../../../public/assets/Spinner.gif'
 
 
 
 function App() {
+    const [GrapshData, setGrapshData] = useState();
+    const [isLoading, setIsLoading] = useState(true);
+    const [progressValue, setprogressValue] = useState("");
+    const [totalSum, settotalSum] = useState("");
+    const [barChartDataName, setBarChartDataName] = useState("");
+    const [barChartDataValue, setBarChartDataValue] = useState("");
+    const [filterPName, setFilterPName] = useState("");
+    const [searchBox, setSearchBox] = useState(false);
 
-    window.onload = function () {
+    useEffect(() => {
+        setIsLoading(true)
+        GraphsData().then(async (result) => {
+            localStorage.setItem("DemoModels", result.model_names.Demo_Model)
+            localStorage.setItem("IntroModels", result.model_names.Intro_Model)
+            localStorage.setItem("OutroModels", result.model_names.Outro_Model)
+
+            let graphDataRender = result.Product_Count.slice(0, 10).map((e) => { return e.name });
+            let graphDataRender2 = result.Product_Count.slice(0, 10).map((e) => { return e.value });
+            setFilterPName(result.Product_Count)
+            setBarChartDataName(graphDataRender)
+            setBarChartDataValue(graphDataRender2)
+
+            setGrapshData(result.Industry_Count)
+            let map = result.Industry_Count.map((e) => { return e.value });
+            let sum = 0;
+            for (const value of Object.values(map)) {
+                sum += toInteger(value);
+            }
+            settotalSum(sum)
+            setIsLoading(false)
+            document.getElementById("body-loader").style.display = "none"
+        })
+    }, [])
+
+
+    useEffect(() => {
+
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-                labels: ['Reddsdsds', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: barChartDataName,
                 datasets: [{
-                    axis: 'y',
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Respective Count',
+                    data: barChartDataValue,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -41,10 +79,12 @@ function App() {
                 }]
             },
             options: {
-                indexAxis: 'y',
+                legend: {
+                    display: false
+                }
             }
         });
-    }
+    })
 
 
     const [StateOne, setStateOne] = useState(false);
@@ -54,7 +94,7 @@ function App() {
     const [StateFive, setStateFive] = useState(false);
     const [StateSix, setStateSix] = useState(false);
 
-    const [pName, setPname] = useState("");;
+    const [pName, setPname] = useState("");
     const [useCase, setUseCase] = useState("");
     const [Indursty, setIndursty] = useState("");
     const [Protagonist, setProtagonist] = useState("");
@@ -105,6 +145,12 @@ function App() {
     const [outroLoading, setoutroLoading] = useState(false);
     const [outroState1, setoutroState1] = useState("");
     const [outroState2, setoutroState2] = useState("");
+
+    const OnSelectSearchRes = (e) => {
+        setPname(e)
+        setSearchBox(false)
+        console.log("aleemsajjad-=-=-=", e);
+    }
 
     const out1 = (e) => {
         setoutroState1(e.target.value)
@@ -173,6 +219,9 @@ function App() {
     const onChangeBoF3 = (e) => {
         setSBO3(e.target.value)
     }
+    const onChangeBoF55 = (e) => {
+        setSBO4(e.target.value)
+    }
     const OnChnageBof2 = (e) => {
         setSBO2(e.target.value)
     }
@@ -207,14 +256,23 @@ function App() {
         setnewIntro(e.target.value)
     }
     const onChangePname = (e) => {
+        setSearchBox(true)
         setPname(e.target.value)
     }
     const onChangeUseCase = (e) => {
         setUseCase(e.target.value)
     }
     const onChangeIndursty = (e) => {
-        setIndursty(e.target.value)
+        let abc = e.target.value
+        setIndursty(abc)
+        let aa = GrapshData.find((e) => e.name == abc)
+        console.log("dsdsds", totalSum);
+
+        let formula = aa.value;
+
+        setprogressValue(formula)
     }
+
     const onChangeProtagonist = (e) => {
         setProtagonist(e.target.value)
     }
@@ -349,6 +407,7 @@ function App() {
             document.getElementById("gen1disN").style.display = "block"
             setloading(true)
             scriptOne(pName, useCase, Indursty, Protagonist, BO1, Demo1).then(async (result) => {
+                console.log(result);
                 const aa = {
                     "error": {
                         "message": "That model is still being loaded. Please try again shortly.",
@@ -388,6 +447,7 @@ function App() {
             document.getElementById("disN123").style.display = "block"
             setloading(true)
             scriptTwo(pName, useCase, Indursty, protagnist2, SBO2, Demo2).then(async (result) => {
+                console.log(result);
                 const aa = {
                     "error": {
                         "message": "That model is still being loaded. Please try again shortly.",
@@ -427,6 +487,7 @@ function App() {
             document.getElementById("dis0988").style.display = "block"
             setloading(true)
             scriptThree(pName, useCase, Indursty, protagnist3, SBO3, Demo3).then(async (result) => {
+                console.log(result);
                 const aa = {
                     "error": {
                         "message": "That model is still being loaded. Please try again shortly.",
@@ -585,6 +646,7 @@ function App() {
         setlastLoading(true)
         setFloading(true)
         FinalOutPut(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4).then(async (result) => {
+            console.log(result);
             const aa = {
                 "error": {
                     "message": "That model is still being loaded. Please try again shortly.",
@@ -608,7 +670,11 @@ function App() {
             document.getElementById("next3NoneFinish").style.display = "block"
             scrollToBottom()
 
-        })
+        }).catch(err => {
+            alert(err)
+            setFloading(false)
+            setlastLoading(false)
+        });
     }
 
     const FinClick = () => {
@@ -667,7 +733,7 @@ function App() {
         scrollToBottom()
 
         FinalOutro(pName, useCase, newIntro, BO1, SBO2, SBO3, SBO4).then(async (result) => {
-            const aa = {
+            let aa = {
                 "error": {
                     "message": "That model is still being loaded. Please try again shortly.",
                     "type": "server_error",
@@ -675,7 +741,8 @@ function App() {
                     "code": null
                 }
             }
-            if (result == aa) {
+            if (aa == result) {
+                console.log("innser log", aa);
                 alert(aa.error.message)
             }
             let dataa = result.choices
@@ -686,7 +753,10 @@ function App() {
             setoutroLoading(false)
             scrollToBottom()
 
-        })
+        }).catch(err => {
+            alert(err)
+            setoutroLoading(false)
+        });
     }
     const ClearAll = () => {
         window.location.reload(false);
@@ -767,34 +837,34 @@ function App() {
                     children: [
                         new Paragraph({ text: 'Final Script', heading: HeadingLevel.TITLE }),
                         new Paragraph({ text: 'Intro', heading: HeadingLevel.HEADING_1 }),
-                        new Paragraph({ text: extrasss5 }),
+                        new Paragraph({ text: extrasss5 == "" ? newIntro : extrasss5 }),
 
                         new Paragraph({ text: 'BO 1', heading: HeadingLevel.HEADING_1 }),
                         new Paragraph({ text: BO1 }),
 
                         new Paragraph({ text: 'DEMO 1', heading: HeadingLevel.HEADING_1 }),
-                        new Paragraph({ text: extrasss }),
+                        new Paragraph({ text: extrasss == "" ? extra : extrasss }),
 
                         new Paragraph({ text: 'BO 2', heading: HeadingLevel.HEADING_1 }),
                         new Paragraph({ text: SBO2 }),
 
                         new Paragraph({ text: 'DEMO 2', heading: HeadingLevel.HEADING_1 }),
-                        new Paragraph({ text: extrasss2 }),
+                        new Paragraph({ text: extrasss2 == "" ? extra2 : extrasss2 }),
 
                         new Paragraph({ text: 'BO 3', heading: HeadingLevel.HEADING_1 }),
                         new Paragraph({ text: SBO3 }),
 
                         new Paragraph({ text: 'DEMO 3', heading: HeadingLevel.HEADING_1 }),
-                        new Paragraph({ text: extrasss3 }),
+                        new Paragraph({ text: extrasss3 == "" ? extra3 : extrasss3 }),
 
                         new Paragraph({ text: 'BO 4', heading: HeadingLevel.HEADING_1 }),
                         new Paragraph({ text: SBO4 }),
 
                         new Paragraph({ text: 'DEMO 4', heading: HeadingLevel.HEADING_1 }),
-                        new Paragraph({ text: extrasss4 }),
+                        new Paragraph({ text: extrasss4 == "" ? extra4 : extrasss4 }),
 
                         new Paragraph({ text: 'Outro', heading: HeadingLevel.HEADING_1 }),
-                        new Paragraph({ text: extrasss6 }),
+                        new Paragraph({ text: extrasss6 == "" ? newOutro : extrasss6 }),
                     ],
                 },
             ],
@@ -849,8 +919,12 @@ function App() {
 
 
     return (
+
         <section>
             <section>
+                <div className='body-loader' id="body-loader">
+                    <img width="100" src={gif} />
+                </div>
                 <div style={{ position: "sticky", top: 0, backgroundColor: "#fff" }}>
                     <div className="row m-0 pt-3 pb-2" style={{ boxShadow: "0px 11px 10px -15px #111" }}>
                         <div className="col-1"></div>
@@ -900,7 +974,25 @@ function App() {
                                         className="InputFields"
                                         placeholder="SAP S/4HANA Cloud"
                                         type="text"
+                                        value={pName}
                                     />
+                                    {
+                                        searchBox &&
+                                        <div style={{ padding: 20, height: "auto", overflow: "auto", position: "absolute", zIndex: 999, backgroundColor: "#fff", width: 536, border: "1px solid gray" }}>
+                                            {
+                                                filterPName && filterPName.filter((val) => {
+                                                    if (val.name.toLowerCase().includes(pName.toLowerCase())) {
+                                                        return val;
+                                                    }
+                                                }).map((e) => {
+                                                    return (
+                                                        <p style={{ cursor: "pointer" }} onClick={() => OnSelectSearchRes(e.name)}>{e.name}</p>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                    }
+
                                 </div>
                             </div>
                             <div className="col-1"></div>
@@ -937,12 +1029,27 @@ function App() {
                                 </div>
                                 <div className="top_input">
                                     <input
+                                        list="browsers"
+                                        name="myBrowser"
                                         disabled={disabledInputs}
                                         onChange={onChangeIndursty}
                                         className="InputFields"
                                         placeholder="CX"
                                         type="text"
                                     />
+                                    <datalist id="browsers">
+                                        {
+                                            GrapshData && GrapshData.map((row) => (
+                                                <option value={row.name} />
+                                            ))
+                                        }
+                                    </datalist>
+                                </div>
+                                <div style={{ width: 535, marginLeft: 50 }}>
+                                    {
+                                        progressValue &&
+                                        <Progressbar bgcolor="#99ccff" progress={_.round(progressValue, 2)} height={20} width={80} />
+                                    }
                                 </div>
                             </div>
                             <div className="col-1"></div>
@@ -2049,8 +2156,7 @@ function App() {
                         <ul className="nav nav-tabs" style={{ width: "90%", marginLeft: 10 }}>
                             <li className="active"><a data-toggle="tab" href="#home" style={{ fontWeight: 600, fontSize: 16 }}>Result</a></li>
                             <li>
-                                <a data-toggle="tab" href="#menu1" style={{ fontWeight: 600, fontSize: 16 }}>Graphs
-                                </a>
+                                <a data-toggle="tab" href="#menu1" style={{ fontWeight: 600, fontSize: 16 }}>Graphs</a>
                             </li>
                         </ul>
 
@@ -2145,7 +2251,7 @@ function App() {
                                                                     <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 3:</div>
                                                                 </div>
                                                                 <div className='row'>
-                                                                    <div wrap="soft" rows="5" onChange={onChangeBoF3} className='right_side autosize' value={SBO3}></div>
+                                                                    <textarea wrap="soft" rows="5" onChange={onChangeBoF3} className='right_side autosize' value={SBO3}></textarea>
                                                                 </div><br></br>
                                                             </div>
                                                         }
@@ -2177,7 +2283,7 @@ function App() {
                                                                     <div className='col-12' style={{ fontSize: "18px", fontWeight: "600" }}>BO 4:</div>
                                                                 </div>
                                                                 <div className='row'>
-                                                                    <textarea wrap="soft" rows="5" onChange={onChangeBoF3} className='right_side autosize' value={SBO4}></textarea>
+                                                                    <textarea wrap="soft" rows="5" onChange={onChangeBoF55} className='right_side autosize' value={SBO4}></textarea>
                                                                 </div><br></br>
                                                             </div>
                                                         }
@@ -2223,11 +2329,8 @@ function App() {
 
                                                         <div className='row'>
                                                             <div className='col-12 newpd'>
-                                                                <button className="btn cuss_btn" id="generate" onClick={OnlyDownload}>Download Script</button>
                                                                 <button className="btn cuss_btn" id="generate" onClick={generateWordDocument}>Save and Download Script</button>
-                                                            </div>
-                                                            <div className='col-12 newpd'>
-                                                                <button className="btn cus_btn" style={{ marginRight: 15, marginTop: 10 }} onClick={ClearAll}>Clear All</button>
+                                                                <button className="btn cuss_btn" id="generate" onClick={ClearAll}>Clear All</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2237,18 +2340,22 @@ function App() {
                                     </div>
                                     <div className="col-1"></div>
                                 </div>
-
                             </div>
                             <div id="menu1" className="tab-pane fade">
+                                <p style={{ textAlign: "center", paddingTop: 10, fontWeight: 600 }}>Respective Count</p>
                                 <div style={{ width: 600 }}>
                                     <canvas id="myChart" width="300" height="300"></canvas>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </section>
         </section >
+
+
+
     );
 }
 

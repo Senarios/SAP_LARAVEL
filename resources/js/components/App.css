@@ -263,3 +263,20 @@ pre {
     white-space: pre-wrap;
     padding: 15px;
 }
+.circle {
+    margin-left: 10;
+    width: 20;
+    height: 20;
+    border-radius: 20;
+    border: "1px solid blue";
+}
+.body-loader {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #f9fafe;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 99999999;
+}

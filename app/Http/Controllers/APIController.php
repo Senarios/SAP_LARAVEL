@@ -160,16 +160,44 @@ class APIController extends Controller
             Storage::disk('public_uploads')->delete($fileName2);
             Storage::disk('public_uploads')->delete($fileName3);
             
-            $Product_Used_Industry = Product_Used_Industry::get(['name','value'])->skip(1)->toArray();
-            $Product_Count = Product_Count::get(['name','value'])->skip(1)->toArray();
-            $Industry_Count = Industry_Count::get(['name','value'])->skip(1)->toArray();
-            $model_names = model_names::get(['Demo_Model','Intro_Model','Outro_Model'])->skip(1)->toArray();
+            $Product_Used_Industry = Product_Used_Industry::get(['name','value'])->skip(1);
+            $Product_Count = Product_Count::get(['name','value'])->skip(1);
+            $Industry_Count = Industry_Count::get(['name','value'])->skip(1);
+            $model_names = model_names::get(['Demo_Model','Intro_Model','Outro_Model'])->skip(1);
+            
+
+            $Product_Used_Industry_array = array();
+            foreach($Product_Used_Industry as $industry){
+                $Product_Used_IndustryArray = [
+                    'name' => $industry->name,
+                    'value' => $industry->value,
+                ];
+                array_push($Product_Used_Industry_array,$Product_Used_IndustryArray);
+            }
+            
+            $Industry_Count_array = array();
+            foreach($Industry_Count as $industry){
+                $industryArray = [
+                    'name' => $industry->name,
+                    'value' => $industry->value,
+                ];
+                array_push($Industry_Count_array,$industryArray);
+            }
+
+            $Product_Count_array = array();
+            foreach($Product_Count as $product){
+                $Product_CountArray = [
+                    'name' => $product->name,
+                    'value' => $product->value,
+                ];
+                array_push($Product_Count_array,$Product_CountArray);
+            }
     
             return response()->json(['success' => true,
-                'Product_Used_Industry' => $Product_Used_Industry,
-                'Product_Count' => $Product_Count,
-                'Industry_Count' => $Industry_Count,
-                'model_names' => $model_names,
+                'Product_Used_Industry' => $Product_Used_Industry_array,
+                'Product_Count' => $Product_Count_array,
+                'Industry_Count' => $Industry_Count_array,
+                'model_names' => $model_names["1"],
             ]);
         }
         catch(\Exception $e){
