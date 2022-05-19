@@ -283,28 +283,33 @@ export function verbs(BO1) {
     });
 }
 export function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6) {
+    console.log("1--->", extrasss6);
+    console.log("2--->", newOutro);
+    console.log("3--->", newIntro);
+    console.log("4--->", extrasss5);
+
     var body = JSON.stringify({
-        "Ind": Indursty,
-        "PN": pName,
-        "Use_Case": useCase,
-        "Intro": newIntro == "" ? extrasss5 : newIntro,
-        "Protagonist_1": Protagonist,
-        "BO_1": BO1,
-        "Demo_1": extra == "" ? extrasss : extra,
-        "Demo_1_key_points": Demo1,
-        "Protagonist_2": protagnist2,
-        "BO_2": SBO2,
-        "Demo_2": extra2 == "" ? extrasss2 : extra2,
-        "Demo_2_key_points": Demo2,
-        "Protagonist_3": protagnist3,
-        "BO_3": SBO3,
-        "Demo_3": extra3 == "" ? extrasss3 : extra3,
-        "Demo_3_key_points": Demo3,
-        "Protagonist_4": protagnist4,
-        "BO_4": SBO4,
-        "Demo_4": extra4 == "" ? extrasss4 : extra4,
-        "Demo_4_key_points": Demo4,
-        "Outro": newOutro == "" ? extrasss6 : newOutro,
+        "Ind": Indursty.trim(),
+        "PN": pName.trim(),
+        "Use_Case": useCase.trim(),
+        "Intro": extrasss5 == "" ? newIntro.trim() : extrasss5.trim(),
+        "Protagonist_1": Protagonist.trim(),
+        "BO_1": BO1.trim(),
+        "Demo_1": extrasss == "" ? extra.trim() : extrasss.trim(),
+        "Demo_1_key_points": Demo1.trim(),
+        "Protagonist_2": protagnist2.trim(),
+        "BO_2": SBO2.trim(),
+        "Demo_2": extrasss2 == "" ? extra2.trim() : extrasss2.trim(),
+        "Demo_2_key_points": Demo2.trim(),
+        "Protagonist_3": protagnist3.trim(),
+        "BO_3": SBO3.trim(),
+        "Demo_3": extrasss3 == "" ? extra3.trim() : extrasss3.trim(),
+        "Demo_3_key_points": Demo3.trim(),
+        "Protagonist_4": protagnist4.trim(),
+        "BO_4": SBO4.trim(),
+        "Demo_4": extrasss4 == "" ? extra4.trim() : extrasss4.trim(),
+        "Demo_4_key_points": Demo4.trim(),
+        "Outro": extrasss6 == "" ? newOutro.trim() : extrasss6.trim(),
     })
     return new Promise((resolve, reject) => {
         fetch("/api/storeScripts", {

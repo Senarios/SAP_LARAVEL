@@ -8,16 +8,18 @@ import $ from "jquery"
 import Diff from 'react-diff2';
 import Progressbar from './ProgressBar';
 import { toInteger } from 'lodash';
-import gif from '../assets/Spinner.gif'
+// import gif from '../assets/Spinner.gif'
 // import gif from '../../../public/assets/Spinner.gif'
 
 
 
 function App() {
+
     const [GrapshData, setGrapshData] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [progressValue, setprogressValue] = useState("");
     const [totalSum, settotalSum] = useState("");
+    const [progressValueSearch, setprogressValueSearch] = useState("");
     const [barChartDataName, setBarChartDataName] = useState("");
     const [barChartDataValue, setBarChartDataValue] = useState("");
     const [filterPName, setFilterPName] = useState("");
@@ -84,7 +86,95 @@ function App() {
                 }
             }
         });
+
+
+
     })
+
+    useEffect(() => {
+        anychart.onDocumentReady(function () {
+
+            // create the data 
+            var data = [
+                { x: "2010", y: "Arab States", heat: 0.676 },
+                { x: "2010", y: "East the Pacific", heat: 0.691 },
+                { x: "2010", y: " Central Asia", heat: 0.735 },
+                { x: "2010", y: "Latin Caribbean", heat: 0.731 },
+                { x: "2010", y: "South Asia", heat: 0.585 },
+                { x: "2010", y: "Sub-Saharan Africa", heat: 0.498 },
+                { x: "2011", y: "Arab States", heat: 0.681 },
+                { x: "2011", y: "East the Pacific", heat: 0.700 },
+                { x: "2011", y: " Central Asia", heat: 0.744 },
+                { x: "2011", y: "Latin Caribbean", heat: 0.737 },
+                { x: "2011", y: "South Asia", heat: 0.593 },
+                { x: "2011", y: "Sub-Saharan Africa", heat: 0.505 },
+                { x: "2012", y: "Arab States", heat: 0.687 },
+                { x: "2012", y: "East the Pacific", heat: 0.707 },
+                { x: "2012", y: " Central Asia", heat: 0.750 },
+                { x: "2012", y: "Latin Caribbean", heat: 0.740 },
+                { x: "2012", y: "South Asia", heat: 0.601 },
+                { x: "2012", y: "Sub-Saharan Africa", heat: 0.512 },
+                { x: "2013", y: "Arab States", heat: 0.688 },
+                { x: "2013", y: "East the Pacific", heat: 0.714 },
+                { x: "2013", y: " Central Asia", heat: 0.759 },
+                { x: "2013", y: "Latin Caribbean", heat: 0.748 },
+                { x: "2013", y: "South Asia", heat: 0.607 },
+                { x: "2013", y: "Sub-Saharan Africa", heat: 0.521 },
+                { x: "2014", y: "Arab States", heat: 0.691 },
+                { x: "2014", y: "East the Pacific", heat: 0.721 },
+                { x: "2014", y: " Central Asia", heat: 0.766 },
+                { x: "2014", y: "Latin Caribbean", heat: 0.752 },
+                { x: "2014", y: "South Asia", heat: 0.617 },
+                { x: "2014", y: "Sub-Saharan Africa", heat: 0.527 },
+                { x: "2015", y: "Arab States", heat: 0.695 },
+                { x: "2015", y: "East the Pacific", heat: 0.727 },
+                { x: "2015", y: " Central Asia", heat: 0.770 },
+                { x: "2015", y: "Latin Caribbean", heat: 0.754 },
+                { x: "2015", y: "South Asia", heat: 0.624 },
+                { x: "2015", y: "Sub-Saharan Africa", heat: 0.532 },
+                { x: "2016", y: "Arab States", heat: 0.699 },
+                { x: "2016", y: "East the Pacific", heat: 0.733 },
+                { x: "2016", y: " Central Asia", heat: 0.772 },
+                { x: "2016", y: "Latin Caribbean", heat: 0.756 },
+                { x: "2016", y: "South Asia", heat: 0.634 },
+                { x: "2016", y: "Sub-Saharan Africa", heat: 0.535 },
+                { x: "2017", y: "Arab States", heat: 0.699 },
+                { x: "2017", y: "East the Pacific", heat: 0.733 },
+                { x: "2017", y: " Central Asia", heat: 0.771 },
+                { x: "2017", y: "Latin Caribbean", heat: 0.758 },
+                { x: "2017", y: "South Asia", heat: 0.638 },
+                { x: "2017", y: "Sub-Saharan Africa", heat: 0.537 },
+                { x: "2018", y: "Arab States", heat: 0.703 },
+                { x: "2018", y: "East the Pacific", heat: 0.741 },
+                { x: "2018", y: " Central Asia", heat: 0.779 },
+                { x: "2018", y: "Latin Caribbean", heat: 0.759 },
+                { x: "2018", y: "South Asia", heat: 0.642 },
+                { x: "2018", y: "Sub-Saharan Africa", heat: 0.541 },
+                { x: "2018", y: "Sub-Saharan Africa", heat: 0.541 },
+            ];
+
+            // create the chart and set the data
+            let chart = anychart.heatMap(data);
+
+            // set the chart title
+            chart.title("Heat Map");
+            chart.colorScale(customColorScale)
+
+            // create and configure the color scale.
+            var customColorScale = anychart.scales.linearColor();
+            customColorScale.colors(["#CF7A78", "#E69645", "#69A231", "#4D7623"]);
+
+            // set the color scale as the color scale of the chart
+            chart.colorScale(customColorScale);
+
+            // set the container id
+            chart.container("containerHeatMap");
+
+            // initiate drawing the chart
+            chart.draw();
+
+        });
+    }, [])
 
 
     const [StateOne, setStateOne] = useState(false);
@@ -146,10 +236,11 @@ function App() {
     const [outroState1, setoutroState1] = useState("");
     const [outroState2, setoutroState2] = useState("");
 
+
     const OnSelectSearchRes = (e) => {
-        setPname(e)
+        setPname(e.name)
         setSearchBox(false)
-        console.log("aleemsajjad-=-=-=", e);
+        setprogressValueSearch(e.value)
     }
 
     const out1 = (e) => {
@@ -258,6 +349,7 @@ function App() {
     const onChangePname = (e) => {
         setSearchBox(true)
         setPname(e.target.value)
+        setprogressValueSearch("")
     }
     const onChangeUseCase = (e) => {
         setUseCase(e.target.value)
@@ -266,10 +358,8 @@ function App() {
         let abc = e.target.value
         setIndursty(abc)
         let aa = GrapshData.find((e) => e.name == abc)
-        console.log("dsdsds", totalSum);
-
         let formula = aa.value;
-
+        setprogressValue("")
         setprogressValue(formula)
     }
 
@@ -400,7 +490,7 @@ function App() {
     }
     const generate1Press = () => {
         var arr = BO1.match(/\S+/g);
-        if (arr.length > 3) {
+        if (arr.length > 5) {
             alert("Max. Number of allowable words in BO are 3.")
         } else {
             document.getElementById("gen0disN").style.display = "none"
@@ -431,7 +521,7 @@ function App() {
                 document.getElementById("state1").style.display = "block"
                 scrollToBottom()
             }).catch(err => {
-                alert(err)
+                alert("Please try Again")
                 setloading(false)
             });
             setdisabledInputs(true)
@@ -440,7 +530,7 @@ function App() {
 
     const onRegenerate1 = () => {
         var arr = SBO2.match(/\S+/g);
-        if (arr.length > 3) {
+        if (arr.length > 5) {
             alert("Max. Number of allowable words in BO are 3.")
         } else {
             document.getElementById("123disN123").style.display = "none"
@@ -472,7 +562,7 @@ function App() {
                 scrollToBottom()
 
             }).catch(err => {
-                alert(err)
+                alert("Please try Again")
                 setloading(false)
             });
         }
@@ -480,7 +570,7 @@ function App() {
     }
     const regenerate3 = () => {
         var arr = SBO3.match(/\S+/g);
-        if (arr.length > 3) {
+        if (arr.length > 5) {
             alert("Max. Number of allowable words in BO are 3.")
         } else {
             document.getElementById("dis76546").style.display = "none"
@@ -511,14 +601,14 @@ function App() {
                 document.getElementById("demo3dis").style.display = "block"
                 scrollToBottom()
             }).catch(err => {
-                alert(err)
+                alert("Please try Again")
                 setloading(false)
             });
         }
     }
     const regenerate4 = () => {
         var arr = SBO4.match(/\S+/g);
-        if (arr.length > 3) {
+        if (arr.length > 5) {
             alert("Max. Number of allowable words in BO are 3.")
         } else {
             document.getElementById("dis76546_1").style.display = "none"
@@ -548,7 +638,7 @@ function App() {
                 document.getElementById("DEMO4OP").style.display = "block"
                 scrollToBottom()
             }).catch(err => {
-                alert(err)
+                alert("Please try Again")
                 setloading(false)
             });
         }
@@ -671,7 +761,7 @@ function App() {
             scrollToBottom()
 
         }).catch(err => {
-            alert(err)
+            alert("Please try Again")
             setFloading(false)
             setlastLoading(false)
         });
@@ -754,7 +844,7 @@ function App() {
             scrollToBottom()
 
         }).catch(err => {
-            alert(err)
+            alert("Please try Again")
             setoutroLoading(false)
         });
     }
@@ -827,7 +917,7 @@ function App() {
     function generateWordDocument(event) {
 
         SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
-            console.log("Result---->", result);
+            console.log("Result---->123", result);
         })
         event.preventDefault();
 
@@ -923,7 +1013,7 @@ function App() {
         <section>
             <section>
                 <div className='body-loader' id="body-loader">
-                    <img width="100" src={gif} />
+                    <img width="100" src="/public/assets/Spinner.gif" />
                 </div>
                 <div style={{ position: "sticky", top: 0, backgroundColor: "#fff" }}>
                     <div className="row m-0 pt-3 pb-2" style={{ boxShadow: "0px 11px 10px -15px #111" }}>
@@ -976,9 +1066,20 @@ function App() {
                                         type="text"
                                         value={pName}
                                     />
+                                    <div className='row'>
+                                        <div className='col-10'>
+                                            <div style={{ width: "auto", marginLeft: 20 }}>
+                                                {
+                                                    pName != "" && progressValueSearch &&
+                                                    <Progressbar bgcolor="#99ccff" progress={_.round(progressValueSearch, 2)} height={20} width={80} />
+                                                }
+                                            </div>
+                                        </div>
+                                        <div className='col-2'></div>
+                                    </div>
                                     {
-                                        searchBox &&
-                                        <div style={{ padding: 20, height: "auto", overflow: "auto", position: "absolute", zIndex: 999, backgroundColor: "#fff", width: 536, border: "1px solid gray" }}>
+                                        pName != "" && searchBox &&
+                                        <div style={{ maxHeight: "200px", border: "1px solid gray", overflow: "auto", position: "absolute", zIndex: 999, backgroundColor: "#fff", width: 536 }}>
                                             {
                                                 filterPName && filterPName.filter((val) => {
                                                     if (val.name.toLowerCase().includes(pName.toLowerCase())) {
@@ -986,7 +1087,7 @@ function App() {
                                                     }
                                                 }).map((e) => {
                                                     return (
-                                                        <p style={{ cursor: "pointer" }} onClick={() => OnSelectSearchRes(e.name)}>{e.name}</p>
+                                                        <p style={{ cursor: "pointer" }} onClick={() => OnSelectSearchRes(e)}>{e.name}</p>
                                                     )
                                                 })
                                             }
@@ -1045,11 +1146,17 @@ function App() {
                                         }
                                     </datalist>
                                 </div>
-                                <div style={{ width: 535, marginLeft: 50 }}>
-                                    {
-                                        progressValue &&
-                                        <Progressbar bgcolor="#99ccff" progress={_.round(progressValue, 2)} height={20} width={80} />
-                                    }
+                                <div className='row'>
+                                    <div className='col-1'></div>
+                                    <div className='col-9'>
+                                        <div style={{ width: "auto", marginLeft: 20, marginRight: -15 }}>
+                                            {
+                                                Indursty != "" && progressValue &&
+                                                <Progressbar bgcolor="#99ccff" progress={_.round(progressValue, 2)} height={20} width={80} />
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className='col-2'></div>
                                 </div>
                             </div>
                             <div className="col-1"></div>
@@ -2153,6 +2260,7 @@ function App() {
                     </div>
 
                     <div className="col-6">
+
                         <ul className="nav nav-tabs" style={{ width: "90%", marginLeft: 10 }}>
                             <li className="active"><a data-toggle="tab" href="#home" style={{ fontWeight: 600, fontSize: 16 }}>Result</a></li>
                             <li>
@@ -2276,7 +2384,6 @@ function App() {
                                                             </div>
                                                         }
 
-
                                                         {SBO4 &&
                                                             <div>
                                                                 <div className='row'>
@@ -2346,8 +2453,15 @@ function App() {
                                 <div style={{ width: 600 }}>
                                     <canvas id="myChart" width="300" height="300"></canvas>
                                 </div>
+                                <div style={{ marginTop: 50, marginBottom: 200 }}>
+                                    <div style={{
+                                        width: "100%",
+                                        height: "50%",
+                                        margin: "0",
+                                        padding: "0"
+                                    }} id="containerHeatMap"></div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
