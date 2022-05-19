@@ -133,7 +133,7 @@ class APIController extends Controller
             Industry_Count::truncate();
             model_names::truncate();
             $fileName = 'config_and_graph_data/Industry_Count.xlsx';
-            $fileName1 = 'config_and_graph_data/Product_Used_Industry.xlsx';
+            $fileName1 = 'config_and_graph_data/Heatmap.xlsx';
             $fileName2 = 'config_and_graph_data/Product_Count.xlsx';
             $fileName3 = 'config_and_graph_data/model_names.xlsx';
     
@@ -160,7 +160,7 @@ class APIController extends Controller
             Storage::disk('public_uploads')->delete($fileName2);
             Storage::disk('public_uploads')->delete($fileName3);
             
-            $Product_Used_Industry = Product_Used_Industry::get(['name','value'])->skip(1);
+            $Product_Used_Industry = Product_Used_Industry::get(['x','y','heat'])->skip(1);
             $Product_Count = Product_Count::get(['name','value'])->skip(1);
             $Industry_Count = Industry_Count::get(['name','value'])->skip(1);
             $model_names = model_names::get(['Demo_Model','Intro_Model','Outro_Model'])->skip(1);
@@ -169,8 +169,9 @@ class APIController extends Controller
             $Product_Used_Industry_array = array();
             foreach($Product_Used_Industry as $industry){
                 $Product_Used_IndustryArray = [
-                    'name' => $industry->name,
-                    'value' => $industry->value,
+                    'x' => $industry->x,
+                    'y' => $industry->y,
+                    'heat' => $industry->heat,
                 ];
                 array_push($Product_Used_Industry_array,$Product_Used_IndustryArray);
             }

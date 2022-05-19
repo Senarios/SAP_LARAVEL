@@ -15,8 +15,9 @@ class ProductUsedIndustoryImport implements ToModel
     public function model(array $row)
     {
         return new Product_Used_Industry([
-            'name' => $row[0],
-            'value' => $row[1],
+            'x' => $row[0],
+            'y' => $row[1],
+            'heat' => $row[2],
         ]);
     }
 }

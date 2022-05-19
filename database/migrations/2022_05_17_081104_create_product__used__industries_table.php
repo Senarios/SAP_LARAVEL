@@ -14,8 +14,9 @@ class CreateProductUsedIndustriesTable extends Migration
     public function up()
     {
         Schema::create('product__used__industries', function (Blueprint $table) {
-            $table->string('name');
-            $table->string('value');
+            $table->string('x');
+            $table->string('y');
+            $table->string('heat');
             $table->timestamps();
         });
     }

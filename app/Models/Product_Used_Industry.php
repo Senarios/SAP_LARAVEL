@@ -9,5 +9,5 @@ class Product_Used_Industry extends Model
 {
     use HasFactory;
 
-    Protected $fillable = ['name','value'];
+    Protected $fillable = ['x','y','heat'];
 }
