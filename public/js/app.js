@@ -9575,7 +9575,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra, Lob1) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9617,7 +9617,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2, Lob2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9659,7 +9659,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob3) 
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9701,7 +9701,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9753,7 +9753,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9784,7 +9784,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
