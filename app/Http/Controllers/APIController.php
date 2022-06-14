@@ -93,6 +93,9 @@ class APIController extends Controller
                 'fileName' => $name?$name:'',
                 'Ind' => isset($data['Ind'])?$data['Ind']:'',
                 'PN' => isset($data['PN'])?$data['PN']:'',
+                'LOB1' => isset($data['LOB1'])?$data['LOB1']:'',
+                'LOB2' => isset($data['LOB2'])?$data['LOB2']:'',
+                'LOB3' => isset($data['LOB3'])?$data['LOB3']:'',
                 'Use_Case' => isset($data['Use_Case'])?$data['Use_Case']:'',
                 'Intro' => isset($data['Intro'])?$data['Intro']:'',
                 'Protagonist_1' => isset($data['Protagonist_1'])?$data['Protagonist_1']:'',
@@ -116,7 +119,7 @@ class APIController extends Controller
             ExportScript::insert($dataScript);
     
             if(Excel::store(new ScriptExport(2018), 'saved-scripts/'.$name,'s3', \Maatwebsite\Excel\Excel::XLSX)){
-                return response()->json(['success' => true, 'message' => 'Data captured successfully!']);
+                return response()->json(['success' => true, 'filename' => $name, 'message' => 'Data captured successfully!', 'data' => $dataScript]);
             }
             else{
                 return response()->json(['success' => false, 'message' => 'Something went wrong!']);

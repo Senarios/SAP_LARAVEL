@@ -17,6 +17,9 @@ class CreateExportScriptsTable extends Migration
             $table->longText('fileName');
             $table->longText('Ind');
             $table->longText('PN');
+            $table->longText('LOB1');
+            $table->longText('LOB2');
+            $table->longText('LOB3');
             $table->longText('Use_Case');
             $table->longText('Intro');
             $table->longText('Protagonist_1');

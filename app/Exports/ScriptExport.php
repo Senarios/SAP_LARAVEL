@@ -19,7 +19,8 @@ class ScriptExport implements FromCollection,WithHeadings
     public function headings(): array
     {
         return [
-            'Filename','Ind','PN','Use_Case','Intro','Protagonist 1','BO-1','Demo-1','Demo-1-key-points',
+            'File_name Asset Name','HUB (Industry)','Product Name', 'LOB1', 'LOB2', 'LOB3',
+            'Use_Case','Intro','Protagonist 1', 'BO-1','Demo-1','Demo-1-key-points',
             'Protagonist 2', 'BO-2','Demo-2','Demo-2-key-points','Protagonist 3','BO-3' ,
             'Demo-3' ,'Demo-3-key-points','Protagonist 4','BO-4','Demo-4','Demo-4-key-points',
             'Outro'
