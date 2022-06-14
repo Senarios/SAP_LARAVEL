@@ -22,6 +22,7 @@ function PageOne(props) {
 
 
     const [Lob1, setLob1] = useState([]);
+    const [fileName, setFileName] = useState();
     // const [Lob2, setLob2] = useState([]);
     // const [Lob3, setLob3] = useState([]);
     // const [Lob4, setLob4] = useState([]);
@@ -885,6 +886,11 @@ function PageOne(props) {
 
         SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
             console.log("Bussiness array====>", result);
+            let name = result.filename.slice(0, -5)
+            console.log(name);
+            // setFileName(result.filename)
+            saveDocumentToFile(doc, name)
+
         })
         event.preventDefault();
 
@@ -926,7 +932,6 @@ function PageOne(props) {
                 },
             ],
         })
-        saveDocumentToFile(doc, 'New Document.docx')
     }
     function OnlyDownload(event) {
 

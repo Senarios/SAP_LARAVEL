@@ -5460,70 +5460,75 @@ function PageOne(props) {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
       Lob1 = _useState4[0],
-      setLob1 = _useState4[1]; // const [Lob2, setLob2] = useState([]);
+      setLob1 = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      fileName = _useState6[0],
+      setFileName = _useState6[1]; // const [Lob2, setLob2] = useState([]);
   // const [Lob3, setLob3] = useState([]);
   // const [Lob4, setLob4] = useState([]);
 
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
-      _useState6 = _slicedToArray(_useState5, 2),
-      GrapshData = _useState6[0],
-      setGrapshData = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState8 = _slicedToArray(_useState7, 2),
-      isLoading = _useState8[0],
-      setIsLoading = _useState8[1];
+      GrapshData = _useState8[0],
+      setGrapshData = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
       _useState10 = _slicedToArray(_useState9, 2),
-      progressValue = _useState10[0],
-      setprogressValue = _useState10[1];
+      isLoading = _useState10[0],
+      setIsLoading = _useState10[1];
 
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState12 = _slicedToArray(_useState11, 2),
-      totalSum = _useState12[0],
-      settotalSum = _useState12[1];
+      progressValue = _useState12[0],
+      setprogressValue = _useState12[1];
 
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState14 = _slicedToArray(_useState13, 2),
-      progressValueSearch = _useState14[0],
-      setprogressValueSearch = _useState14[1];
+      totalSum = _useState14[0],
+      settotalSum = _useState14[1];
 
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState16 = _slicedToArray(_useState15, 2),
-      barChartDataName = _useState16[0],
-      setBarChartDataName = _useState16[1];
+      progressValueSearch = _useState16[0],
+      setprogressValueSearch = _useState16[1];
 
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState18 = _slicedToArray(_useState17, 2),
-      IndbarChartDataName = _useState18[0],
-      setIndBarChartDataName = _useState18[1];
+      barChartDataName = _useState18[0],
+      setBarChartDataName = _useState18[1];
 
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState20 = _slicedToArray(_useState19, 2),
-      IndbarChartDataName2 = _useState20[0],
-      setIndBarChartDataName2 = _useState20[1];
+      IndbarChartDataName = _useState20[0],
+      setIndBarChartDataName = _useState20[1];
 
   var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState22 = _slicedToArray(_useState21, 2),
-      barChartDataValue = _useState22[0],
-      setBarChartDataValue = _useState22[1];
+      IndbarChartDataName2 = _useState22[0],
+      setIndBarChartDataName2 = _useState22[1];
 
   var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState24 = _slicedToArray(_useState23, 2),
-      filterPName = _useState24[0],
-      setFilterPName = _useState24[1];
+      barChartDataValue = _useState24[0],
+      setBarChartDataValue = _useState24[1];
 
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState26 = _slicedToArray(_useState25, 2),
-      searchBox = _useState26[0],
-      setSearchBox = _useState26[1];
+      filterPName = _useState26[0],
+      setFilterPName = _useState26[1];
 
-  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState28 = _slicedToArray(_useState27, 2),
-      heatMapData = _useState28[0],
-      setHeatMapData = _useState28[1];
+      searchBox = _useState28[0],
+      setSearchBox = _useState28[1];
+
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState30 = _slicedToArray(_useState29, 2),
+      heatMapData = _useState30[0],
+      setHeatMapData = _useState30[1];
 
   var listOfBo = newBArray;
 
@@ -5650,290 +5655,290 @@ function PageOne(props) {
     });
   });
 
-  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState30 = _slicedToArray(_useState29, 2),
-      StateOne = _useState30[0],
-      setStateOne = _useState30[1];
-
   var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState32 = _slicedToArray(_useState31, 2),
-      StateTwo = _useState32[0],
-      setStateTwo = _useState32[1];
+      StateOne = _useState32[0],
+      setStateOne = _useState32[1];
 
   var _useState33 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState34 = _slicedToArray(_useState33, 2),
-      StateThree = _useState34[0],
-      setStateThree = _useState34[1];
+      StateTwo = _useState34[0],
+      setStateTwo = _useState34[1];
 
   var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState36 = _slicedToArray(_useState35, 2),
-      StateFour = _useState36[0],
-      setStateFour = _useState36[1];
+      StateThree = _useState36[0],
+      setStateThree = _useState36[1];
 
   var _useState37 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState38 = _slicedToArray(_useState37, 2),
-      StateFive = _useState38[0],
-      setStateFive = _useState38[1];
+      StateFour = _useState38[0],
+      setStateFour = _useState38[1];
 
   var _useState39 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState40 = _slicedToArray(_useState39, 2),
-      StateSix = _useState40[0],
-      setStateSix = _useState40[1];
+      StateFive = _useState40[0],
+      setStateFive = _useState40[1];
 
-  var _useState41 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState41 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState42 = _slicedToArray(_useState41, 2),
-      pName = _useState42[0],
-      setPname = _useState42[1];
+      StateSix = _useState42[0],
+      setStateSix = _useState42[1];
 
   var _useState43 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState44 = _slicedToArray(_useState43, 2),
-      useCase = _useState44[0],
-      setUseCase = _useState44[1];
+      pName = _useState44[0],
+      setPname = _useState44[1];
 
   var _useState45 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState46 = _slicedToArray(_useState45, 2),
-      Indursty = _useState46[0],
-      setIndursty = _useState46[1];
+      useCase = _useState46[0],
+      setUseCase = _useState46[1];
 
   var _useState47 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState48 = _slicedToArray(_useState47, 2),
-      Protagonist = _useState48[0],
-      setProtagonist = _useState48[1];
+      Indursty = _useState48[0],
+      setIndursty = _useState48[1];
 
   var _useState49 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState50 = _slicedToArray(_useState49, 2),
-      BO1 = _useState50[0],
-      setBO1 = _useState50[1];
+      Protagonist = _useState50[0],
+      setProtagonist = _useState50[1];
 
   var _useState51 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState52 = _slicedToArray(_useState51, 2),
-      Demo1 = _useState52[0],
-      setDemo1 = _useState52[1];
+      BO1 = _useState52[0],
+      setBO1 = _useState52[1];
 
   var _useState53 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState54 = _slicedToArray(_useState53, 2),
-      Demo2 = _useState54[0],
-      setDemo2 = _useState54[1];
+      Demo1 = _useState54[0],
+      setDemo1 = _useState54[1];
 
   var _useState55 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState56 = _slicedToArray(_useState55, 2),
-      Demo3 = _useState56[0],
-      setDemo3 = _useState56[1];
+      Demo2 = _useState56[0],
+      setDemo2 = _useState56[1];
 
   var _useState57 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState58 = _slicedToArray(_useState57, 2),
-      Demo4 = _useState58[0],
-      setDemo4 = _useState58[1];
+      Demo3 = _useState58[0],
+      setDemo3 = _useState58[1];
 
   var _useState59 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState60 = _slicedToArray(_useState59, 2),
-      resA1 = _useState60[0],
-      setResA1 = _useState60[1];
+      Demo4 = _useState60[0],
+      setDemo4 = _useState60[1];
 
   var _useState61 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState62 = _slicedToArray(_useState61, 2),
-      resA2 = _useState62[0],
-      setResA2 = _useState62[1];
+      resA1 = _useState62[0],
+      setResA1 = _useState62[1];
 
   var _useState63 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState64 = _slicedToArray(_useState63, 2),
-      resB1 = _useState64[0],
-      setResB1 = _useState64[1];
+      resA2 = _useState64[0],
+      setResA2 = _useState64[1];
 
   var _useState65 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState66 = _slicedToArray(_useState65, 2),
-      resB2 = _useState66[0],
-      setResB2 = _useState66[1];
+      resB1 = _useState66[0],
+      setResB1 = _useState66[1];
 
   var _useState67 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState68 = _slicedToArray(_useState67, 2),
-      resC1 = _useState68[0],
-      setResC1 = _useState68[1];
+      resB2 = _useState68[0],
+      setResB2 = _useState68[1];
 
   var _useState69 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState70 = _slicedToArray(_useState69, 2),
-      resC1_2 = _useState70[0],
-      setResC1_2 = _useState70[1];
+      resC1 = _useState70[0],
+      setResC1 = _useState70[1];
 
   var _useState71 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState72 = _slicedToArray(_useState71, 2),
-      resC2 = _useState72[0],
-      setResC2 = _useState72[1];
+      resC1_2 = _useState72[0],
+      setResC1_2 = _useState72[1];
 
   var _useState73 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState74 = _slicedToArray(_useState73, 2),
-      resC2_1 = _useState74[0],
-      setResC2_1 = _useState74[1];
+      resC2 = _useState74[0],
+      setResC2 = _useState74[1];
 
-  var _useState75 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState75 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState76 = _slicedToArray(_useState75, 2),
-      loading = _useState76[0],
-      setloading = _useState76[1];
+      resC2_1 = _useState76[0],
+      setResC2_1 = _useState76[1];
 
   var _useState77 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState78 = _slicedToArray(_useState77, 2),
-      disabledInputs = _useState78[0],
-      setdisabledInputs = _useState78[1];
+      loading = _useState78[0],
+      setloading = _useState78[1];
 
   var _useState79 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState80 = _slicedToArray(_useState79, 2),
-      disabledInputsOnNext = _useState80[0],
-      setdisabledInputsOnNext = _useState80[1];
+      disabledInputs = _useState80[0],
+      setdisabledInputs = _useState80[1];
 
   var _useState81 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState82 = _slicedToArray(_useState81, 2),
-      disabledInputsd2 = _useState82[0],
-      setdisabledInputsd2 = _useState82[1];
+      disabledInputsOnNext = _useState82[0],
+      setdisabledInputsOnNext = _useState82[1];
 
   var _useState83 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState84 = _slicedToArray(_useState83, 2),
-      disabledInputsd3 = _useState84[0],
-      setdisabledInputsd3 = _useState84[1];
+      disabledInputsd2 = _useState84[0],
+      setdisabledInputsd2 = _useState84[1];
 
   var _useState85 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState86 = _slicedToArray(_useState85, 2),
-      disabledInputsd4 = _useState86[0],
-      setdisabledInputsd4 = _useState86[1];
+      disabledInputsd3 = _useState86[0],
+      setdisabledInputsd3 = _useState86[1];
 
   var _useState87 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState88 = _slicedToArray(_useState87, 2),
-      isChecked = _useState88[0],
-      setisChecked = _useState88[1];
+      disabledInputsd4 = _useState88[0],
+      setdisabledInputsd4 = _useState88[1];
 
   var _useState89 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState90 = _slicedToArray(_useState89, 2),
-      isChecked2 = _useState90[0],
-      setisChecked2 = _useState90[1];
+      isChecked = _useState90[0],
+      setisChecked = _useState90[1];
 
   var _useState91 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState92 = _slicedToArray(_useState91, 2),
-      isChecked3 = _useState92[0],
-      setisChecked3 = _useState92[1];
+      isChecked2 = _useState92[0],
+      setisChecked2 = _useState92[1];
 
   var _useState93 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState94 = _slicedToArray(_useState93, 2),
-      isChecked4 = _useState94[0],
-      setisChecked4 = _useState94[1];
+      isChecked3 = _useState94[0],
+      setisChecked3 = _useState94[1];
 
   var _useState95 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState96 = _slicedToArray(_useState95, 2),
-      isChecked5 = _useState96[0],
-      setisChecked5 = _useState96[1];
+      isChecked4 = _useState96[0],
+      setisChecked4 = _useState96[1];
 
   var _useState97 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState98 = _slicedToArray(_useState97, 2),
-      isChecked6 = _useState98[0],
-      setisChecked6 = _useState98[1];
+      isChecked5 = _useState98[0],
+      setisChecked5 = _useState98[1];
 
   var _useState99 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState100 = _slicedToArray(_useState99, 2),
-      isChecked11 = _useState100[0],
-      setisChecked11 = _useState100[1];
+      isChecked6 = _useState100[0],
+      setisChecked6 = _useState100[1];
 
   var _useState101 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState102 = _slicedToArray(_useState101, 2),
-      isChecked12 = _useState102[0],
-      setisChecked12 = _useState102[1];
+      isChecked11 = _useState102[0],
+      setisChecked11 = _useState102[1];
 
   var _useState103 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState104 = _slicedToArray(_useState103, 2),
-      isChecked7 = _useState104[0],
-      setisChecked7 = _useState104[1];
+      isChecked12 = _useState104[0],
+      setisChecked12 = _useState104[1];
 
   var _useState105 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState106 = _slicedToArray(_useState105, 2),
-      isChecked8 = _useState106[0],
-      setisChecked8 = _useState106[1];
+      isChecked7 = _useState106[0],
+      setisChecked7 = _useState106[1];
 
   var _useState107 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState108 = _slicedToArray(_useState107, 2),
-      isChecked9 = _useState108[0],
-      setisChecked9 = _useState108[1];
+      isChecked8 = _useState108[0],
+      setisChecked8 = _useState108[1];
 
   var _useState109 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState110 = _slicedToArray(_useState109, 2),
-      isChecked10 = _useState110[0],
-      setisChecked10 = _useState110[1];
+      isChecked9 = _useState110[0],
+      setisChecked9 = _useState110[1];
 
-  var _useState111 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState111 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState112 = _slicedToArray(_useState111, 2),
-      extra = _useState112[0],
-      setextra = _useState112[1];
+      isChecked10 = _useState112[0],
+      setisChecked10 = _useState112[1];
 
   var _useState113 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState114 = _slicedToArray(_useState113, 2),
-      extrasss = _useState114[0],
-      setextrasss = _useState114[1];
+      extra = _useState114[0],
+      setextra = _useState114[1];
 
   var _useState115 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState116 = _slicedToArray(_useState115, 2),
-      extra2 = _useState116[0],
-      setextra2 = _useState116[1];
+      extrasss = _useState116[0],
+      setextrasss = _useState116[1];
 
   var _useState117 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState118 = _slicedToArray(_useState117, 2),
-      extrasss2 = _useState118[0],
-      setextrasss2 = _useState118[1];
+      extra2 = _useState118[0],
+      setextra2 = _useState118[1];
 
   var _useState119 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState120 = _slicedToArray(_useState119, 2),
-      extra3 = _useState120[0],
-      setextra3 = _useState120[1];
+      extrasss2 = _useState120[0],
+      setextrasss2 = _useState120[1];
 
   var _useState121 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState122 = _slicedToArray(_useState121, 2),
-      extrasss3 = _useState122[0],
-      setextrasss3 = _useState122[1];
+      extra3 = _useState122[0],
+      setextra3 = _useState122[1];
 
   var _useState123 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState124 = _slicedToArray(_useState123, 2),
-      extra4 = _useState124[0],
-      setextra4 = _useState124[1];
+      extrasss3 = _useState124[0],
+      setextrasss3 = _useState124[1];
 
   var _useState125 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState126 = _slicedToArray(_useState125, 2),
-      extrasss4 = _useState126[0],
-      setextrasss4 = _useState126[1];
+      extra4 = _useState126[0],
+      setextra4 = _useState126[1];
 
   var _useState127 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState128 = _slicedToArray(_useState127, 2),
-      extrasss5 = _useState128[0],
-      setextrasss5 = _useState128[1];
+      extrasss4 = _useState128[0],
+      setextrasss4 = _useState128[1];
 
   var _useState129 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState130 = _slicedToArray(_useState129, 2),
-      extrasss6 = _useState130[0],
-      setextrasss6 = _useState130[1];
+      extrasss5 = _useState130[0],
+      setextrasss5 = _useState130[1];
 
   var _useState131 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState132 = _slicedToArray(_useState131, 2),
-      newIntro = _useState132[0],
-      setnewIntro = _useState132[1];
+      extrasss6 = _useState132[0],
+      setextrasss6 = _useState132[1];
 
   var _useState133 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState134 = _slicedToArray(_useState133, 2),
-      newOutro = _useState134[0],
-      setnewOutro = _useState134[1];
+      newIntro = _useState134[0],
+      setnewIntro = _useState134[1];
 
-  var _useState135 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState135 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState136 = _slicedToArray(_useState135, 2),
-      lastLoading = _useState136[0],
-      setlastLoading = _useState136[1];
+      newOutro = _useState136[0],
+      setnewOutro = _useState136[1];
 
   var _useState137 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState138 = _slicedToArray(_useState137, 2),
-      outroLoading = _useState138[0],
-      setoutroLoading = _useState138[1];
+      lastLoading = _useState138[0],
+      setlastLoading = _useState138[1];
 
-  var _useState139 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState139 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState140 = _slicedToArray(_useState139, 2),
-      outroState1 = _useState140[0],
-      setoutroState1 = _useState140[1];
+      outroLoading = _useState140[0],
+      setoutroLoading = _useState140[1];
 
   var _useState141 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState142 = _slicedToArray(_useState141, 2),
-      outroState2 = _useState142[0],
-      setoutroState2 = _useState142[1];
+      outroState1 = _useState142[0],
+      setoutroState1 = _useState142[1];
+
+  var _useState143 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState144 = _slicedToArray(_useState143, 2),
+      outroState2 = _useState144[0],
+      setoutroState2 = _useState144[1];
 
   var OnSelectSearchRes = function OnSelectSearchRes(e) {
     setPname(e.name);
@@ -5949,60 +5954,60 @@ function PageOne(props) {
     setoutroState2(e.target.value);
   };
 
-  var _useState143 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
-      _useState144 = _slicedToArray(_useState143, 2),
-      SBO2 = _useState144[0],
-      setSBO2 = _useState144[1];
-
   var _useState145 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState146 = _slicedToArray(_useState145, 2),
-      SBO3 = _useState146[0],
-      setSBO3 = _useState146[1];
+      SBO2 = _useState146[0],
+      setSBO2 = _useState146[1];
 
   var _useState147 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState148 = _slicedToArray(_useState147, 2),
-      SBO4 = _useState148[0],
-      setSBO4 = _useState148[1];
+      SBO3 = _useState148[0],
+      setSBO3 = _useState148[1];
 
   var _useState149 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState150 = _slicedToArray(_useState149, 2),
-      Fintro1 = _useState150[0],
-      setFintro1 = _useState150[1];
+      SBO4 = _useState150[0],
+      setSBO4 = _useState150[1];
 
   var _useState151 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState152 = _slicedToArray(_useState151, 2),
-      Foutro1 = _useState152[0],
-      setFoutro1 = _useState152[1];
+      Fintro1 = _useState152[0],
+      setFintro1 = _useState152[1];
 
   var _useState153 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState154 = _slicedToArray(_useState153, 2),
-      Fintro2 = _useState154[0],
-      setFintro2 = _useState154[1];
+      Foutro1 = _useState154[0],
+      setFoutro1 = _useState154[1];
 
   var _useState155 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState156 = _slicedToArray(_useState155, 2),
-      Foutro2 = _useState156[0],
-      setFoutro2 = _useState156[1];
+      Fintro2 = _useState156[0],
+      setFintro2 = _useState156[1];
 
   var _useState157 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState158 = _slicedToArray(_useState157, 2),
-      protagnist2 = _useState158[0],
-      setprotagnist2 = _useState158[1];
+      Foutro2 = _useState158[0],
+      setFoutro2 = _useState158[1];
 
   var _useState159 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState160 = _slicedToArray(_useState159, 2),
-      protagnist3 = _useState160[0],
-      setprotagnist3 = _useState160[1];
+      protagnist2 = _useState160[0],
+      setprotagnist2 = _useState160[1];
 
   var _useState161 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState162 = _slicedToArray(_useState161, 2),
-      protagnist4 = _useState162[0],
-      setprotagnist4 = _useState162[1];
+      protagnist3 = _useState162[0],
+      setprotagnist3 = _useState162[1];
 
-  var _useState163 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState163 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState164 = _slicedToArray(_useState163, 2),
-      Floading = _useState164[0],
-      setFloading = _useState164[1];
+      protagnist4 = _useState164[0],
+      setprotagnist4 = _useState164[1];
+
+  var _useState165 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState166 = _slicedToArray(_useState165, 2),
+      Floading = _useState166[0],
+      setFloading = _useState166[1];
 
   var int1 = function int1(e) {
     setFintro1(e.target.value);
@@ -6012,25 +6017,25 @@ function PageOne(props) {
     setFintro2(e.target.value);
   };
 
-  var _useState165 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
-      _useState166 = _slicedToArray(_useState165, 2),
-      bo1RES = _useState166[0],
-      setbo1RES = _useState166[1];
-
   var _useState167 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState168 = _slicedToArray(_useState167, 2),
-      bo1RES_1 = _useState168[0],
-      setbo1RES_1 = _useState168[1];
+      bo1RES = _useState168[0],
+      setbo1RES = _useState168[1];
 
   var _useState169 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState170 = _slicedToArray(_useState169, 2),
-      bo1RES_2 = _useState170[0],
-      setbo1RES_2 = _useState170[1];
+      bo1RES_1 = _useState170[0],
+      setbo1RES_1 = _useState170[1];
 
   var _useState171 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState172 = _slicedToArray(_useState171, 2),
-      bo1RES_3 = _useState172[0],
-      setbo1RES_3 = _useState172[1];
+      bo1RES_2 = _useState172[0],
+      setbo1RES_2 = _useState172[1];
+
+  var _useState173 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState174 = _slicedToArray(_useState173, 2),
+      bo1RES_3 = _useState174[0],
+      setbo1RES_3 = _useState174[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     scrollToTop();
@@ -6953,13 +6958,18 @@ function PageOne(props) {
   function generateWordDocument(event) {
     (0,_Service__WEBPACK_IMPORTED_MODULE_4__.SaveScripts)(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then( /*#__PURE__*/function () {
       var _ref13 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee13(result) {
+        var name;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee13$(_context13) {
           while (1) {
             switch (_context13.prev = _context13.next) {
               case 0:
                 console.log("Bussiness array====>", result);
+                name = result.filename.slice(0, -5);
+                console.log(name); // setFileName(result.filename)
 
-              case 1:
+                saveDocumentToFile(doc, name);
+
+              case 4:
               case "end":
                 return _context13.stop();
             }
@@ -7030,7 +7040,6 @@ function PageOne(props) {
         })]
       }]
     });
-    saveDocumentToFile(doc, 'New Document.docx');
   }
 
   function OnlyDownload(event) {
@@ -9566,7 +9575,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra, Lob1) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9608,7 +9617,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2, Lob2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9650,7 +9659,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob3) 
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9692,7 +9701,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9744,7 +9753,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9775,7 +9784,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9807,15 +9816,17 @@ function verbs(BO1) {
     });
   });
 }
-function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6) {
-  console.log("1--->", extrasss6);
-  console.log("2--->", newOutro);
-  console.log("3--->", newIntro);
-  console.log("4--->", extrasss5);
+function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6, Lob1) {
+  var new1 = Lob1 != null ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "";
+  var new2 = Lob1 != null ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "";
+  var new3 = Lob1 != null ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "";
   var body = JSON.stringify({
     "Ind": Indursty.trim(),
     "PN": pName.trim(),
     "Use_Case": useCase.trim(),
+    "LOB1": new1,
+    "LOB2": new2,
+    "LOB3": new3,
     "Intro": extrasss5 == "" ? newIntro.trim() : extrasss5.trim(),
     "Protagonist_1": Protagonist.trim(),
     "BO_1": BO1.trim(),

@@ -314,16 +314,18 @@ export function verbs(BO1) {
             });
     });
 }
-export function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6) {
-    console.log("1--->", extrasss6);
-    console.log("2--->", newOutro);
-    console.log("3--->", newIntro);
-    console.log("4--->", extrasss5);
+export function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6, Lob1) {
+    var new1 = Lob1 != null ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : ""
+    var new2 = Lob1 != null ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : ""
+    var new3 = Lob1 != null ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : ""
 
     var body = JSON.stringify({
         "Ind": Indursty.trim(),
         "PN": pName.trim(),
         "Use_Case": useCase.trim(),
+        "LOB1": new1,
+        "LOB2": new2,
+        "LOB3": new3,
         "Intro": extrasss5 == "" ? newIntro.trim() : extrasss5.trim(),
         "Protagonist_1": Protagonist.trim(),
         "BO_1": BO1.trim(),
