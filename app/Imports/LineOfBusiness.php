@@ -2,10 +2,10 @@
 
 namespace App\Imports;
 
-use App\Models\Product_Used_Industry;
+use App\Models\LineOfBusiness as Business;
 use Maatwebsite\Excel\Concerns\ToModel;
 
-class ProductUsedIndustoryImport implements ToModel
+class LineOfBusiness implements ToModel
 {
     /**
     * @param array $row
@@ -14,10 +14,8 @@ class ProductUsedIndustoryImport implements ToModel
     */
     public function model(array $row)
     {
-        return new Product_Used_Industry([
-            'heat' => $row[0],
-            'y' => $row[1],
-            'x' => $row[2],
+        return new Business([
+            'name' => $row[0],
         ]);
     }
 }

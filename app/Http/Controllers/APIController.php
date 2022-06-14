@@ -13,11 +13,13 @@ use App\Imports\IndustoryCountImport;
 use App\Imports\ModelNamesImport;
 use App\Imports\ProductCountImport;
 use App\Imports\ProductUsedIndustoryImport;
+use App\Imports\LineOfBusiness;
 
 use App\Models\Product_Used_Industry;
 use App\Models\Product_Count;
 use App\Models\Industry_Count;
 use App\Models\model_names;
+use App\Models\LineOfBusiness as Business;
 
 use Excel;
 use Response;
@@ -74,16 +76,17 @@ class APIController extends Controller
     public function storeScriptsFile(Request $request){
         try{
             ExportScript::truncate();
-            $fileName = ScriptFileName::find(1);
+            $fileName = ScriptFileName::latest()->first('filename');
             if($fileName){
-                ScriptFileName::where('id',1)->increment('filename');
+                $number = $fileName->filename + 1;
+                ScriptFileName::insert(['filename' => $number]);
                 $date = date('Y-m-d H:i:s');
-                $name = 'script_'. ++$fileName->filename .'_'.$date.'.xlsx';
+                $name = 'script_'. $number .'_'.$date.'.xlsx';
             }
             else{
-                ScriptFileName::insert(['filename' => 1]);
+                ScriptFileName::insert(['filename' => 315]);
                 $date = date('Y-m-d H:i:s');
-                $name = 'script_307' . '_' . $date . '.xlsx';
+                $name = 'script_315' . '_' . $date . '.xlsx';
             }
             $data = $request->all();
             $dataScript = [
@@ -136,6 +139,7 @@ class APIController extends Controller
             $fileName1 = 'config_and_graph_data/Heatmap.xlsx';
             $fileName2 = 'config_and_graph_data/Product_Count.xlsx';
             $fileName3 = 'config_and_graph_data/model_names.xlsx';
+            $fileName4 = 'config_and_graph_data/Line_of_Business.xlsx';
     
             $s3_file = Storage::disk('s3')->get($fileName);
             $s3 = Storage::disk('public_uploads')->put($fileName, $s3_file);
@@ -145,6 +149,8 @@ class APIController extends Controller
             $s3 = Storage::disk('public_uploads')->put($fileName2, $s3_file);
             $s3_file = Storage::disk('s3')->get($fileName3);
             $s3 = Storage::disk('public_uploads')->put($fileName3, $s3_file);
+            $s3_file = Storage::disk('s3')->get($fileName4);
+            $s3 = Storage::disk('public_uploads')->put($fileName4, $s3_file);
     
             $var = public_path('uploads/s3/'.$fileName);
             Excel::import(new IndustoryCountImport,$var);
@@ -154,17 +160,29 @@ class APIController extends Controller
             Excel::import(new ProductCountImport,$var2);
             $var3 = public_path('uploads/s3/'.$fileName3);
             Excel::import(new ModelNamesImport,$var3);
+            $var4 = public_path('uploads/s3/'.$fileName4);
+            Excel::import(new LineOfBusiness,$var4);
     
             Storage::disk('public_uploads')->delete($fileName);
             Storage::disk('public_uploads')->delete($fileName1);
             Storage::disk('public_uploads')->delete($fileName2);
             Storage::disk('public_uploads')->delete($fileName3);
+            Storage::disk('public_uploads')->delete($fileName4);
             
             $Product_Used_Industry = Product_Used_Industry::get(['x','y','heat'])->skip(1);
             $Product_Count = Product_Count::get(['name','value'])->skip(1);
             $Industry_Count = Industry_Count::get(['name','value'])->skip(1);
             $model_names = model_names::get(['Demo_Model','Intro_Model','Outro_Model'])->skip(1);
+            $LineOfBusiness = Business::get(['id','name'])->skip(2);
             
+            $LineOfBusiness_array = array();
+            foreach($LineOfBusiness as $business){
+                $LineOfBusinessArray = [
+                    'id' => $business->id,
+                    'name' => $business->name,
+                ];
+                array_push($LineOfBusiness_array,$LineOfBusinessArray);
+            }
 
             $Product_Used_Industry_array = array();
             foreach($Product_Used_Industry as $industry){
@@ -199,6 +217,7 @@ class APIController extends Controller
                 'Product_Count' => $Product_Count_array,
                 'Industry_Count' => $Industry_Count_array,
                 'model_names' => $model_names["1"],
+                'business_array' => $LineOfBusiness_array
             ]);
         }
         catch(\Exception $e){
