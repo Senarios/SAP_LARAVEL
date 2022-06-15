@@ -5531,6 +5531,7 @@ function PageOne(props) {
       setHeatMapData = _useState30[1];
 
   var listOfBo = newBArray;
+  console.log("Lob1---------", Lob1);
 
   var onselect = function onselect(selectedList, selectedItem) {
     setLob1(function (Lob1) {
@@ -6658,7 +6659,7 @@ function PageOne(props) {
     setdisabledInputsd3(true);
     setlastLoading(true);
     setFloading(true);
-    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.FinalOutPut)(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4).then( /*#__PURE__*/function () {
+    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.FinalOutPut)(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, Lob1).then( /*#__PURE__*/function () {
       var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7(result) {
         var Fdata;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
@@ -6956,7 +6957,7 @@ function PageOne(props) {
   }
 
   function generateWordDocument(event) {
-    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.SaveScripts)(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then( /*#__PURE__*/function () {
+    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.SaveScripts)(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6, Lob1).then( /*#__PURE__*/function () {
       var _ref13 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee13(result) {
         var name;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee13$(_context13) {
@@ -6965,11 +6966,9 @@ function PageOne(props) {
               case 0:
                 console.log("Bussiness array====>", result);
                 name = result.filename.slice(0, -5);
-                console.log(name); // setFileName(result.filename)
-
                 saveDocumentToFile(doc, name);
 
-              case 4:
+              case 3:
               case "end":
                 return _context13.stop();
             }
@@ -9575,7 +9574,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra, Lob1) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9617,7 +9616,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2, Lob2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9659,7 +9658,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob3) 
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9701,7 +9700,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9714,6 +9713,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob4) {
   });
 }
 function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3, SBO4, extra1, extra2, extra3, extra4, Lob1) {
+  console.log("aleem==-=-=-", Lob1);
   var PNAME = pName1.trim();
   var USECASE = useCase1.trim();
   var INDUSRTY = Indursty1.trim();
@@ -9736,9 +9736,9 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
   var DEMO2 = D2 == "" ? "nan" : D2;
   var DEMO3 = D3 == "" ? "nan" : D3;
   var DEMO4 = D4 == "" ? "nan" : D4;
-  var new1 = Lob1 != null ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "nan";
-  var new2 = Lob1 != null ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "nan";
-  var new3 = Lob1 != null ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "nan";
+  var new1 = Lob1 != "" ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "nan";
+  var new2 = Lob1 != "" ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "nan";
+  var new3 = Lob1 != "" ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "nan";
   var body = JSON.stringify({
     "prompt": "PN:" + " " + PN + " " + "$ Industry:" + " " + IN + " $ Use Case:" + " " + US + " " + "$ Line of Business 1:" + " " + new1 + " " + "$ Line of Business 2:" + " " + new2 + " " + "$ Line of Business 3:" + " " + new3 + " " + "$ BO-1:" + " " + BoONE + " " + "$ Demo-1: " + DEMO1 + " " + "$ BO-2:" + " " + BoTWO + " " + "$ Demo-2: " + DEMO2 + " " + "$ BO-3: " + BoThree + " " + "$ Demo-3: " + DEMO3 + " " + "$ BO-4: " + BoFour + " " + "$ Demo-4: " + DEMO4,
     "model": "davinci:ft-ai-derivatives-2022-06-13-11-48-03",
@@ -9753,7 +9753,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9784,7 +9784,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9817,9 +9817,10 @@ function verbs(BO1) {
   });
 }
 function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6, Lob1) {
-  var new1 = Lob1 != null ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "";
-  var new2 = Lob1 != null ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "";
-  var new3 = Lob1 != null ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "";
+  console.log("new panga---->", Lob1);
+  var new1 = Lob1 != "" ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "";
+  var new2 = Lob1 != "" ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "";
+  var new3 = Lob1 != "" ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "";
   var body = JSON.stringify({
     "Ind": Indursty.trim(),
     "PN": pName.trim(),

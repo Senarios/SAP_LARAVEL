@@ -41,7 +41,7 @@ function PageOne(props) {
 
     const listOfBo = newBArray;
 
-
+    console.log("Lob1---------", Lob1);
     const onselect = (selectedList, selectedItem) => {
         setLob1(Lob1 => [...Lob1, selectedItem.name])
     }
@@ -725,7 +725,7 @@ function PageOne(props) {
         setdisabledInputsd3(true)
         setlastLoading(true)
         setFloading(true)
-        FinalOutPut(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4).then(async (result) => {
+        FinalOutPut(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, Lob1).then(async (result) => {
             if (result.hasOwnProperty("error")) {
                 alert(result.error.message);
                 setFloading(false)
@@ -884,11 +884,9 @@ function PageOne(props) {
 
     function generateWordDocument(event) {
 
-        SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6).then(async (result) => {
+        SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6, Lob1).then(async (result) => {
             console.log("Bussiness array====>", result);
             let name = result.filename.slice(0, -5)
-            console.log(name);
-            // setFileName(result.filename)
             saveDocumentToFile(doc, name)
 
         })

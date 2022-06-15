@@ -193,6 +193,8 @@ export function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3, 
     });
 }
 export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3, SBO4, extra1, extra2, extra3, extra4, Lob1) {
+    console.log("aleem==-=-=-", Lob1);
+
     let PNAME = pName1.trim();
     let USECASE = useCase1.trim();
     let INDUSRTY = Indursty1.trim();
@@ -217,9 +219,9 @@ export function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2
     var DEMO3 = D3 == "" ? "nan" : D3
     var DEMO4 = D4 == "" ? "nan" : D4
 
-    var new1 = Lob1 != null ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "nan"
-    var new2 = Lob1 != null ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "nan"
-    var new3 = Lob1 != null ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "nan"
+    var new1 = Lob1 != "" ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : "nan"
+    var new2 = Lob1 != "" ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : "nan"
+    var new3 = Lob1 != "" ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : "nan"
 
     var body = JSON.stringify({
 
@@ -315,9 +317,10 @@ export function verbs(BO1) {
     });
 }
 export function SaveScripts(pName, useCase, Indursty, Protagonist, BO1, SBO2, SBO3, SBO4, Demo1, Demo2, Demo3, Demo4, protagnist2, protagnist3, protagnist4, extra, extra2, extra3, extra4, newIntro, extrasss5, newOutro, extrasss, extrasss2, extrasss3, extrasss4, extrasss6, Lob1) {
-    var new1 = Lob1 != null ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : ""
-    var new2 = Lob1 != null ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : ""
-    var new3 = Lob1 != null ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : ""
+    console.log("new panga---->", Lob1);
+    var new1 = Lob1 != "" ? Lob1.slice(0, 1)[0] == null ? "nan" : Lob1.slice(0, 1)[0] : ""
+    var new2 = Lob1 != "" ? Lob1.slice(1, 2)[0] == null ? "nan" : Lob1.slice(1, 2)[0] : ""
+    var new3 = Lob1 != "" ? Lob1.slice(2, 3)[0] == null ? "nan" : Lob1.slice(2, 3)[0] : ""
 
     var body = JSON.stringify({
         "Ind": Indursty.trim(),
