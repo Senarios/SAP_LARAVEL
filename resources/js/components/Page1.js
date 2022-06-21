@@ -1102,7 +1102,7 @@ function PageOne(props) {
                             <div className="col-9" style={{ paddingRight: 0 }}>
                                 <div className='top_input'>
                                     <div className='row'>
-                                        <div className='col-4'>
+                                        <div className='col-4' style={{ paddingLeft: 14 }}>
                                             <input
                                                 list="list1"
                                                 disabled={disabledInputs}
@@ -1192,7 +1192,7 @@ function PageOne(props) {
                                 </div>
                                 <div className="top_input">
                                     <div className='row' style={{ marginRight: 25 }}>
-                                        <div className='col-6'>
+                                        <div className='col-6' style={{ paddingLeft: 15 }}>
                                             <input
                                                 list="indList1"
                                                 name="myBrowser1"

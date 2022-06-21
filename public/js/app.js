@@ -7284,6 +7284,9 @@ function PageOne(props) {
                   className: "row",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                     className: "col-4",
+                    style: {
+                      paddingLeft: 14
+                    },
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
                       list: "list1",
                       disabled: disabledInputs // onChange={onChnagePNLeavel1}
@@ -7401,6 +7404,9 @@ function PageOne(props) {
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                     className: "col-6",
+                    style: {
+                      paddingLeft: 15
+                    },
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
                       list: "indList1",
                       name: "myBrowser1",
