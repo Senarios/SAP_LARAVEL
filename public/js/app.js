@@ -5448,90 +5448,118 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function PageOne(props) {
+  var PNList1 = ['Content and Collaboration', 'Customer Relationship Management', 'Digital Manufacturing', 'Enterprise Management', 'Financial Management', 'Health and Safety Management', 'Human Capital Management', 'Product Lifecycle Management', 'Supplier Relationship Management', 'Supply Chain Management', 'Technology Platform'];
+  var PNList2 = ['SAP  Cloud', 'SAP  Hub', 'SAP Digital Boardroom', 'SAP Global Trade Services', 'SAP Predictive ', 'SAP Watch List Screening', 'SAP Content Stream by Skillsoft', 'SAP Mobile Documents', 'SAP Portal Content Management By OpenText', 'SAP Signature Management by DocuSign', 'SAP C/4HANA', 'SAP Cloud for Customer', 'SAP Commerce', 'SAP Commerce Cloud', 'SAP Customer Activity Repository', 'SAP Customer  for Retail', 'SAP Customer Data Cloud', 'SAP Customer Experience Foundation', 'SAP Customer Order Sourcing', 'SAP Dynamic Pricing by GK', 'SAP Field Service Management', 'SAP Incentive Administration by Vistex and SAP Paybacks and Chargebacks by Vistex', 'SAP Marketing', 'SAP Marketing Cloud', 'SAP Mobile Consumer Assistant by GK', 'SAP Omnichannel Point-of-Sale by GK', 'SAP Omnichannel Promotion Pricing', 'SAP Order Management', 'SAP Precision Marketing', 'SAP Sales Cloud', 'SAP Service Cloud', 'SAP Store Management by GK', 'SAP Student Lifecycle Management', 'SAP Trade Management', 'SAP Trade Promotion Management', 'SAP Upscale Commerce', 'SAP Utilities Customer Engagement', 'SAP Data Custodian', 'Digital Manufacturing', 'Enterprise Management', 'Manufacturing', 'SAP Asset Manager', 'SAP Business ByDesign', 'SAP Digital Vehicle Suite', 'SAP Enterprise Asset Management', 'SAP Entitlement Management', 'SAP ERP', 'SAP S/4HANA', 'SAP S/4HANA Cloud', 'Banking services from SAP', 'SAP Access Control', 'SAP Business Planning and Consolidation', 'SAP Cloud for Real Estate', 'SAP Commodity Management', 'SAP Process Control', 'SAP Profitability and Performance Management', 'SAP Risk Management', 'SAP Spend Performance Management', 'SAP Sustainability Performance Management', 'SAP Treasury and Risk Management', 'Health and Safety Management', 'SAP Environment', 'Qualtrics EmployeeXM for IT', 'SAP Fieldglass Time Entry', 'SAP Qualtrics 360 Feedback', 'SAP Qualtrics Employee Benefits Optimizer', 'SAP Qualtrics Employee Engagement', 'SAP Qualtrics Employee Lifecycle', 'SAP SuccessFactors H', 'SAP SuccessFactors HCM Core', 'SAP SuccessFactors HXM Suite', 'SAP Workforce Management', 'SAP Dairy Management by msg', 'SAP Enterprise Product Development', 'SAP Fashion Management', 'SAP Innovation Management', 'SAP Intelligent Product Design', 'SAP Meat and Fish Management by msg', 'SAP Meat Management by msg', 'SAP Product Lifecycle Costing', 'Ariba Network', 'SAP Ariba Buying', 'SAP Ariba Buying and Invoicing', 'SAP Ariba Contracts', 'SAP Ariba Discount Management', 'SAP Ariba Invoice Management', 'SAP Ariba Procurement', 'SAP Ariba Snap', 'SAP Ariba Sourcing', 'SAP Ariba Spend Analysis', 'SAP Ariba Spot Buy Catalog', 'SAP Ariba Supplier', 'SAP Ariba Supplier Information and Performance Management', 'SAP Ariba Supplier Lifecycle and Performance', 'SAP Ariba Supplier Risk', 'SAP Ariba Supply Chain', 'SAP Fieldglass Contingent Workforce Management', 'SAP Fieldglass Services Procurement', 'SAP Fieldglass Vendor Management System', 'SAP Fieldglass\xa0Assignment Management', 'SAP Rural Sourcing Management', 'SAP Strategic Sourcing Suite', 'SAP Supplier Relationship Management', 'SAP Digital Supply Chain', 'SAP Extended Warehouse Management', 'SAP Farm Management by Vistex', 'SAP Global Track and Trace', 'SAP Grower Management for Perishables by Vistex', 'SAP Integrated Business Planning for Supply Chain', 'SAP Intelligent Asset Management', 'SAP Logistics Business Network', 'SAP S/4HANA Supply Chain', 'SAP Sales and Operations Planning', 'SAP Transportation Management', 'business process intelligence', 'Qualtrics CoreXM', 'Qualtrics CustomerXM', 'Qualtrics EmployeeXM', 'Qualtrics XM Platform', 'SAP', 'SAP Business Technology Platform', 'SAP Cloud Identity Access Governance', 'SAP Data Warehouse Cloud', 'SAP Fiori', 'SAP HANA', 'SAP HANA Cloud Services', 'SAP Landscape Management', 'SAP Mobile App Protection by Mocana', 'SAP SuccessFactors Work Zone'];
+  var PNList3 = ['SAP  Cloud', 'SAP  Hub', 'SAP Digital Boardroom', 'SAP Global Trade Services', 'SAP Predictive ', 'SAP Watch List Screening', 'SAP Content Stream by Skillsoft', 'SAP Mobile Documents', 'SAP Portal Content Management By OpenText', 'SAP Signature Management by DocuSign', 'SAP Sales Cloud', 'SAP Service Cloud', 'SAP Cloud for Customer', 'SAP Commerce', 'SAP Commerce Cloud', 'SAP Customer Activity Repository', 'SAP Customer  for Retail', 'SAP Customer Data Cloud', 'SAP Customer Data Platform', 'SAP Customer Order Sourcing', 'SAP Dynamic Pricing by GK(cloud edition)', 'SAP Field Service Management', 'SAP Incentive Administration by Vistex and SAP Paybacks and Chargebacks by Vistex', 'SAP Marketing', 'SAP Marketing Cloud', 'SAP Mobile Consumer Assistant by GK', 'SAP Omnichannel Point-of-Sale by GK(cloud edition)', 'SAP Omnichannel Promotion Pricing', 'SAP Order Management', 'SAP Precision Marketing', 'SAP Subscription Billing', 'SAP Customer Engagement Center', 'SAP Self-Service Accelerator fo', 'SAP Self-Service Accelerator for Utilities by SEW', 'SAP Omnichannel Point-of-Sale by GK', 'SAP Student Lifecycle Management', 'SAP Trade Management', 'SAP Trade Promotion Management', 'SAP Upscale Commerce', 'SAP Utilities Customer Engagement', 'SAP Data Custodian', 'SAP Digital Manufacturing Cloud', 'SAP Digital Manufacturing Insights', 'Enterprise Management', 'SAP Manufacturing Execution', 'SAP Manufacturing Integration and Intelligence', 'SAP Asset Manager', 'SAP Business ByDesign', 'SAP Digital Vehicle Suite', 'SAP Enterprise Asset Management', 'SAP Entitlement Management', 'SAP ERP', 'SAP ERP add-on for retail', 'SAP S/4HANA', 'SAP S/4HANA Cloud', 'SAP S/4HANA Finance', 'SAP S/4HANA for central procurement', 'SAP S/4HANA Cloud for central procurement', 'SAP S/4HANA Cloud for projects(project collaboration)', 'Banking services from SAP', 'SAP Access Control for SAP S/4HANA', 'SAP Business Planning and Consolidation', 'SAP Cloud for Real Estate', 'SAP Commodity Management', 'SAP Process Control', 'SAP Profitability and Performance Management', 'SAP', 'SAP Risk Management', 'SAP Risk Management for SAP S/4HANA', 'SAP Spend Performance Management', 'SAP Sustainability Performance Management', 'SAP Treasury and Risk Management(version for the United States)', 'Health and Safety Management', 'SAP Environment', 'Qualtrics EmployeeXM for IT', 'SAP Fieldglass Time Entry', 'SAP Qualtrics 360 Feedback', 'SAP Qualtrics Employee Benefits Optimizer', 'SAP Qualtrics Employee Engagement', 'SAP Qualtrics Employee Lifecycle', 'SAP SuccessFactors H', 'SAP SuccessFactors HCM Core', 'SAP SuccessFactors', 'SAP SuccessFactors Compensation', 'SAP SuccessFactors Employee Central', 'SAP SuccessFactors Employee Central Payroll', 'SAP SuccessFactors Employee Central Service', 'SAP SuccessFactors Employee Central Service Center', 'SAP SuccessFactors HXM Core', 'SAP SuccessFactors HXM Suite', 'SAP SuccessFactors Learning', 'SAP SuccessFactors Learning Marketplace', 'SAP SuccessFactors Mobile', 'SAP SuccessFactors Onboarding', 'SAP SuccessFactors Opportunity Marketplace', 'SAP SuccessFactors People ', 'SAP SuccessFactors Performance & Goals', 'SAP SuccessFactors platform', 'SAP SuccessFactors Recruit', 'SAP SuccessFactors Recruiting', 'SAP SuccessFactors Succession & Development', 'SAP SuccessFactors Workforce ', 'SAP SuccessFactors Work-Life', 'SAP Workforce Management', 'SAP Dairy Management by msg', 'SAP Enterprise Product Development', 'SAP Fashion Management', 'SAP Innovation Management', 'SAP Intelligent Product Design', 'SAP Meat and Fish Management by msg', 'SAP Meat Management by msg', 'SAP Product Lifecycle Costing', 'Ariba Network', 'SAP Ariba Buying', 'SAP Ariba Buying and Invoicing', 'SAP Ariba Contracts', 'SAP Ariba Discount Management', 'SAP Ariba Invoice Management', 'SAP Ariba Procurement', 'SAP Ariba Snap', 'SAP Ariba Sourcing', 'SAP Ariba Spend Analysis', 'SAP Ariba Spot Buy Catalog', 'SAP Ariba Supplier', 'SAP Ariba Supplier Information and Performance Management', 'SAP Ariba Supplier Lifecycle and Performance', 'SAP Ariba Supplier Risk', 'SAP Ariba Supply Chain', 'SAP Fieldglass Contingent Workforce Management', 'SAP Fieldglass Services Procurement', 'SAP Fieldglass Vendor', 'SAP Fieldglass Vendor Management System', 'SAP Fieldglass\xa0Assignment Management', 'SAP Rural Sourcing Management', 'SAP Strategic Sourcing Suite', 'SAP Supplier Relationship Management', 'SAP Internet of Things', 'SAP Extended Warehouse Management', 'SAP Farm Management by Vistex', 'SAP Global Track and Trace', 'SAP Grower Management for Perishables by Vistex', 'SAP Integrated Business Planning for Supply Chain', 'SAP Asset Intelligence Network', 'SAP Asset Strategy and Performance Management', 'SAP Predictive Asset Insights', 'SAP Logistics Business Network', 'SAP S/4HANA Supply Chain', 'SAP Sales and Operations Planning', 'SAP Transportation Management', 'SAP Process Insights', 'Qualtrics CoreXM', 'Qualtrics CustomerXM', 'Qualtrics EmployeeXM', 'Qualtrics XM Platform', 'business rules', 'SAP Business Technology Platform', 'SAP Integration Suite', 'SAP IoT services for SAP BTP', 'SAP Cloud Identity Access Governance', 'SAP Data Warehouse Cloud', 'SAP Fiori', 'SAP Fiori Cloud', 'SAP HANA spatial services', 'SAP HANA(platform edition)', 'SAP HANA Cloud', 'SAP Landscape Management', 'SAP Mobile App Protection by Mocana', 'SAP SuccessFactors Work Zone', 'SAP Work Zone'];
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      dum = _useState2[0],
+      setDum = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(PNList1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      level1 = _useState4[0],
+      setLevel1 = _useState4[1]; // const onChnagePNLeavel1 = (e) => {
+  //     let val = e.target.value
+  //     PNList1.push(val)
+  //     setLevel1(...PNList1)
+  //     console.log("AleemSAjjad----", PNList1);
+  // }
+
+
+  var indArray = {
+    "Business Technology Platform": ["Business Technology Platform"],
+    "Consumer": ["Consumer Products", "Healthcare", "Life Sciences", "Retail", "Retail- Fashion", "Wholesale Distribution"],
+    "Discrete": ["Aerospace & Defense", "Automotive", "High Tech", "Industrial Manufacturing"],
+    "ENR": ["Chemicals", "Mill Products & Mining", "Oil Gas & Energy", "Utilities"],
+    "Finserve": ["Banking", "Insurance"],
+    "ISM": ["Concur", "Fieldglass", "Procurement"],
+    "Public Services": ["Defense & Security", "Public Sector"],
+    "LOB": [],
+    "Midmarket": [],
+    "Services": ["Engineering Construction & Operations", "Higher Education & Research", "Professional Services", "Sports & Entertainment", "Telco", "Travel & Transport"]
+  };
+
+  var selectedValueRow = function selectedValueRow(e) {
+    setDum(indArray[e.target.value]);
+  };
+
   var onClickHeat = function onClickHeat() {
     props.history.push("/heat-map");
   };
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
-      _useState2 = _slicedToArray(_useState, 2),
-      newBArray = _useState2[0],
-      setnewBArray = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      Lob1 = _useState4[0],
-      setLob1 = _useState4[1];
-
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState6 = _slicedToArray(_useState5, 2),
-      fileName = _useState6[0],
-      setFileName = _useState6[1]; // const [Lob2, setLob2] = useState([]);
-  // const [Lob3, setLob3] = useState([]);
-  // const [Lob4, setLob4] = useState([]);
+      newBArray = _useState6[0],
+      setnewBArray = _useState6[1];
 
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState8 = _slicedToArray(_useState7, 2),
-      GrapshData = _useState8[0],
-      setGrapshData = _useState8[1];
+      Lob1 = _useState8[0],
+      setLob1 = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState10 = _slicedToArray(_useState9, 2),
-      isLoading = _useState10[0],
-      setIsLoading = _useState10[1];
+      GrapshData = _useState10[0],
+      setGrapshData = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
       _useState12 = _slicedToArray(_useState11, 2),
-      progressValue = _useState12[0],
-      setprogressValue = _useState12[1];
+      isLoading = _useState12[0],
+      setIsLoading = _useState12[1];
 
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState14 = _slicedToArray(_useState13, 2),
-      totalSum = _useState14[0],
-      settotalSum = _useState14[1];
+      progressValue = _useState14[0],
+      setprogressValue = _useState14[1];
 
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState16 = _slicedToArray(_useState15, 2),
-      progressValueSearch = _useState16[0],
-      setprogressValueSearch = _useState16[1];
+      totalSum = _useState16[0],
+      settotalSum = _useState16[1];
 
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState18 = _slicedToArray(_useState17, 2),
-      barChartDataName = _useState18[0],
-      setBarChartDataName = _useState18[1];
+      progressValueSearch = _useState18[0],
+      setprogressValueSearch = _useState18[1];
 
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState20 = _slicedToArray(_useState19, 2),
-      IndbarChartDataName = _useState20[0],
-      setIndBarChartDataName = _useState20[1];
+      barChartDataName = _useState20[0],
+      setBarChartDataName = _useState20[1];
 
   var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState22 = _slicedToArray(_useState21, 2),
-      IndbarChartDataName2 = _useState22[0],
-      setIndBarChartDataName2 = _useState22[1];
+      IndbarChartDataName = _useState22[0],
+      setIndBarChartDataName = _useState22[1];
 
   var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState24 = _slicedToArray(_useState23, 2),
-      barChartDataValue = _useState24[0],
-      setBarChartDataValue = _useState24[1];
+      IndbarChartDataName2 = _useState24[0],
+      setIndBarChartDataName2 = _useState24[1];
 
   var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState26 = _slicedToArray(_useState25, 2),
-      filterPName = _useState26[0],
-      setFilterPName = _useState26[1];
+      barChartDataValue = _useState26[0],
+      setBarChartDataValue = _useState26[1];
 
-  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState28 = _slicedToArray(_useState27, 2),
-      searchBox = _useState28[0],
-      setSearchBox = _useState28[1];
+      filterPName = _useState28[0],
+      setFilterPName = _useState28[1];
 
-  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState30 = _slicedToArray(_useState29, 2),
-      heatMapData = _useState30[0],
-      setHeatMapData = _useState30[1];
+      searchBox = _useState30[0],
+      setSearchBox = _useState30[1];
+
+  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState32 = _slicedToArray(_useState31, 2),
+      heatMapData = _useState32[0],
+      setHeatMapData = _useState32[1];
 
   var listOfBo = newBArray;
-  console.log("Lob1---------", Lob1);
 
   var onselect = function onselect(selectedList, selectedItem) {
     setLob1(function (Lob1) {
@@ -5656,290 +5684,290 @@ function PageOne(props) {
     });
   });
 
-  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState32 = _slicedToArray(_useState31, 2),
-      StateOne = _useState32[0],
-      setStateOne = _useState32[1];
-
   var _useState33 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState34 = _slicedToArray(_useState33, 2),
-      StateTwo = _useState34[0],
-      setStateTwo = _useState34[1];
+      StateOne = _useState34[0],
+      setStateOne = _useState34[1];
 
   var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState36 = _slicedToArray(_useState35, 2),
-      StateThree = _useState36[0],
-      setStateThree = _useState36[1];
+      StateTwo = _useState36[0],
+      setStateTwo = _useState36[1];
 
   var _useState37 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState38 = _slicedToArray(_useState37, 2),
-      StateFour = _useState38[0],
-      setStateFour = _useState38[1];
+      StateThree = _useState38[0],
+      setStateThree = _useState38[1];
 
   var _useState39 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState40 = _slicedToArray(_useState39, 2),
-      StateFive = _useState40[0],
-      setStateFive = _useState40[1];
+      StateFour = _useState40[0],
+      setStateFour = _useState40[1];
 
   var _useState41 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState42 = _slicedToArray(_useState41, 2),
-      StateSix = _useState42[0],
-      setStateSix = _useState42[1];
+      StateFive = _useState42[0],
+      setStateFive = _useState42[1];
 
-  var _useState43 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState43 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState44 = _slicedToArray(_useState43, 2),
-      pName = _useState44[0],
-      setPname = _useState44[1];
+      StateSix = _useState44[0],
+      setStateSix = _useState44[1];
 
   var _useState45 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState46 = _slicedToArray(_useState45, 2),
-      useCase = _useState46[0],
-      setUseCase = _useState46[1];
+      pName = _useState46[0],
+      setPname = _useState46[1];
 
   var _useState47 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState48 = _slicedToArray(_useState47, 2),
-      Indursty = _useState48[0],
-      setIndursty = _useState48[1];
+      useCase = _useState48[0],
+      setUseCase = _useState48[1];
 
   var _useState49 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState50 = _slicedToArray(_useState49, 2),
-      Protagonist = _useState50[0],
-      setProtagonist = _useState50[1];
+      Indursty = _useState50[0],
+      setIndursty = _useState50[1];
 
   var _useState51 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState52 = _slicedToArray(_useState51, 2),
-      BO1 = _useState52[0],
-      setBO1 = _useState52[1];
+      Protagonist = _useState52[0],
+      setProtagonist = _useState52[1];
 
   var _useState53 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState54 = _slicedToArray(_useState53, 2),
-      Demo1 = _useState54[0],
-      setDemo1 = _useState54[1];
+      BO1 = _useState54[0],
+      setBO1 = _useState54[1];
 
   var _useState55 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState56 = _slicedToArray(_useState55, 2),
-      Demo2 = _useState56[0],
-      setDemo2 = _useState56[1];
+      Demo1 = _useState56[0],
+      setDemo1 = _useState56[1];
 
   var _useState57 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState58 = _slicedToArray(_useState57, 2),
-      Demo3 = _useState58[0],
-      setDemo3 = _useState58[1];
+      Demo2 = _useState58[0],
+      setDemo2 = _useState58[1];
 
   var _useState59 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState60 = _slicedToArray(_useState59, 2),
-      Demo4 = _useState60[0],
-      setDemo4 = _useState60[1];
+      Demo3 = _useState60[0],
+      setDemo3 = _useState60[1];
 
   var _useState61 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState62 = _slicedToArray(_useState61, 2),
-      resA1 = _useState62[0],
-      setResA1 = _useState62[1];
+      Demo4 = _useState62[0],
+      setDemo4 = _useState62[1];
 
   var _useState63 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState64 = _slicedToArray(_useState63, 2),
-      resA2 = _useState64[0],
-      setResA2 = _useState64[1];
+      resA1 = _useState64[0],
+      setResA1 = _useState64[1];
 
   var _useState65 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState66 = _slicedToArray(_useState65, 2),
-      resB1 = _useState66[0],
-      setResB1 = _useState66[1];
+      resA2 = _useState66[0],
+      setResA2 = _useState66[1];
 
   var _useState67 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState68 = _slicedToArray(_useState67, 2),
-      resB2 = _useState68[0],
-      setResB2 = _useState68[1];
+      resB1 = _useState68[0],
+      setResB1 = _useState68[1];
 
   var _useState69 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState70 = _slicedToArray(_useState69, 2),
-      resC1 = _useState70[0],
-      setResC1 = _useState70[1];
+      resB2 = _useState70[0],
+      setResB2 = _useState70[1];
 
   var _useState71 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState72 = _slicedToArray(_useState71, 2),
-      resC1_2 = _useState72[0],
-      setResC1_2 = _useState72[1];
+      resC1 = _useState72[0],
+      setResC1 = _useState72[1];
 
   var _useState73 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState74 = _slicedToArray(_useState73, 2),
-      resC2 = _useState74[0],
-      setResC2 = _useState74[1];
+      resC1_2 = _useState74[0],
+      setResC1_2 = _useState74[1];
 
   var _useState75 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState76 = _slicedToArray(_useState75, 2),
-      resC2_1 = _useState76[0],
-      setResC2_1 = _useState76[1];
+      resC2 = _useState76[0],
+      setResC2 = _useState76[1];
 
-  var _useState77 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState77 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState78 = _slicedToArray(_useState77, 2),
-      loading = _useState78[0],
-      setloading = _useState78[1];
+      resC2_1 = _useState78[0],
+      setResC2_1 = _useState78[1];
 
   var _useState79 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState80 = _slicedToArray(_useState79, 2),
-      disabledInputs = _useState80[0],
-      setdisabledInputs = _useState80[1];
+      loading = _useState80[0],
+      setloading = _useState80[1];
 
   var _useState81 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState82 = _slicedToArray(_useState81, 2),
-      disabledInputsOnNext = _useState82[0],
-      setdisabledInputsOnNext = _useState82[1];
+      disabledInputs = _useState82[0],
+      setdisabledInputs = _useState82[1];
 
   var _useState83 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState84 = _slicedToArray(_useState83, 2),
-      disabledInputsd2 = _useState84[0],
-      setdisabledInputsd2 = _useState84[1];
+      disabledInputsOnNext = _useState84[0],
+      setdisabledInputsOnNext = _useState84[1];
 
   var _useState85 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState86 = _slicedToArray(_useState85, 2),
-      disabledInputsd3 = _useState86[0],
-      setdisabledInputsd3 = _useState86[1];
+      disabledInputsd2 = _useState86[0],
+      setdisabledInputsd2 = _useState86[1];
 
   var _useState87 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState88 = _slicedToArray(_useState87, 2),
-      disabledInputsd4 = _useState88[0],
-      setdisabledInputsd4 = _useState88[1];
+      disabledInputsd3 = _useState88[0],
+      setdisabledInputsd3 = _useState88[1];
 
   var _useState89 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState90 = _slicedToArray(_useState89, 2),
-      isChecked = _useState90[0],
-      setisChecked = _useState90[1];
+      disabledInputsd4 = _useState90[0],
+      setdisabledInputsd4 = _useState90[1];
 
   var _useState91 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState92 = _slicedToArray(_useState91, 2),
-      isChecked2 = _useState92[0],
-      setisChecked2 = _useState92[1];
+      isChecked = _useState92[0],
+      setisChecked = _useState92[1];
 
   var _useState93 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState94 = _slicedToArray(_useState93, 2),
-      isChecked3 = _useState94[0],
-      setisChecked3 = _useState94[1];
+      isChecked2 = _useState94[0],
+      setisChecked2 = _useState94[1];
 
   var _useState95 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState96 = _slicedToArray(_useState95, 2),
-      isChecked4 = _useState96[0],
-      setisChecked4 = _useState96[1];
+      isChecked3 = _useState96[0],
+      setisChecked3 = _useState96[1];
 
   var _useState97 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState98 = _slicedToArray(_useState97, 2),
-      isChecked5 = _useState98[0],
-      setisChecked5 = _useState98[1];
+      isChecked4 = _useState98[0],
+      setisChecked4 = _useState98[1];
 
   var _useState99 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState100 = _slicedToArray(_useState99, 2),
-      isChecked6 = _useState100[0],
-      setisChecked6 = _useState100[1];
+      isChecked5 = _useState100[0],
+      setisChecked5 = _useState100[1];
 
   var _useState101 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState102 = _slicedToArray(_useState101, 2),
-      isChecked11 = _useState102[0],
-      setisChecked11 = _useState102[1];
+      isChecked6 = _useState102[0],
+      setisChecked6 = _useState102[1];
 
   var _useState103 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState104 = _slicedToArray(_useState103, 2),
-      isChecked12 = _useState104[0],
-      setisChecked12 = _useState104[1];
+      isChecked11 = _useState104[0],
+      setisChecked11 = _useState104[1];
 
   var _useState105 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState106 = _slicedToArray(_useState105, 2),
-      isChecked7 = _useState106[0],
-      setisChecked7 = _useState106[1];
+      isChecked12 = _useState106[0],
+      setisChecked12 = _useState106[1];
 
   var _useState107 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState108 = _slicedToArray(_useState107, 2),
-      isChecked8 = _useState108[0],
-      setisChecked8 = _useState108[1];
+      isChecked7 = _useState108[0],
+      setisChecked7 = _useState108[1];
 
   var _useState109 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState110 = _slicedToArray(_useState109, 2),
-      isChecked9 = _useState110[0],
-      setisChecked9 = _useState110[1];
+      isChecked8 = _useState110[0],
+      setisChecked8 = _useState110[1];
 
   var _useState111 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState112 = _slicedToArray(_useState111, 2),
-      isChecked10 = _useState112[0],
-      setisChecked10 = _useState112[1];
+      isChecked9 = _useState112[0],
+      setisChecked9 = _useState112[1];
 
-  var _useState113 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState113 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState114 = _slicedToArray(_useState113, 2),
-      extra = _useState114[0],
-      setextra = _useState114[1];
+      isChecked10 = _useState114[0],
+      setisChecked10 = _useState114[1];
 
   var _useState115 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState116 = _slicedToArray(_useState115, 2),
-      extrasss = _useState116[0],
-      setextrasss = _useState116[1];
+      extra = _useState116[0],
+      setextra = _useState116[1];
 
   var _useState117 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState118 = _slicedToArray(_useState117, 2),
-      extra2 = _useState118[0],
-      setextra2 = _useState118[1];
+      extrasss = _useState118[0],
+      setextrasss = _useState118[1];
 
   var _useState119 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState120 = _slicedToArray(_useState119, 2),
-      extrasss2 = _useState120[0],
-      setextrasss2 = _useState120[1];
+      extra2 = _useState120[0],
+      setextra2 = _useState120[1];
 
   var _useState121 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState122 = _slicedToArray(_useState121, 2),
-      extra3 = _useState122[0],
-      setextra3 = _useState122[1];
+      extrasss2 = _useState122[0],
+      setextrasss2 = _useState122[1];
 
   var _useState123 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState124 = _slicedToArray(_useState123, 2),
-      extrasss3 = _useState124[0],
-      setextrasss3 = _useState124[1];
+      extra3 = _useState124[0],
+      setextra3 = _useState124[1];
 
   var _useState125 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState126 = _slicedToArray(_useState125, 2),
-      extra4 = _useState126[0],
-      setextra4 = _useState126[1];
+      extrasss3 = _useState126[0],
+      setextrasss3 = _useState126[1];
 
   var _useState127 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState128 = _slicedToArray(_useState127, 2),
-      extrasss4 = _useState128[0],
-      setextrasss4 = _useState128[1];
+      extra4 = _useState128[0],
+      setextra4 = _useState128[1];
 
   var _useState129 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState130 = _slicedToArray(_useState129, 2),
-      extrasss5 = _useState130[0],
-      setextrasss5 = _useState130[1];
+      extrasss4 = _useState130[0],
+      setextrasss4 = _useState130[1];
 
   var _useState131 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState132 = _slicedToArray(_useState131, 2),
-      extrasss6 = _useState132[0],
-      setextrasss6 = _useState132[1];
+      extrasss5 = _useState132[0],
+      setextrasss5 = _useState132[1];
 
   var _useState133 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState134 = _slicedToArray(_useState133, 2),
-      newIntro = _useState134[0],
-      setnewIntro = _useState134[1];
+      extrasss6 = _useState134[0],
+      setextrasss6 = _useState134[1];
 
   var _useState135 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState136 = _slicedToArray(_useState135, 2),
-      newOutro = _useState136[0],
-      setnewOutro = _useState136[1];
+      newIntro = _useState136[0],
+      setnewIntro = _useState136[1];
 
-  var _useState137 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState137 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState138 = _slicedToArray(_useState137, 2),
-      lastLoading = _useState138[0],
-      setlastLoading = _useState138[1];
+      newOutro = _useState138[0],
+      setnewOutro = _useState138[1];
 
   var _useState139 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState140 = _slicedToArray(_useState139, 2),
-      outroLoading = _useState140[0],
-      setoutroLoading = _useState140[1];
+      lastLoading = _useState140[0],
+      setlastLoading = _useState140[1];
 
-  var _useState141 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState141 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState142 = _slicedToArray(_useState141, 2),
-      outroState1 = _useState142[0],
-      setoutroState1 = _useState142[1];
+      outroLoading = _useState142[0],
+      setoutroLoading = _useState142[1];
 
   var _useState143 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState144 = _slicedToArray(_useState143, 2),
-      outroState2 = _useState144[0],
-      setoutroState2 = _useState144[1];
+      outroState1 = _useState144[0],
+      setoutroState1 = _useState144[1];
+
+  var _useState145 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState146 = _slicedToArray(_useState145, 2),
+      outroState2 = _useState146[0],
+      setoutroState2 = _useState146[1];
 
   var OnSelectSearchRes = function OnSelectSearchRes(e) {
     setPname(e.name);
@@ -5955,60 +5983,60 @@ function PageOne(props) {
     setoutroState2(e.target.value);
   };
 
-  var _useState145 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
-      _useState146 = _slicedToArray(_useState145, 2),
-      SBO2 = _useState146[0],
-      setSBO2 = _useState146[1];
-
   var _useState147 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState148 = _slicedToArray(_useState147, 2),
-      SBO3 = _useState148[0],
-      setSBO3 = _useState148[1];
+      SBO2 = _useState148[0],
+      setSBO2 = _useState148[1];
 
   var _useState149 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState150 = _slicedToArray(_useState149, 2),
-      SBO4 = _useState150[0],
-      setSBO4 = _useState150[1];
+      SBO3 = _useState150[0],
+      setSBO3 = _useState150[1];
 
   var _useState151 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState152 = _slicedToArray(_useState151, 2),
-      Fintro1 = _useState152[0],
-      setFintro1 = _useState152[1];
+      SBO4 = _useState152[0],
+      setSBO4 = _useState152[1];
 
   var _useState153 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState154 = _slicedToArray(_useState153, 2),
-      Foutro1 = _useState154[0],
-      setFoutro1 = _useState154[1];
+      Fintro1 = _useState154[0],
+      setFintro1 = _useState154[1];
 
   var _useState155 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState156 = _slicedToArray(_useState155, 2),
-      Fintro2 = _useState156[0],
-      setFintro2 = _useState156[1];
+      Foutro1 = _useState156[0],
+      setFoutro1 = _useState156[1];
 
   var _useState157 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState158 = _slicedToArray(_useState157, 2),
-      Foutro2 = _useState158[0],
-      setFoutro2 = _useState158[1];
+      Fintro2 = _useState158[0],
+      setFintro2 = _useState158[1];
 
   var _useState159 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState160 = _slicedToArray(_useState159, 2),
-      protagnist2 = _useState160[0],
-      setprotagnist2 = _useState160[1];
+      Foutro2 = _useState160[0],
+      setFoutro2 = _useState160[1];
 
   var _useState161 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState162 = _slicedToArray(_useState161, 2),
-      protagnist3 = _useState162[0],
-      setprotagnist3 = _useState162[1];
+      protagnist2 = _useState162[0],
+      setprotagnist2 = _useState162[1];
 
   var _useState163 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState164 = _slicedToArray(_useState163, 2),
-      protagnist4 = _useState164[0],
-      setprotagnist4 = _useState164[1];
+      protagnist3 = _useState164[0],
+      setprotagnist3 = _useState164[1];
 
-  var _useState165 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState165 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState166 = _slicedToArray(_useState165, 2),
-      Floading = _useState166[0],
-      setFloading = _useState166[1];
+      protagnist4 = _useState166[0],
+      setprotagnist4 = _useState166[1];
+
+  var _useState167 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState168 = _slicedToArray(_useState167, 2),
+      Floading = _useState168[0],
+      setFloading = _useState168[1];
 
   var int1 = function int1(e) {
     setFintro1(e.target.value);
@@ -6018,25 +6046,25 @@ function PageOne(props) {
     setFintro2(e.target.value);
   };
 
-  var _useState167 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
-      _useState168 = _slicedToArray(_useState167, 2),
-      bo1RES = _useState168[0],
-      setbo1RES = _useState168[1];
-
   var _useState169 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState170 = _slicedToArray(_useState169, 2),
-      bo1RES_1 = _useState170[0],
-      setbo1RES_1 = _useState170[1];
+      bo1RES = _useState170[0],
+      setbo1RES = _useState170[1];
 
   var _useState171 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState172 = _slicedToArray(_useState171, 2),
-      bo1RES_2 = _useState172[0],
-      setbo1RES_2 = _useState172[1];
+      bo1RES_1 = _useState172[0],
+      setbo1RES_1 = _useState172[1];
 
   var _useState173 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState174 = _slicedToArray(_useState173, 2),
-      bo1RES_3 = _useState174[0],
-      setbo1RES_3 = _useState174[1];
+      bo1RES_2 = _useState174[0],
+      setbo1RES_2 = _useState174[1];
+
+  var _useState175 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState176 = _slicedToArray(_useState175, 2),
+      bo1RES_3 = _useState176[0],
+      setbo1RES_3 = _useState176[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     scrollToTop();
@@ -6135,13 +6163,10 @@ function PageOne(props) {
 
   var onChangeIndursty = function onChangeIndursty(e) {
     var abc = e.target.value;
-    setIndursty(abc);
-    var aa = GrapshData.find(function (e) {
-      return e.name == abc;
-    });
-    var formula = aa.value;
-    setprogressValue("");
-    setprogressValue(formula);
+    setIndursty(abc); // let aa = GrapshData.find((e) => e.name == abc)
+    // let formula = aa.value;
+    // setprogressValue("")
+    // setprogressValue(formula)
   };
 
   var onChangeProtagonist = function onChangeProtagonist(e) {
@@ -6294,212 +6319,188 @@ function PageOne(props) {
   };
 
   var generate1Press = function generate1Press() {
-    var arr = BO1.match(/\S+/g);
-
-    if (arr.length > 5) {
-      alert("Max. Number of allowable words in BO are 3.");
-    } else {
-      document.getElementById("gen0disN").style.display = "none";
-      document.getElementById("gen1disN").style.display = "block";
-      setloading(true);
-      (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptOne)(pName, useCase, Indursty, Protagonist, BO1, Demo1, Lob1).then( /*#__PURE__*/function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(result) {
-          var data;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false);
-                  }
-
-                  data = result.choices;
-
-                  if (data.length == 0) {
-                    setloading(false);
-                  }
-
-                  setResA1(data[0]['text']);
-
-                  if (data.length == 2) {
-                    setResA2(data[1]['text']);
-                  }
-
+    document.getElementById("gen0disN").style.display = "none";
+    document.getElementById("gen1disN").style.display = "block";
+    setloading(true);
+    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptOne)(pName, useCase, Indursty, Protagonist, BO1, Demo1, Lob1).then( /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(result) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (result.hasOwnProperty("error")) {
+                  alert(result.error.message);
                   setloading(false);
-                  document.getElementById("state1").style.display = "block";
-                  scrollToBottom();
+                }
 
-                case 8:
-                case "end":
-                  return _context2.stop();
-              }
+                data = result.choices;
+
+                if (data.length == 0) {
+                  setloading(false);
+                }
+
+                setResA1(data[0]['text']);
+
+                if (data.length == 2) {
+                  setResA2(data[1]['text']);
+                }
+
+                setloading(false);
+                document.getElementById("state1").style.display = "block";
+                scrollToBottom();
+
+              case 8:
+              case "end":
+                return _context2.stop();
             }
-          }, _callee2);
-        }));
+          }
+        }, _callee2);
+      }));
 
-        return function (_x2) {
-          return _ref2.apply(this, arguments);
-        };
-      }());
-      setdisabledInputs(true);
-    }
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+    setdisabledInputs(true);
   };
 
   var onRegenerate1 = function onRegenerate1() {
-    var arr = SBO2.match(/\S+/g);
-
-    if (arr.length > 5) {
-      alert("Max. Number of allowable words in BO are 3.");
-    } else {
-      document.getElementById("123disN123").style.display = "none";
-      document.getElementById("disN123").style.display = "block";
-      setloading(true);
-      (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptTwo)(pName, useCase, Indursty, protagnist2, SBO2, Demo2, Lob1).then( /*#__PURE__*/function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(result) {
-          var data;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-            while (1) {
-              switch (_context3.prev = _context3.next) {
-                case 0:
-                  if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false);
-                  }
-
-                  data = result.choices;
-
-                  if (data.length == 0) {
-                    setloading(false);
-                  }
-
-                  setResB1(data[0]['text']);
-
-                  if (data.length == 2) {
-                    setResB2(data[1]['text']);
-                  }
-
+    document.getElementById("123disN123").style.display = "none";
+    document.getElementById("disN123").style.display = "block";
+    setloading(true);
+    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptTwo)(pName, useCase, Indursty, protagnist2, SBO2, Demo2, Lob1).then( /*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(result) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                if (result.hasOwnProperty("error")) {
+                  alert(result.error.message);
                   setloading(false);
-                  document.getElementById("regenerate").style.display = "block";
-                  scrollToBottom();
+                }
 
-                case 8:
-                case "end":
-                  return _context3.stop();
-              }
+                data = result.choices;
+
+                if (data.length == 0) {
+                  setloading(false);
+                }
+
+                setResB1(data[0]['text']);
+
+                if (data.length == 2) {
+                  setResB2(data[1]['text']);
+                }
+
+                setloading(false);
+                document.getElementById("regenerate").style.display = "block";
+                scrollToBottom();
+
+              case 8:
+              case "end":
+                return _context3.stop();
             }
-          }, _callee3);
-        }));
+          }
+        }, _callee3);
+      }));
 
-        return function (_x3) {
-          return _ref3.apply(this, arguments);
-        };
-      }());
-    }
+      return function (_x3) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
   };
 
   var regenerate3 = function regenerate3() {
-    var arr = SBO3.match(/\S+/g);
-
-    if (arr.length > 5) {
-      alert("Max. Number of allowable words in BO are 3.");
-    } else {
-      document.getElementById("dis76546").style.display = "none";
-      document.getElementById("dis0988").style.display = "block";
-      setloading(true);
-      (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptThree)(pName, useCase, Indursty, protagnist3, SBO3, Demo3, Lob1).then( /*#__PURE__*/function () {
-        var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(result) {
-          var data;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-            while (1) {
-              switch (_context4.prev = _context4.next) {
-                case 0:
-                  if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false);
-                  }
-
-                  data = result.choices;
-
-                  if (data.length == 0) {
-                    setloading(false);
-                  }
-
-                  setResC1(data[0]['text']);
-
-                  if (data.length == 2) {
-                    setResC2(data[1]['text']);
-                  }
-
+    document.getElementById("dis76546").style.display = "none";
+    document.getElementById("dis0988").style.display = "block";
+    setloading(true);
+    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptThree)(pName, useCase, Indursty, protagnist3, SBO3, Demo3, Lob1).then( /*#__PURE__*/function () {
+      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(result) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                if (result.hasOwnProperty("error")) {
+                  alert(result.error.message);
                   setloading(false);
-                  document.getElementById("demo3dis").style.display = "block";
-                  scrollToBottom();
+                }
 
-                case 8:
-                case "end":
-                  return _context4.stop();
-              }
+                data = result.choices;
+
+                if (data.length == 0) {
+                  setloading(false);
+                }
+
+                setResC1(data[0]['text']);
+
+                if (data.length == 2) {
+                  setResC2(data[1]['text']);
+                }
+
+                setloading(false);
+                document.getElementById("demo3dis").style.display = "block";
+                scrollToBottom();
+
+              case 8:
+              case "end":
+                return _context4.stop();
             }
-          }, _callee4);
-        }));
+          }
+        }, _callee4);
+      }));
 
-        return function (_x4) {
-          return _ref4.apply(this, arguments);
-        };
-      }());
-    }
+      return function (_x4) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
   };
 
   var regenerate4 = function regenerate4() {
-    var arr = SBO4.match(/\S+/g);
-
-    if (arr.length > 5) {
-      alert("Max. Number of allowable words in BO are 3.");
-    } else {
-      document.getElementById("dis76546_1").style.display = "none";
-      document.getElementById("dis0988_11").style.display = "block";
-      setloading(true);
-      (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptFour)(pName, useCase, Indursty, protagnist4, SBO4, Demo4, Lob1).then( /*#__PURE__*/function () {
-        var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(result) {
-          var data;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
-            while (1) {
-              switch (_context5.prev = _context5.next) {
-                case 0:
-                  if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false);
-                  }
-
-                  data = result.choices;
-
-                  if (data.length == 0) {
-                    setloading(false);
-                  }
-
-                  setResC1_2(data[0]['text']);
-
-                  if (data.length == 2) {
-                    setResC2_1(data[1]['text']);
-                  }
-
+    document.getElementById("dis76546_1").style.display = "none";
+    document.getElementById("dis0988_11").style.display = "block";
+    setloading(true);
+    (0,_Service__WEBPACK_IMPORTED_MODULE_4__.scriptFour)(pName, useCase, Indursty, protagnist4, SBO4, Demo4, Lob1).then( /*#__PURE__*/function () {
+      var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(result) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                if (result.hasOwnProperty("error")) {
+                  alert(result.error.message);
                   setloading(false);
-                  document.getElementById("DEMO4OP").style.display = "block";
-                  scrollToBottom();
+                }
 
-                case 8:
-                case "end":
-                  return _context5.stop();
-              }
+                data = result.choices;
+
+                if (data.length == 0) {
+                  setloading(false);
+                }
+
+                setResC1_2(data[0]['text']);
+
+                if (data.length == 2) {
+                  setResC2_1(data[1]['text']);
+                }
+
+                setloading(false);
+                document.getElementById("DEMO4OP").style.display = "block";
+                scrollToBottom();
+
+              case 8:
+              case "end":
+                return _context5.stop();
             }
-          }, _callee5);
-        }));
+          }
+        }, _callee5);
+      }));
 
-        return function (_x5) {
-          return _ref5.apply(this, arguments);
-        };
-      }());
-    }
+      return function (_x5) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
   };
 
   var onNextClick = function onNextClick() {
@@ -7272,6 +7273,76 @@ function PageOne(props) {
             className: "row top_pad",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
               className: "col-1"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+              className: "col-9",
+              style: {
+                paddingRight: 0
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+                className: "top_input",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                  className: "row",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    className: "col-4",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+                      list: "list1",
+                      disabled: disabledInputs // onChange={onChnagePNLeavel1}
+                      ,
+                      className: "InputFields",
+                      placeholder: "Level 1",
+                      type: "text"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("datalist", {
+                      id: "list1",
+                      children: PNList1 && PNList1.map(function (row) {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+                          value: row
+                        });
+                      })
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    className: "col-4",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+                      list: "list2",
+                      disabled: disabledInputs // onChange={onChangeIndursty}
+                      ,
+                      className: "InputFields",
+                      placeholder: "Level 2",
+                      type: "text"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("datalist", {
+                      id: "list2",
+                      children: PNList2 && PNList2.map(function (row) {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+                          value: row
+                        });
+                      })
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    className: "col-4",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+                      list: "list3",
+                      disabled: disabledInputs // onChange={onChangeIndursty}
+                      ,
+                      className: "InputFields",
+                      placeholder: "Level 3",
+                      type: "text"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("datalist", {
+                      id: "list3",
+                      children: PNList3 && PNList3.map(function (row) {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+                          value: row
+                        });
+                      })
+                    })]
+                  })]
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+              className: "col-2"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+            className: "row top_pad",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+              className: "col-1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
               className: "col-10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
@@ -7321,46 +7392,51 @@ function PageOne(props) {
                   className: "pName",
                   children: "Industry"
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "top_input",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
-                  list: "browsers",
-                  name: "myBrowser",
-                  disabled: disabledInputs,
-                  onChange: onChangeIndursty,
-                  className: "InputFields",
-                  placeholder: "CX",
-                  type: "text"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("datalist", {
-                  id: "browsers",
-                  children: GrapshData && GrapshData.map(function (row) {
-                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
-                      value: row.name
-                    });
-                  })
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-                className: "row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                  className: "col-1"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                  className: "col-9",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                    style: {
-                      width: "auto",
-                      marginLeft: 20,
-                      marginRight: -15
-                    },
-                    children: Indursty != "" && progressValue && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_ProgressBar__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                      bgcolor: "#99ccff",
-                      progress: _.round(progressValue, 2),
-                      height: 20,
-                      width: 80
-                    })
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                  className: "col-2"
-                })]
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                  className: "row",
+                  style: {
+                    marginRight: 25
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    className: "col-6",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+                      list: "indList1",
+                      name: "myBrowser1",
+                      disabled: disabledInputs,
+                      onChange: selectedValueRow,
+                      className: "InputFields",
+                      placeholder: "Cluster",
+                      type: "text"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("datalist", {
+                      id: "indList1",
+                      children: Object.keys(indArray).map(function (row) {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+                          value: row
+                        });
+                      })
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    className: "col-6",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+                      list: "indList2",
+                      name: "myBrowser2",
+                      disabled: disabledInputs,
+                      onChange: onChangeIndursty,
+                      className: "InputFields",
+                      placeholder: "Hub",
+                      type: "text"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("datalist", {
+                      id: "indList2",
+                      children: dum && dum.map(function (row) {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+                          value: row
+                        });
+                      })
+                    })]
+                  })]
+                })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
               className: "col-1"
@@ -7379,7 +7455,7 @@ function PageOne(props) {
                   className: "firstDiv",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                     className: "inner_text",
-                    children: "A"
+                    children: "4"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                   className: "pName",
@@ -7388,6 +7464,7 @@ function PageOne(props) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "top_input",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(multiselect_react_dropdown__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                  disable: disabledInputs,
                   options: listOfBo // Options to display in the dropdown
                   ,
                   className: "InputFields",
@@ -7618,7 +7695,7 @@ function PageOne(props) {
                         rows: "8",
                         cols: "50",
                         onChange: onChangeDO1O,
-                        value: resA1 == null || "" ? "" : resA1,
+                        value: resA1 == null || "" ? "" : resA1.trim(),
                         className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -7645,7 +7722,7 @@ function PageOne(props) {
                         rows: "8",
                         cols: "50",
                         onChange: onChangeDO1O1,
-                        value: resA2 == null || "" ? "" : resA2,
+                        value: resA2 == null || "" ? "" : resA2.trim(),
                         className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -7831,7 +7908,8 @@ function PageOne(props) {
                           onClick: onRegenerate1,
                           className: "btn cus_btn",
                           style: {
-                            "float": "right"
+                            "float": "right",
+                            marginLeft: 10
                           },
                           children: "Generate Demo Script"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("button", {
@@ -7914,7 +7992,7 @@ function PageOne(props) {
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO2O,
-                              value: resB1 == null || "" ? "" : resB1,
+                              value: resB1 == null || "" ? "" : resB1.trim(),
                               className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -7941,7 +8019,7 @@ function PageOne(props) {
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO2O1,
-                              value: resB2 == null || "" ? "" : resB2,
+                              value: resB2 == null || "" ? "" : resB2.trim(),
                               className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8252,7 +8330,7 @@ function PageOne(props) {
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO3O,
-                              value: resC1 == null || "" ? "" : resC1,
+                              value: resC1 == null || "" ? "" : resC1.trim(),
                               className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8279,7 +8357,7 @@ function PageOne(props) {
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO3O1,
-                              value: resC2 == null || "" ? "" : resC2,
+                              value: resC2 == null || "" ? "" : resC2.trim(),
                               className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8593,7 +8671,7 @@ function PageOne(props) {
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO4O,
-                              value: resC1_2 == null || "" ? "" : resC1_2,
+                              value: resC1_2 == null || "" ? "" : resC1_2.trim(),
                               className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8620,7 +8698,7 @@ function PageOne(props) {
                               rows: "8",
                               cols: "50",
                               onChange: onChangeDO4O1,
-                              value: resC2_1 == null || "" ? "" : resC2_1,
+                              value: resC2_1 == null || "" ? "" : resC2_1.trim(),
                               className: "left_from",
                               type: "text"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8723,7 +8801,7 @@ function PageOne(props) {
                                     rows: "5",
                                     cols: "50",
                                     onChange: int1,
-                                    value: Fintro1 == null || "" ? "" : Fintro1,
+                                    value: Fintro1 == null || "" ? "" : Fintro1.trim(),
                                     className: "left_from",
                                     type: "text"
                                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8750,7 +8828,7 @@ function PageOne(props) {
                                     rows: "5",
                                     cols: "50",
                                     onChange: int2,
-                                    value: Fintro2 == null || "" ? "" : Fintro2,
+                                    value: Fintro2 == null || "" ? "" : Fintro2.trim(),
                                     className: "left_from",
                                     type: "text"
                                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8852,7 +8930,7 @@ function PageOne(props) {
                         id: "CCC",
                         rows: "5",
                         cols: "50",
-                        value: outroState1,
+                        value: outroState1.trim(),
                         className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -8879,7 +8957,7 @@ function PageOne(props) {
                         id: "DDD",
                         rows: "5",
                         cols: "50",
-                        value: outroState2,
+                        value: outroState2.trim(),
                         className: "left_from",
                         type: "text"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
@@ -9278,11 +9356,24 @@ function PageOne(props) {
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
                 style: {
+                  position: "absolute",
+                  paddingTop: 0,
+                  justifyContent: "center",
+                  top: 420,
+                  fontWeight: 700,
+                  fontSize: 16,
+                  marginLeft: -25,
+                  transform: "rotate(270deg)",
+                  fontFamily: "inherit"
+                },
+                children: "SAP Products"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+                style: {
                   textAlign: "center",
                   paddingTop: 10,
                   fontWeight: 600
                 },
-                children: "Industries Count"
+                children: "Respective Count"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 style: {
                   width: 600,
@@ -9293,6 +9384,19 @@ function PageOne(props) {
                   width: "300",
                   height: "300"
                 })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+                style: {
+                  position: "absolute",
+                  paddingTop: 0,
+                  justifyContent: "center",
+                  top: 1200,
+                  fontWeight: 700,
+                  fontSize: 16,
+                  marginLeft: -58,
+                  transform: "rotate(270deg)",
+                  fontFamily: "inherit"
+                },
+                children: "Industies"
               })]
             })]
           })]
@@ -9438,8 +9542,10 @@ function PageTwo() {
           justifyContent: "center",
           top: 750,
           fontWeight: 800,
-          fontSize: 16,
-          marginLeft: 10
+          fontSize: 18,
+          marginLeft: 10,
+          fontFamily: "cursive",
+          transform: "rotate(270deg)"
         },
         children: "Industries"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -9452,9 +9558,10 @@ function PageTwo() {
         id: "containerHeatMap"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
         style: {
-          fontSize: 16,
+          fontSize: 18,
           fontWeight: 800,
-          textAlign: "center"
+          textAlign: "center",
+          fontFamily: "cursive"
         },
         children: "SAP Products"
       })]
@@ -9574,7 +9681,7 @@ function scriptOne(pName, useCase, Indursty, Protagonist, BO1, extra, Lob1) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9616,7 +9723,7 @@ function scriptTwo(pName, useCase, Indursty, Protagonist, SBO2, extra2, Lob2) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9658,7 +9765,7 @@ function scriptThree(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob3) 
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9700,7 +9807,7 @@ function scriptFour(pName, useCase, Indursty, Protagonist, SBO3, extra3, Lob4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9753,7 +9860,7 @@ function FinalOutPut(pName1, useCase1, Indursty1, Protagonist1, BO1, SBO2, SBO3,
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -9784,7 +9891,7 @@ function FinalOutro(pName1, useCase1, intro, BO1, SBO2, SBO3, SBO4) {
       body: body,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + "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",
+        Authorization: "Bearer " + "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",
         "OpenAI-Organization": "org-uAm5KJBKbuyoDzkPF6r67bFB"
       }
     }).then(function (response) {
@@ -16887,7 +16994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".top_pad {\r\n    margin-top: 40px;\r\n}\r\n.firstDiv {\r\n    height: 42px;\r\n    width: 42px;\r\n    background-color: #0a6ed1;\r\n    border-radius: 50px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-right: 20px;\r\n}\r\n.inner_text {\r\n    color: #fff;\r\n    font-size: 22px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n}\r\n.inner_text_O {\r\n    color: #fff;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding-top: 7px;\r\n}\r\n.pName {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n}\r\n.pName1 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName2 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName3 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.top_input {\r\n    margin-top: 10px;\r\n    margin-left: 60px;\r\n}\r\n.cus_radio {\r\n    margin-top: 25px;\r\n    margin-left: 20px !important;\r\n}\r\n.InputFields {\r\n    width: 90% !important;\r\n    padding: 8px;\r\n}\r\n.btn_section {\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n.btn_section_next {\r\n    padding-bottom: 40px;\r\n}\r\n.cus_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n}\r\n.cuss_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n    margin-right: 15px;\r\n}\r\n.custom-radio {\r\n    display: flex;\r\n    margin-top: 20px;\r\n    margin-left: 20px;\r\n}\r\n.left_from {\r\n    margin-left: 20px;\r\n    padding-left: 20px;\r\n    outline: none;\r\n    padding: 15px;\r\n    color: #757575;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n    width: 470px;\r\n}\r\n\r\n.animation_text {\r\n    border-right: solid 3px #000;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    font-size: 20px;\r\n    color: #000;\r\n    font-weight: 600;\r\n}\r\n\r\n/* Animation */\r\n.animation_text {\r\n    -webkit-animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n            animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n}\r\n\r\n/* text animation */\r\n\r\n@-webkit-keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n@keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n/* cursor animations */\r\n\r\n@-webkit-keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n@keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n/* react state */\r\n\r\n/* input[type=\"text\"]:enabled {\r\n  background: #ffff00;\r\n} */\r\n\r\ninput[type=\"text\"]:disabled {\r\n    background: #dddddd;\r\n}\r\n\r\n#state1 {\r\n    display: none;\r\n}\r\n\r\n/* Loader */\r\n\r\n#loading {\r\n    display: inline-block;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 5px solid rgb(26 108 97 / 56%);\r\n    border-radius: 50%;\r\n    border-top-color: #fff;\r\n    animation: spin 1s ease-in-out infinite;\r\n    -webkit-animation: spin 1s ease-in-out infinite;\r\n    float: right;\r\n}\r\n\r\n@keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n#section1dis {\r\n    display: block;\r\n}\r\n\r\n#state2 {\r\n    display: none;\r\n}\r\n#regenerate {\r\n    display: none;\r\n}\r\n\r\n#section2dis {\r\n    display: block;\r\n}\r\n#regenerate2 {\r\n    display: none;\r\n}\r\n#demo3dis {\r\n    display: none;\r\n}\r\n#next1None {\r\n    display: none;\r\n}\r\n#next2None {\r\n    display: none;\r\n}\r\n#next3None {\r\n    display: none;\r\n}\r\n#lastDivNone {\r\n    display: none;\r\n}\r\n#gen1disN {\r\n    display: none;\r\n}\r\n#disN123 {\r\n    display: none;\r\n}\r\n#dis0988 {\r\n    display: none;\r\n}\r\n#dis0988_11 {\r\n    display: none;\r\n}\r\n#next3NoneFinish {\r\n    display: none;\r\n}\r\n.right_side {\r\n    background-color: #ebf8ff;\r\n    width: 100%;\r\n    border: none;\r\n    height: 100%;\r\n    padding: 5px;\r\n    overflow: hidden;\r\n    padding-left: 16px;\r\n}\r\n\r\n#demo4Div {\r\n    display: none;\r\n}\r\n#DEMO4OP {\r\n    display: none;\r\n}\r\n#next3None111 {\r\n    display: none;\r\n}\r\n#FOROutro {\r\n    display: none;\r\n}\r\n#outro1Dis {\r\n    display: none;\r\n}\r\n#outNon2 {\r\n    display: none;\r\n}\r\n#outNon1 {\r\n    display: none;\r\n}\r\n.autosize {\r\n    resize: none;\r\n    overflow: hidden;\r\n}\r\n.pdfhead {\r\n    text-align: center;\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n}\r\n.newpd {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\npre {\r\n    display: block;\r\n    font-size: 87.5%;\r\n    color: #212529;\r\n    white-space: pre-wrap;\r\n    padding: 15px;\r\n}\r\n.circle {\r\n    margin-left: 10;\r\n    width: 20;\r\n    height: 20;\r\n    border-radius: 20;\r\n    border: \"1px solid blue\";\r\n}\r\n.body-loader {\r\n    display: flex;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background: #f9fafe;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: fixed;\r\n    z-index: 99999999;\r\n}\r\n#reGenIntro {\r\n    display: none;\r\n}\r\n#intro1ReGen {\r\n    display: none;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".top_pad {\r\n    margin-top: 40px;\r\n}\r\n.firstDiv {\r\n    height: 42px;\r\n    width: 42px;\r\n    background-color: #0a6ed1;\r\n    border-radius: 50px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-right: 20px;\r\n}\r\n.inner_text {\r\n    color: #fff;\r\n    font-size: 22px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n}\r\n.inner_text_O {\r\n    color: #fff;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding-top: 7px;\r\n}\r\n.pName {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n}\r\n.pName1 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName2 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.pName3 {\r\n    color: #000;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n}\r\n.top_input {\r\n    margin-top: 10px;\r\n    margin-left: 60px;\r\n}\r\n.cus_radio {\r\n    margin-top: 25px;\r\n    margin-left: 20px !important;\r\n}\r\n.InputFields {\r\n    width: 90% !important;\r\n    padding: 8px;\r\n}\r\n.btn_section {\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n.btn_section_next {\r\n    padding-bottom: 40px;\r\n}\r\n.cus_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n}\r\n.cuss_btn {\r\n    border: 1px solid #0a6ed1;\r\n    color: #0a6ed1;\r\n    margin-right: 15px;\r\n}\r\n.custom-radio {\r\n    display: flex;\r\n    margin-top: 20px;\r\n    margin-left: 20px;\r\n}\r\n.left_from {\r\n    margin-left: 20px;\r\n    padding-left: 20px;\r\n    outline: none;\r\n    padding: 15px;\r\n    color: #757575;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n    width: 552px;\r\n}\r\n\r\n.animation_text {\r\n    border-right: solid 3px #000;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    font-size: 20px;\r\n    color: #000;\r\n    font-weight: 600;\r\n}\r\n\r\n/* Animation */\r\n.animation_text {\r\n    -webkit-animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n            animation: animated-text 1.5s steps(29, end) 1s 1 normal both,\r\n        animated-cursor 600ms steps(29, end) infinite;\r\n}\r\n\r\n/* text animation */\r\n\r\n@-webkit-keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n@keyframes animated-text {\r\n    from {\r\n        width: 0;\r\n    }\r\n    to {\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n/* cursor animations */\r\n\r\n@-webkit-keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n@keyframes animated-cursor {\r\n    from {\r\n        border-right-color: #000;\r\n    }\r\n    to {\r\n        border-right-color: transparent;\r\n    }\r\n}\r\n\r\n/* react state */\r\n\r\n/* input[type=\"text\"]:enabled {\r\n  background: #ffff00;\r\n} */\r\n\r\ninput[type=\"text\"]:disabled {\r\n    background: #dddddd;\r\n}\r\n\r\n#state1 {\r\n    display: none;\r\n}\r\n\r\n/* Loader */\r\n\r\n#loading {\r\n    display: inline-block;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: 5px solid rgb(26 108 97 / 56%);\r\n    border-radius: 50%;\r\n    border-top-color: #fff;\r\n    animation: spin 1s ease-in-out infinite;\r\n    -webkit-animation: spin 1s ease-in-out infinite;\r\n    float: right;\r\n}\r\n\r\n@keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n    to {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n#section1dis {\r\n    display: block;\r\n}\r\n\r\n#state2 {\r\n    display: none;\r\n}\r\n#regenerate {\r\n    display: none;\r\n}\r\n\r\n#section2dis {\r\n    display: block;\r\n}\r\n#regenerate2 {\r\n    display: none;\r\n}\r\n#demo3dis {\r\n    display: none;\r\n}\r\n#next1None {\r\n    display: none;\r\n}\r\n#next2None {\r\n    display: none;\r\n}\r\n#next3None {\r\n    display: none;\r\n}\r\n#lastDivNone {\r\n    display: none;\r\n}\r\n#gen1disN {\r\n    display: none;\r\n}\r\n#disN123 {\r\n    display: none;\r\n}\r\n#dis0988 {\r\n    display: none;\r\n}\r\n#dis0988_11 {\r\n    display: none;\r\n}\r\n#next3NoneFinish {\r\n    display: none;\r\n}\r\n.right_side {\r\n    background-color: #ebf8ff;\r\n    width: 100%;\r\n    border: none;\r\n    height: 100%;\r\n    padding: 5px;\r\n    overflow: hidden;\r\n    padding-left: 16px;\r\n}\r\n\r\n#demo4Div {\r\n    display: none;\r\n}\r\n#DEMO4OP {\r\n    display: none;\r\n}\r\n#next3None111 {\r\n    display: none;\r\n}\r\n#FOROutro {\r\n    display: none;\r\n}\r\n#outro1Dis {\r\n    display: none;\r\n}\r\n#outNon2 {\r\n    display: none;\r\n}\r\n#outNon1 {\r\n    display: none;\r\n}\r\n.autosize {\r\n    resize: none;\r\n    overflow: hidden;\r\n}\r\n.pdfhead {\r\n    text-align: center;\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n}\r\n.newpd {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\npre {\r\n    display: block;\r\n    font-size: 87.5%;\r\n    color: #212529;\r\n    white-space: pre-wrap;\r\n    padding: 15px;\r\n}\r\n.circle {\r\n    margin-left: 10;\r\n    width: 20;\r\n    height: 20;\r\n    border-radius: 20;\r\n    border: \"1px solid blue\";\r\n}\r\n.body-loader {\r\n    display: flex;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background: #f9fafe;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: fixed;\r\n    z-index: 99999999;\r\n}\r\n#reGenIntro {\r\n    display: none;\r\n}\r\n#intro1ReGen {\r\n    display: none;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

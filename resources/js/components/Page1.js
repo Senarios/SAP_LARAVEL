@@ -15,6 +15,52 @@ import Multiselect from 'multiselect-react-dropdown';
 
 
 function PageOne(props) {
+    const PNList1 = ['Content and Collaboration', 'Customer Relationship Management', 'Digital Manufacturing', 'Enterprise Management', 'Financial Management', 'Health and Safety Management', 'Human Capital Management', 'Product Lifecycle Management', 'Supplier Relationship Management', 'Supply Chain Management', 'Technology Platform']
+    const PNList2 = ['SAP  Cloud', 'SAP  Hub', 'SAP Digital Boardroom', 'SAP Global Trade Services', 'SAP Predictive ', 'SAP Watch List Screening', 'SAP Content Stream by Skillsoft', 'SAP Mobile Documents', 'SAP Portal Content Management By OpenText', 'SAP Signature Management by DocuSign', 'SAP C/4HANA', 'SAP Cloud for Customer', 'SAP Commerce', 'SAP Commerce Cloud', 'SAP Customer Activity Repository', 'SAP Customer  for Retail', 'SAP Customer Data Cloud', 'SAP Customer Experience Foundation', 'SAP Customer Order Sourcing', 'SAP Dynamic Pricing by GK', 'SAP Field Service Management', 'SAP Incentive Administration by Vistex and SAP Paybacks and Chargebacks by Vistex', 'SAP Marketing', 'SAP Marketing Cloud', 'SAP Mobile Consumer Assistant by GK', 'SAP Omnichannel Point-of-Sale by GK', 'SAP Omnichannel Promotion Pricing', 'SAP Order Management', 'SAP Precision Marketing', 'SAP Sales Cloud', 'SAP Service Cloud', 'SAP Store Management by GK', 'SAP Student Lifecycle Management', 'SAP Trade Management', 'SAP Trade Promotion Management', 'SAP Upscale Commerce', 'SAP Utilities Customer Engagement', 'SAP Data Custodian', 'Digital Manufacturing', 'Enterprise Management', 'Manufacturing', 'SAP Asset Manager', 'SAP Business ByDesign', 'SAP Digital Vehicle Suite', 'SAP Enterprise Asset Management', 'SAP Entitlement Management', 'SAP ERP', 'SAP S/4HANA', 'SAP S/4HANA Cloud', 'Banking services from SAP', 'SAP Access Control', 'SAP Business Planning and Consolidation', 'SAP Cloud for Real Estate', 'SAP Commodity Management', 'SAP Process Control', 'SAP Profitability and Performance Management', 'SAP Risk Management', 'SAP Spend Performance Management', 'SAP Sustainability Performance Management', 'SAP Treasury and Risk Management', 'Health and Safety Management', 'SAP Environment', 'Qualtrics EmployeeXM for IT', 'SAP Fieldglass Time Entry', 'SAP Qualtrics 360 Feedback', 'SAP Qualtrics Employee Benefits Optimizer', 'SAP Qualtrics Employee Engagement', 'SAP Qualtrics Employee Lifecycle', 'SAP SuccessFactors H', 'SAP SuccessFactors HCM Core', 'SAP SuccessFactors HXM Suite', 'SAP Workforce Management', 'SAP Dairy Management by msg', 'SAP Enterprise Product Development', 'SAP Fashion Management', 'SAP Innovation Management', 'SAP Intelligent Product Design', 'SAP Meat and Fish Management by msg', 'SAP Meat Management by msg', 'SAP Product Lifecycle Costing', 'Ariba Network', 'SAP Ariba Buying', 'SAP Ariba Buying and Invoicing', 'SAP Ariba Contracts', 'SAP Ariba Discount Management', 'SAP Ariba Invoice Management', 'SAP Ariba Procurement', 'SAP Ariba Snap', 'SAP Ariba Sourcing', 'SAP Ariba Spend Analysis', 'SAP Ariba Spot Buy Catalog', 'SAP Ariba Supplier', 'SAP Ariba Supplier Information and Performance Management', 'SAP Ariba Supplier Lifecycle and Performance', 'SAP Ariba Supplier Risk', 'SAP Ariba Supply Chain', 'SAP Fieldglass Contingent Workforce Management', 'SAP Fieldglass Services Procurement', 'SAP Fieldglass Vendor Management System', 'SAP Fieldglass\xa0Assignment Management', 'SAP Rural Sourcing Management', 'SAP Strategic Sourcing Suite', 'SAP Supplier Relationship Management', 'SAP Digital Supply Chain', 'SAP Extended Warehouse Management', 'SAP Farm Management by Vistex', 'SAP Global Track and Trace', 'SAP Grower Management for Perishables by Vistex', 'SAP Integrated Business Planning for Supply Chain', 'SAP Intelligent Asset Management', 'SAP Logistics Business Network', 'SAP S/4HANA Supply Chain', 'SAP Sales and Operations Planning', 'SAP Transportation Management', 'business process intelligence', 'Qualtrics CoreXM', 'Qualtrics CustomerXM', 'Qualtrics EmployeeXM', 'Qualtrics XM Platform', 'SAP', 'SAP Business Technology Platform', 'SAP Cloud Identity Access Governance', 'SAP Data Warehouse Cloud', 'SAP Fiori', 'SAP HANA', 'SAP HANA Cloud Services', 'SAP Landscape Management', 'SAP Mobile App Protection by Mocana', 'SAP SuccessFactors Work Zone']
+    const PNList3 = ['SAP  Cloud', 'SAP  Hub', 'SAP Digital Boardroom', 'SAP Global Trade Services', 'SAP Predictive ', 'SAP Watch List Screening', 'SAP Content Stream by Skillsoft', 'SAP Mobile Documents', 'SAP Portal Content Management By OpenText', 'SAP Signature Management by DocuSign', 'SAP Sales Cloud', 'SAP Service Cloud', 'SAP Cloud for Customer', 'SAP Commerce', 'SAP Commerce Cloud', 'SAP Customer Activity Repository', 'SAP Customer  for Retail', 'SAP Customer Data Cloud', 'SAP Customer Data Platform', 'SAP Customer Order Sourcing', 'SAP Dynamic Pricing by GK(cloud edition)', 'SAP Field Service Management', 'SAP Incentive Administration by Vistex and SAP Paybacks and Chargebacks by Vistex', 'SAP Marketing', 'SAP Marketing Cloud', 'SAP Mobile Consumer Assistant by GK', 'SAP Omnichannel Point-of-Sale by GK(cloud edition)', 'SAP Omnichannel Promotion Pricing', 'SAP Order Management', 'SAP Precision Marketing', 'SAP Subscription Billing', 'SAP Customer Engagement Center', 'SAP Self-Service Accelerator fo', 'SAP Self-Service Accelerator for Utilities by SEW', 'SAP Omnichannel Point-of-Sale by GK', 'SAP Student Lifecycle Management', 'SAP Trade Management', 'SAP Trade Promotion Management', 'SAP Upscale Commerce', 'SAP Utilities Customer Engagement', 'SAP Data Custodian', 'SAP Digital Manufacturing Cloud', 'SAP Digital Manufacturing Insights', 'Enterprise Management', 'SAP Manufacturing Execution', 'SAP Manufacturing Integration and Intelligence', 'SAP Asset Manager', 'SAP Business ByDesign', 'SAP Digital Vehicle Suite', 'SAP Enterprise Asset Management', 'SAP Entitlement Management', 'SAP ERP', 'SAP ERP add-on for retail', 'SAP S/4HANA', 'SAP S/4HANA Cloud', 'SAP S/4HANA Finance', 'SAP S/4HANA for central procurement', 'SAP S/4HANA Cloud for central procurement', 'SAP S/4HANA Cloud for projects(project collaboration)', 'Banking services from SAP', 'SAP Access Control for SAP S/4HANA', 'SAP Business Planning and Consolidation', 'SAP Cloud for Real Estate', 'SAP Commodity Management', 'SAP Process Control', 'SAP Profitability and Performance Management', 'SAP', 'SAP Risk Management', 'SAP Risk Management for SAP S/4HANA', 'SAP Spend Performance Management', 'SAP Sustainability Performance Management', 'SAP Treasury and Risk Management(version for the United States)', 'Health and Safety Management', 'SAP Environment', 'Qualtrics EmployeeXM for IT', 'SAP Fieldglass Time Entry', 'SAP Qualtrics 360 Feedback', 'SAP Qualtrics Employee Benefits Optimizer', 'SAP Qualtrics Employee Engagement', 'SAP Qualtrics Employee Lifecycle', 'SAP SuccessFactors H', 'SAP SuccessFactors HCM Core', 'SAP SuccessFactors', 'SAP SuccessFactors Compensation', 'SAP SuccessFactors Employee Central', 'SAP SuccessFactors Employee Central Payroll', 'SAP SuccessFactors Employee Central Service', 'SAP SuccessFactors Employee Central Service Center', 'SAP SuccessFactors HXM Core', 'SAP SuccessFactors HXM Suite', 'SAP SuccessFactors Learning', 'SAP SuccessFactors Learning Marketplace', 'SAP SuccessFactors Mobile', 'SAP SuccessFactors Onboarding', 'SAP SuccessFactors Opportunity Marketplace', 'SAP SuccessFactors People ', 'SAP SuccessFactors Performance & Goals', 'SAP SuccessFactors platform', 'SAP SuccessFactors Recruit', 'SAP SuccessFactors Recruiting', 'SAP SuccessFactors Succession & Development', 'SAP SuccessFactors Workforce ', 'SAP SuccessFactors Work-Life', 'SAP Workforce Management', 'SAP Dairy Management by msg', 'SAP Enterprise Product Development', 'SAP Fashion Management', 'SAP Innovation Management', 'SAP Intelligent Product Design', 'SAP Meat and Fish Management by msg', 'SAP Meat Management by msg', 'SAP Product Lifecycle Costing', 'Ariba Network', 'SAP Ariba Buying', 'SAP Ariba Buying and Invoicing', 'SAP Ariba Contracts', 'SAP Ariba Discount Management', 'SAP Ariba Invoice Management', 'SAP Ariba Procurement', 'SAP Ariba Snap', 'SAP Ariba Sourcing', 'SAP Ariba Spend Analysis', 'SAP Ariba Spot Buy Catalog', 'SAP Ariba Supplier', 'SAP Ariba Supplier Information and Performance Management', 'SAP Ariba Supplier Lifecycle and Performance', 'SAP Ariba Supplier Risk', 'SAP Ariba Supply Chain', 'SAP Fieldglass Contingent Workforce Management', 'SAP Fieldglass Services Procurement', 'SAP Fieldglass Vendor', 'SAP Fieldglass Vendor Management System', 'SAP Fieldglass\xa0Assignment Management', 'SAP Rural Sourcing Management', 'SAP Strategic Sourcing Suite', 'SAP Supplier Relationship Management', 'SAP Internet of Things', 'SAP Extended Warehouse Management', 'SAP Farm Management by Vistex', 'SAP Global Track and Trace', 'SAP Grower Management for Perishables by Vistex', 'SAP Integrated Business Planning for Supply Chain', 'SAP Asset Intelligence Network', 'SAP Asset Strategy and Performance Management', 'SAP Predictive Asset Insights', 'SAP Logistics Business Network', 'SAP S/4HANA Supply Chain', 'SAP Sales and Operations Planning', 'SAP Transportation Management', 'SAP Process Insights', 'Qualtrics CoreXM', 'Qualtrics CustomerXM', 'Qualtrics EmployeeXM', 'Qualtrics XM Platform', 'business rules', 'SAP Business Technology Platform', 'SAP Integration Suite', 'SAP IoT services for SAP BTP', 'SAP Cloud Identity Access Governance', 'SAP Data Warehouse Cloud', 'SAP Fiori', 'SAP Fiori Cloud', 'SAP HANA spatial services', 'SAP HANA(platform edition)', 'SAP HANA Cloud', 'SAP Landscape Management', 'SAP Mobile App Protection by Mocana', 'SAP SuccessFactors Work Zone', 'SAP Work Zone']
+    const [dum, setDum] = useState([])
+    const [level1, setLevel1] = useState(PNList1)
+
+    // const onChnagePNLeavel1 = (e) => {
+    //     let val = e.target.value
+    //     PNList1.push(val)
+    //     setLevel1(...PNList1)
+    //     console.log("AleemSAjjad----", PNList1);
+    // }
+    const indArray =
+    {
+        "Business Technology Platform": [
+            "Business Technology Platform"
+        ],
+        "Consumer": [
+            "Consumer Products", "Healthcare", "Life Sciences", "Retail", "Retail- Fashion", "Wholesale Distribution"
+        ],
+        "Discrete": [
+            "Aerospace & Defense", "Automotive", "High Tech", "Industrial Manufacturing"
+        ],
+
+        "ENR": [
+            "Chemicals", "Mill Products & Mining", "Oil Gas & Energy", "Utilities"
+        ],
+        "Finserve": [
+            "Banking", "Insurance"
+        ],
+        "ISM": [
+            "Concur", "Fieldglass", "Procurement"
+        ],
+        "Public Services": [
+            "Defense & Security", "Public Sector"
+        ],
+        "LOB": [],
+        "Midmarket": [],
+        "Services": [
+            "Engineering Construction & Operations", "Higher Education & Research", "Professional Services", "Sports & Entertainment", "Telco", "Travel & Transport",
+        ]
+    }
+    const selectedValueRow = (e) => {
+        setDum(indArray[e.target.value])
+    }
+
     const onClickHeat = () => {
         props.history.push("/heat-map")
     }
@@ -22,10 +68,6 @@ function PageOne(props) {
 
 
     const [Lob1, setLob1] = useState([]);
-    const [fileName, setFileName] = useState();
-    // const [Lob2, setLob2] = useState([]);
-    // const [Lob3, setLob3] = useState([]);
-    // const [Lob4, setLob4] = useState([]);
     const [GrapshData, setGrapshData] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [progressValue, setprogressValue] = useState("");
@@ -41,7 +83,6 @@ function PageOne(props) {
 
     const listOfBo = newBArray;
 
-    console.log("Lob1---------", Lob1);
     const onselect = (selectedList, selectedItem) => {
         setLob1(Lob1 => [...Lob1, selectedItem.name])
     }
@@ -353,10 +394,10 @@ function PageOne(props) {
     const onChangeIndursty = (e) => {
         let abc = e.target.value
         setIndursty(abc)
-        let aa = GrapshData.find((e) => e.name == abc)
-        let formula = aa.value;
-        setprogressValue("")
-        setprogressValue(formula)
+        // let aa = GrapshData.find((e) => e.name == abc)
+        // let formula = aa.value;
+        // setprogressValue("")
+        // setprogressValue(formula)
     }
 
     const onChangeProtagonist = (e) => {
@@ -485,118 +526,99 @@ function PageOne(props) {
         });
     }
     const generate1Press = () => {
-        var arr = BO1.match(/\S+/g);
-        if (arr.length > 5) {
-            alert("Max. Number of allowable words in BO are 3.")
-        } else {
-            document.getElementById("gen0disN").style.display = "none"
-            document.getElementById("gen1disN").style.display = "block"
-            setloading(true)
-            scriptOne(pName, useCase, Indursty, Protagonist, BO1, Demo1, Lob1).then(async (result) => {
-                if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false)
-                }
 
-                let data = result.choices
-                if (data.length == 0) {
-                    setloading(false)
-                }
-                setResA1(data[0]['text'])
-                if (data.length == 2) {
-                    setResA2(data[1]['text'])
-                }
+        document.getElementById("gen0disN").style.display = "none"
+        document.getElementById("gen1disN").style.display = "block"
+        setloading(true)
+        scriptOne(pName, useCase, Indursty, Protagonist, BO1, Demo1, Lob1).then(async (result) => {
+            if (result.hasOwnProperty("error")) {
+                alert(result.error.message);
                 setloading(false)
-                document.getElementById("state1").style.display = "block"
-                scrollToBottom()
+            }
 
-            })
-            setdisabledInputs(true)
-        }
+            let data = result.choices
+            if (data.length == 0) {
+                setloading(false)
+            }
+            setResA1(data[0]['text'])
+            if (data.length == 2) {
+                setResA2(data[1]['text'])
+            }
+            setloading(false)
+            document.getElementById("state1").style.display = "block"
+            scrollToBottom()
+
+        })
+        setdisabledInputs(true)
     }
 
     const onRegenerate1 = () => {
-        var arr = SBO2.match(/\S+/g);
-        if (arr.length > 5) {
-            alert("Max. Number of allowable words in BO are 3.")
-        } else {
-            document.getElementById("123disN123").style.display = "none"
-            document.getElementById("disN123").style.display = "block"
-            setloading(true)
-            scriptTwo(pName, useCase, Indursty, protagnist2, SBO2, Demo2, Lob1).then(async (result) => {
-                if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false)
-                }
-                let data = result.choices
-                if (data.length == 0) {
-                    setloading(false)
-                }
-                setResB1(data[0]['text'])
-                if (data.length == 2) {
-                    setResB2(data[1]['text'])
-                }
+        document.getElementById("123disN123").style.display = "none"
+        document.getElementById("disN123").style.display = "block"
+        setloading(true)
+        scriptTwo(pName, useCase, Indursty, protagnist2, SBO2, Demo2, Lob1).then(async (result) => {
+            if (result.hasOwnProperty("error")) {
+                alert(result.error.message);
                 setloading(false)
-                document.getElementById("regenerate").style.display = "block"
-                scrollToBottom()
+            }
+            let data = result.choices
+            if (data.length == 0) {
+                setloading(false)
+            }
+            setResB1(data[0]['text'])
+            if (data.length == 2) {
+                setResB2(data[1]['text'])
+            }
+            setloading(false)
+            document.getElementById("regenerate").style.display = "block"
+            scrollToBottom()
 
-            })
-        }
+        })
 
     }
     const regenerate3 = () => {
-        var arr = SBO3.match(/\S+/g);
-        if (arr.length > 5) {
-            alert("Max. Number of allowable words in BO are 3.")
-        } else {
-            document.getElementById("dis76546").style.display = "none"
-            document.getElementById("dis0988").style.display = "block"
-            setloading(true)
-            scriptThree(pName, useCase, Indursty, protagnist3, SBO3, Demo3, Lob1).then(async (result) => {
-                if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false)
-                }
-                let data = result.choices
-                if (data.length == 0) {
-                    setloading(false)
-                }
-                setResC1(data[0]['text'])
-                if (data.length == 2) {
-                    setResC2(data[1]['text'])
-                }
+        document.getElementById("dis76546").style.display = "none"
+        document.getElementById("dis0988").style.display = "block"
+        setloading(true)
+        scriptThree(pName, useCase, Indursty, protagnist3, SBO3, Demo3, Lob1).then(async (result) => {
+            if (result.hasOwnProperty("error")) {
+                alert(result.error.message);
                 setloading(false)
-                document.getElementById("demo3dis").style.display = "block"
-                scrollToBottom()
-            })
-        }
+            }
+            let data = result.choices
+            if (data.length == 0) {
+                setloading(false)
+            }
+            setResC1(data[0]['text'])
+            if (data.length == 2) {
+                setResC2(data[1]['text'])
+            }
+            setloading(false)
+            document.getElementById("demo3dis").style.display = "block"
+            scrollToBottom()
+        })
     }
     const regenerate4 = () => {
-        var arr = SBO4.match(/\S+/g);
-        if (arr.length > 5) {
-            alert("Max. Number of allowable words in BO are 3.")
-        } else {
-            document.getElementById("dis76546_1").style.display = "none"
-            document.getElementById("dis0988_11").style.display = "block"
-            setloading(true)
-            scriptFour(pName, useCase, Indursty, protagnist4, SBO4, Demo4, Lob1).then(async (result) => {
-                if (result.hasOwnProperty("error")) {
-                    alert(result.error.message);
-                    setloading(false)
-                }
-                let data = result.choices
-                if (data.length == 0) {
-                    setloading(false)
-                }
-                setResC1_2(data[0]['text'])
-                if (data.length == 2) {
-                    setResC2_1(data[1]['text'])
-                }
+        document.getElementById("dis76546_1").style.display = "none"
+        document.getElementById("dis0988_11").style.display = "block"
+        setloading(true)
+        scriptFour(pName, useCase, Indursty, protagnist4, SBO4, Demo4, Lob1).then(async (result) => {
+            if (result.hasOwnProperty("error")) {
+                alert(result.error.message);
                 setloading(false)
-                document.getElementById("DEMO4OP").style.display = "block"
-                scrollToBottom()
-            })
-        }
+            }
+            let data = result.choices
+            if (data.length == 0) {
+                setloading(false)
+            }
+            setResC1_2(data[0]['text'])
+            if (data.length == 2) {
+                setResC2_1(data[1]['text'])
+            }
+            setloading(false)
+            document.getElementById("DEMO4OP").style.display = "block"
+            scrollToBottom()
+        })
     }
     const onNextClick = () => {
         setdisabledInputsOnNext(true)
@@ -1070,11 +1092,74 @@ function PageOne(props) {
                                         <div className='col-1'></div>
                                     </div>
 
-
                                 </div>
                             </div>
                             <div className="col-1"></div>
                         </div>
+
+                        <div className="row top_pad">
+                            <div className="col-1"></div>
+                            <div className="col-9" style={{ paddingRight: 0 }}>
+                                <div className='top_input'>
+                                    <div className='row'>
+                                        <div className='col-4'>
+                                            <input
+                                                list="list1"
+                                                disabled={disabledInputs}
+                                                // onChange={onChnagePNLeavel1}
+                                                className="InputFields"
+                                                placeholder="Level 1"
+                                                type="text"
+                                            />
+                                            <datalist id="list1">
+                                                {
+                                                    PNList1 && PNList1.map((row) => (
+                                                        <option value={row} />
+                                                    ))
+                                                }
+                                            </datalist>
+                                        </div>
+                                        <div className='col-4'>
+                                            <input
+                                                list="list2"
+                                                disabled={disabledInputs}
+                                                // onChange={onChangeIndursty}
+                                                className="InputFields"
+                                                placeholder="Level 2"
+                                                type="text"
+                                            />
+                                            <datalist id="list2">
+                                                {
+                                                    PNList2 && PNList2.map((row) => (
+                                                        <option value={row} />
+                                                    ))
+                                                }
+                                            </datalist>
+                                        </div>
+                                        <div className='col-4'>
+                                            <input
+                                                list="list3"
+                                                disabled={disabledInputs}
+                                                // onChange={onChangeIndursty}
+                                                className="InputFields"
+                                                placeholder="Level 3"
+                                                type="text"
+                                            />
+                                            <datalist id="list3">
+                                                {
+                                                    PNList3 && PNList3.map((row) => (
+                                                        <option value={row} />
+                                                    ))
+                                                }
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-2"></div>
+                        </div>
+
+
                         <div className="row top_pad">
                             <div className="col-1"></div>
                             <div className="col-10">
@@ -1106,24 +1191,46 @@ function PageOne(props) {
                                     <span className="pName">Industry</span>
                                 </div>
                                 <div className="top_input">
-                                    <input
-                                        list="browsers"
-                                        name="myBrowser"
-                                        disabled={disabledInputs}
-                                        onChange={onChangeIndursty}
-                                        className="InputFields"
-                                        placeholder="CX"
-                                        type="text"
-                                    />
-                                    <datalist id="browsers">
-                                        {
-                                            GrapshData && GrapshData.map((row) => (
-                                                <option value={row.name} />
-                                            ))
-                                        }
-                                    </datalist>
+                                    <div className='row' style={{ marginRight: 25 }}>
+                                        <div className='col-6'>
+                                            <input
+                                                list="indList1"
+                                                name="myBrowser1"
+                                                disabled={disabledInputs}
+                                                onChange={selectedValueRow}
+                                                className="InputFields"
+                                                placeholder="Cluster"
+                                                type="text"
+                                            />
+                                            <datalist id="indList1">
+                                                {
+                                                    Object.keys(indArray).map((row) => (
+                                                        <option value={row} />
+                                                    ))
+                                                }
+                                            </datalist>
+                                        </div>
+                                        <div className='col-6'>
+                                            <input
+                                                list="indList2"
+                                                name="myBrowser2"
+                                                disabled={disabledInputs}
+                                                onChange={onChangeIndursty}
+                                                className="InputFields"
+                                                placeholder="Hub"
+                                                type="text"
+                                            />
+                                            <datalist id="indList2">
+                                                {
+                                                    dum && dum.map((row) => (
+                                                        <option value={row} />
+                                                    ))
+                                                }
+                                            </datalist>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='row'>
+                                {/* <div className='row'>
                                     <div className='col-1'></div>
                                     <div className='col-9'>
                                         <div style={{ width: "auto", marginLeft: 20, marginRight: -15 }}>
@@ -1134,7 +1241,7 @@ function PageOne(props) {
                                         </div>
                                     </div>
                                     <div className='col-2'></div>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="col-1"></div>
                         </div>
@@ -1144,12 +1251,13 @@ function PageOne(props) {
                             <div className="col-10">
                                 <div style={{ display: "flex" }}>
                                     <div className="firstDiv">
-                                        <span className="inner_text">A</span>
+                                        <span className="inner_text">4</span>
                                     </div>
                                     <span className="pName">Line of Business</span>
                                 </div>
                                 <div className="top_input">
                                     <Multiselect
+                                        disable={disabledInputs}
                                         options={listOfBo} // Options to display in the dropdown
                                         className="InputFields"
                                         style={{ width: "90%", padding: "8px" }}
@@ -1307,7 +1415,7 @@ function PageOne(props) {
                                                     rows="8"
                                                     cols="50"
                                                     onChange={onChangeDO1O}
-                                                    value={resA1 == null || "" ? "" : resA1}
+                                                    value={resA1 == null || "" ? "" : resA1.trim()}
                                                     className="left_from"
                                                     type="text"
                                                 ></textarea>
@@ -1330,7 +1438,7 @@ function PageOne(props) {
                                                     rows="8"
                                                     cols="50"
                                                     onChange={onChangeDO1O1}
-                                                    value={resA2 == null || "" ? "" : resA2}
+                                                    value={resA2 == null || "" ? "" : resA2.trim()}
                                                     className="left_from"
                                                     type="text"
                                                 ></textarea>
@@ -1372,29 +1480,6 @@ function PageOne(props) {
                         <section id='state2'>
                             <div className="row">
                                 <div className="col-12">
-                                    {/* <div className="row top_pad">
-                                        <div className="col-1"></div>
-                                        <div className="col-10">
-                                            <div style={{ display: "flex" }}>
-                                                <div className="firstDiv">
-                                                    <span className="inner_text">A</span>
-                                                </div>
-                                                <span className="pName">Line of Business 2</span>
-                                            </div>
-                                            <div className="top_input">
-                                                <Multiselect
-                                                    options={listOfBo} // Options to display in the dropdown
-                                                    className="InputFields"
-                                                    style={{ width: "90%", padding: "8px" }}
-                                                    // selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                                                    onSelect={onselect2} // Function will trigger on select event
-                                                    onRemove={onRemove2} // Function will trigger on remove event
-                                                    displayValue="name" // Property name to display in the dropdown options
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="col-1"></div>
-                                    </div> */}
                                     <div className="row top_pad">
                                         <div className="col-1"></div>
                                         <div className="col-10">
@@ -1486,7 +1571,7 @@ function PageOne(props) {
                                                         <button
                                                             onClick={onRegenerate1}
                                                             className="btn cus_btn"
-                                                            style={{ float: "right" }}
+                                                            style={{ float: "right", marginLeft: 10 }}
                                                         >
                                                             Generate Demo Script
                                                         </button>
@@ -1547,7 +1632,7 @@ function PageOne(props) {
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO2O}
-                                                                value={resB1 == null || "" ? "" : resB1}
+                                                                value={resB1 == null || "" ? "" : resB1.trim()}
                                                                 className="left_from"
                                                                 type="text"
                                                             ></textarea>
@@ -1570,7 +1655,7 @@ function PageOne(props) {
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO2O1}
-                                                                value={resB2 == null || "" ? "" : resB2}
+                                                                value={resB2 == null || "" ? "" : resB2.trim()}
                                                                 className="left_from"
                                                                 type="text"
                                                             ></textarea>
@@ -1614,29 +1699,6 @@ function PageOne(props) {
                         <section id='regenerate2'>
                             <div className="row">
                                 <div className="col-12">
-                                    {/* <div className="row top_pad">
-                                        <div className="col-1"></div>
-                                        <div className="col-10">
-                                            <div style={{ display: "flex" }}>
-                                                <div className="firstDiv">
-                                                    <span className="inner_text">A</span>
-                                                </div>
-                                                <span className="pName">Line of Business 3</span>
-                                            </div>
-                                            <div className="top_input">
-                                                <Multiselect
-                                                    options={listOfBo} // Options to display in the dropdown
-                                                    className="InputFields"
-                                                    style={{ width: "90%", padding: "8px" }}
-                                                    // selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                                                    onSelect={onselect3} // Function will trigger on select event
-                                                    onRemove={onRemove3} // Function will trigger on remove event
-                                                    displayValue="name" // Property name to display in the dropdown options
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="col-1"></div>
-                                    </div> */}
                                     <div className="row top_pad">
                                         <div className="col-1"></div>
                                         <div className="col-10">
@@ -1827,7 +1889,7 @@ function PageOne(props) {
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO3O}
-                                                                value={resC1 == null || "" ? "" : resC1}
+                                                                value={resC1 == null || "" ? "" : resC1.trim()}
                                                                 className="left_from"
                                                                 type="text"
                                                             ></textarea>
@@ -1850,7 +1912,7 @@ function PageOne(props) {
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO3O1}
-                                                                value={resC2 == null || "" ? "" : resC2}
+                                                                value={resC2 == null || "" ? "" : resC2.trim()}
                                                                 className="left_from"
                                                                 type="text"
                                                             ></textarea>
@@ -1898,29 +1960,6 @@ function PageOne(props) {
                         <section style={{ marginTop: -78 }} id='demo4Div'>
                             <div className="row">
                                 <div className="col-12">
-                                    {/* <div className="row top_pad">
-                                        <div className="col-1"></div>
-                                        <div className="col-10">
-                                            <div style={{ display: "flex" }}>
-                                                <div className="firstDiv">
-                                                    <span className="inner_text">A</span>
-                                                </div>
-                                                <span className="pName">Line of Business 4</span>
-                                            </div>
-                                            <div className="top_input">
-                                                <Multiselect
-                                                    options={listOfBo} // Options to display in the dropdown
-                                                    className="InputFields"
-                                                    style={{ width: "90%", padding: "8px" }}
-                                                    // selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                                                    onSelect={onselect4} // Function will trigger on select event
-                                                    onRemove={onRemove4} // Function will trigger on remove event
-                                                    displayValue="name" // Property name to display in the dropdown options
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="col-1"></div>
-                                    </div> */}
                                     <div className="row top_pad">
                                         <div className="col-1"></div>
                                         <div className="col-10">
@@ -2108,7 +2147,7 @@ function PageOne(props) {
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO4O}
-                                                                value={resC1_2 == null || "" ? "" : resC1_2}
+                                                                value={resC1_2 == null || "" ? "" : resC1_2.trim()}
                                                                 className="left_from"
                                                                 type="text"
                                                             ></textarea>
@@ -2131,7 +2170,7 @@ function PageOne(props) {
                                                                 rows="8"
                                                                 cols="50"
                                                                 onChange={onChangeDO4O1}
-                                                                value={resC2_1 == null || "" ? "" : resC2_1}
+                                                                value={resC2_1 == null || "" ? "" : resC2_1.trim()}
                                                                 className="left_from"
                                                                 type="text"
                                                             ></textarea>
@@ -2217,7 +2256,7 @@ function PageOne(props) {
                                                                                 rows="5"
                                                                                 cols="50"
                                                                                 onChange={int1}
-                                                                                value={Fintro1 == null || "" ? "" : Fintro1}
+                                                                                value={Fintro1 == null || "" ? "" : Fintro1.trim()}
                                                                                 className="left_from"
                                                                                 type="text"
                                                                             ></textarea>
@@ -2240,7 +2279,7 @@ function PageOne(props) {
                                                                                 rows="5"
                                                                                 cols="50"
                                                                                 onChange={int2}
-                                                                                value={Fintro2 == null || "" ? "" : Fintro2}
+                                                                                value={Fintro2 == null || "" ? "" : Fintro2.trim()}
                                                                                 className="left_from"
                                                                                 type="text"
                                                                             ></textarea>
@@ -2319,7 +2358,7 @@ function PageOne(props) {
                                                         id='CCC'
                                                         rows="5"
                                                         cols="50"
-                                                        value={outroState1}
+                                                        value={outroState1.trim()}
                                                         className="left_from"
                                                         type="text"
                                                     ></textarea>
@@ -2343,7 +2382,7 @@ function PageOne(props) {
                                                         id='DDD'
                                                         rows="5"
                                                         cols="50"
-                                                        value={outroState2}
+                                                        value={outroState2.trim()}
                                                         className="left_from"
                                                         type="text"
                                                     ></textarea>
@@ -2575,11 +2614,35 @@ function PageOne(props) {
                                 <div style={{ width: 600, marginBottom: 60 }}>
                                     <canvas id="myChart" width="300" height="300"></canvas>
                                 </div>
-                                <p style={{ textAlign: "center", paddingTop: 10, fontWeight: 600 }}>Industries Count</p>
+                                <p style={{
+                                    position: "absolute",
+                                    paddingTop: 0,
+                                    justifyContent: "center",
+                                    top: 420,
+                                    fontWeight: 700,
+                                    fontSize: 16,
+                                    marginLeft: -25,
+                                    transform: "rotate(270deg)",
+                                    fontFamily: "inherit"
+
+
+                                }}>SAP Products</p>
+                                <p style={{ textAlign: "center", paddingTop: 10, fontWeight: 600 }}>Respective Count</p>
                                 <div style={{ width: 600, marginBottom: 120 }}>
                                     <canvas id="myChart2" width="300" height="300"></canvas>
                                 </div>
+                                <p style={{
+                                    position: "absolute",
+                                    paddingTop: 0,
+                                    justifyContent: "center",
+                                    top: 1200,
+                                    fontWeight: 700,
+                                    fontSize: 16,
+                                    marginLeft: -58,
+                                    transform: "rotate(270deg)",
+                                    fontFamily: "inherit"
 
+                                }}>Industies</p>
                             </div>
                         </div>
                     </div>

@@ -72,8 +72,12 @@ function PageTwo() {
                     justifyContent: "center",
                     top: 750,
                     fontWeight: 800,
-                    fontSize: 16,
+                    fontSize: 18,
                     marginLeft: 10,
+                    fontFamily: "cursive",
+                    transform: "rotate(270deg)",
+
+
 
                 }}>Industries</p>
                 <div style={{
@@ -82,7 +86,7 @@ function PageTwo() {
                     margin: "0",
                     padding: "0"
                 }} id="containerHeatMap"></div>
-                <p style={{ fontSize: 16, fontWeight: 800, textAlign: "center" }}>SAP Products</p>
+                <p style={{ fontSize: 18, fontWeight: 800, textAlign: "center", fontFamily: "cursive" }}>SAP Products</p>
             </div>
         </div>
 
